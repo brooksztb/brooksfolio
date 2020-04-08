@@ -29,12 +29,34 @@ export default {
           {
             name: 'link',
             type: 'object',
-            title: 'URL',
+            title: 'Link',
             fields: [
               {
                 title: 'URL',
                 name: 'href',
                 type: 'url'
+              },
+              {
+                title: 'Open in a new tab',
+                name: 'blank',
+                type: 'boolean'
+              }
+            ]
+          },
+          {
+            name: 'internalLink',
+            type: 'object',
+            title: 'Internal link',
+            fields: [
+              {
+                name: 'reference',
+                type: 'reference',
+                title: 'Reference',
+                weak: 'true',
+                to: [
+                  {type: 'post'}
+                  // other types you may want to link to
+                ]
               }
             ]
           }
