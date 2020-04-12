@@ -1,11 +1,11 @@
 export default {
+  title: 'Excerpt',
   name: 'bioPortableText',
   type: 'array',
-  title: 'Excerpt',
   of: [
     {
-      type: 'block',
       title: 'Block',
+      type: 'block',
       styles: [{title: 'Normal', value: 'normal'}],
       lists: [],
       marks: {

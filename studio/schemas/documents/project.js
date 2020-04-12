@@ -1,8 +1,8 @@
 import {format} from 'date-fns'
 
 export default {
-  title: 'Blog Post',
-  name: 'post',
+  title: 'Project',
+  name: 'project',
   type: 'document',
   fields: [
     {
@@ -22,14 +22,13 @@ export default {
       }
     },
     {
-      title: 'Published at',
-      name: 'publishedAt',
-      type: 'datetime',
-      description: 'This can be used to schedule post for publishing'
+      title: 'Published Date',
+      name: 'date',
+      type: 'datetime'
     },
     {
-      title: 'Main image',
-      name: 'mainImage',
+      title: 'Image',
+      name: 'image',
       type: 'mainImage'
     },
     {
@@ -40,41 +39,28 @@ export default {
         'This ends up on summary pages, on Google, when people share your post in social media.'
     },
     {
-      title: 'Authors',
-      name: 'authors',
-      type: 'array',
-      of: [
-        {
-          type: 'authorReference'
-        }
-      ]
-    },
-    {
-      title: 'Categories',
-      name: 'categories',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: {
-            type: 'category'
-          }
-        }
-      ]
-    },
-    {
       title: 'Body',
       name: 'body',
       type: 'bodyPortableText'
+    },
+    {
+      title: 'Tags',
+      name: 'tags',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+        layout: 'tags'
+      },
+      description: 'Tools or languages used with this project.'
     }
   ],
   orderings: [
     {
-      title: 'Publishing date new–>old',
-      name: 'publishingDateAsc',
+      title: 'Date new–>old',
+      name: 'dateAsc',
       by: [
         {
-          field: 'publishedAt',
+          field: 'date',
           direction: 'asc'
         },
         {
@@ -84,11 +70,11 @@ export default {
       ]
     },
     {
-      title: 'Publishing date old->new',
-      name: 'publishingDateDesc',
+      title: 'Date old->new',
+      name: 'dateDesc',
       by: [
         {
-          field: 'publishedAt',
+          field: 'date',
           direction: 'desc'
         },
         {
@@ -101,17 +87,17 @@ export default {
   preview: {
     select: {
       title: 'title',
-      publishedAt: 'publishedAt',
+      date: 'date',
       slug: 'slug',
-      media: 'mainImage'
+      media: 'image'
     },
-    prepare ({title = 'No title', publishedAt, slug = {}, media}) {
-      const dateSegment = format(publishedAt, 'MM/YYYY')
+    prepare ({title = 'No title', date, slug = {}, media}) {
+      const dateSegment = format(date, 'MM/YYYY')
       const path = `/${dateSegment}/${slug.current}/`
       return {
         title,
         media,
-        subtitle: publishedAt ? path : 'Missing publishing date'
+        subtitle: date ? path : 'Missing publishing date'
       }
     }
   }

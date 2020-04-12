@@ -1,7 +1,7 @@
 export default {
+  title: 'Excerpt',
   name: 'excerptPortableText',
   type: 'array',
-  title: 'Excerpt',
   of: [
     {
       title: 'Block',

@@ -9,6 +9,7 @@
 
 <script>
 import PortableText from 'sanity-blocks-vue-component'
+import Youtube from './Youtube'
 
 export default {
   props: {
@@ -31,7 +32,8 @@ export default {
               />
               <figcaption>{node.caption}</figcaption>
             </figure>
-          )
+          ),
+          youtube: Youtube
         },
         marks: {
           internalLink: ({ mark, children }) => {
@@ -40,7 +42,6 @@ export default {
             return <a href={href}>{children}</a>
           },
           link: ({ mark, children }) => {
-            // Read https://css-tricks.com/use-target_blank/
             const { blank, href } = mark
             return blank ? (
               <a href={href} target="_blank" rel="noopener">

@@ -1,7 +1,7 @@
 export default {
+  title: 'Post body',
   name: 'bodyPortableText',
   type: 'array',
-  title: 'Post body',
   of: [
     {
       type: 'block',
@@ -18,18 +18,24 @@ export default {
         {title: 'H4', value: 'h4'},
         {title: 'Quote', value: 'blockquote'}
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}, {title: 'Number', value: 'number'}],
+      lists: [
+        {title: 'Bullet', value: 'bullet'},
+        {title: 'Number', value: 'number'}
+      ],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting by editors.
-        decorators: [{title: 'Strong', value: 'strong'}, {title: 'Emphasis', value: 'em'}],
+        decorators: [
+          {title: 'Strong', value: 'strong'},
+          {title: 'Emphasis', value: 'em'}
+        ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
+            title: 'Link',
             name: 'link',
             type: 'object',
-            title: 'Link',
             fields: [
               {
                 title: 'URL',
@@ -44,14 +50,14 @@ export default {
             ]
           },
           {
+            title: 'Internal link',
             name: 'internalLink',
             type: 'object',
-            title: 'Internal link',
             fields: [
               {
+                title: 'Reference',
                 name: 'reference',
                 type: 'reference',
-                title: 'Reference',
                 weak: 'true',
                 to: [
                   {type: 'post'}
@@ -64,12 +70,12 @@ export default {
       },
       of: [{type: 'authorReference'}]
     },
-    // You can add additional types here. Note that you can't use
-    // primitive types such as 'string' and 'number' in the same array
-    // as a block type.
     {
       type: 'mainImage',
       options: {hotspot: true}
+    },
+    {
+      type: 'youtube'
     }
   ]
 }

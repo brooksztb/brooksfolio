@@ -1,7 +1,7 @@
 export default {
+  title: 'Author reference',
   name: 'authorReference',
   type: 'object',
-  title: 'Author reference',
   fields: [
     {
       name: 'author',

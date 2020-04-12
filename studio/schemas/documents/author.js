@@ -1,17 +1,17 @@
 export default {
+  title: 'Author',
   name: 'author',
   type: 'document',
-  title: 'Author',
   fields: [
     {
+      title: 'Name',
       name: 'name',
-      type: 'string',
-      title: 'Name'
+      type: 'string'
     },
     {
+      title: 'Slug',
       name: 'slug',
       type: 'slug',
-      title: 'Slug',
       description: 'Some frontends will require a slug to be set to be able to show the person',
       options: {
         source: 'name',
@@ -19,14 +19,14 @@ export default {
       }
     },
     {
+      title: 'Image',
       name: 'image',
-      type: 'mainImage',
-      title: 'Image'
+      type: 'mainImage'
     },
     {
+      title: 'Biography',
       name: 'bio',
-      type: 'bioPortableText',
-      title: 'Biography'
+      type: 'bioPortableText'
     }
   ],
   preview: {
