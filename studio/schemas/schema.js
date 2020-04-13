@@ -20,6 +20,7 @@ import excerptPortableText from './objects/excerptPortableText'
 import mainImage from './objects/mainImage'
 import authorReference from './objects/authorReference'
 import position from './objects/position'
+import positionDescription from './objects/positionDescription'
 import youtube from './objects/youtube'
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -44,6 +45,7 @@ export default createSchema({
     bioPortableText,
     excerptPortableText,
     position,
+    positionDescription,
     youtube
 
     // When added to this list, object types can be used as

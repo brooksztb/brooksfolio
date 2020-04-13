@@ -48,15 +48,8 @@ export default {
       of: [
         {
           title: 'Responsibility Description',
-          name: 'description',
-          type: 'object',
-          fields: [
-            {
-              title: 'Text',
-              name: 'text',
-              type: 'bodyPortableText'
-            }
-          ]
+          name: 'positionDescription',
+          type: 'positionDescription'
         }
       ]
     }
