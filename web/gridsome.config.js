@@ -7,18 +7,31 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
+const tailwindcss = require('tailwindcss')
 
 const clientConfig = require('./client-config')
 
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  siteName: 'Gridsome Blog Starter',
-  siteDescription:
-    'A simple, hackable & minimalistic starter for Gridsome that uses structured content from Sanity.io.',
+  siteName: clientConfig.siteInfo.title,
+  metadata: {
+    siteName: clientConfig.siteInfo.title,
+    siteDescription: clientConfig.siteInfo.description
+  },
+  siteUrl: 'https://zacharybrooks.io',
+  titleTemplate: `%s - ${clientConfig.siteInfo.title}`,
 
   templates: {
     SanityPost: '/:slug__current'
+  },
+
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [tailwindcss]
+      }
+    }
   },
 
   plugins: [

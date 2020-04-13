@@ -1,9 +1,16 @@
 // Import main css
-import '~/assets/style/index.scss'
+import './assets/css/global.css'
 
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+import { faGithub, faDev, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faHome, faNewspaper, faCode, faUser } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faGithub, faDev, faTwitter, faLinkedin, faHome, faCode, faUser, faNewspaper)
 // Import image url builder
 import urlForImage from './utils/urlForImage'
 
@@ -11,9 +18,28 @@ import VueYoutube from 'vue-youtube'
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 export default function(Vue, { router, head, isClient }) {
-  // Set default layout as a global component
+  head.link.push(
+    {
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css'
+    },
+    {
+      rel: 'stylesheet',
+      href:
+        'https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css'
+    },
+    {
+      rel: 'stylesheet',
+      href:
+        'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Open+Sans&display=swap'
+    }
+  )
+
   Vue.use(VueYoutube)
 
+  Vue.component('font-awesome', FontAwesomeIcon)
+
+  // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
 
   // Inject global image URL builder
