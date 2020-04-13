@@ -22,6 +22,7 @@ export default {
       of: [
         {
           title: 'Position',
+          name: 'position',
           type: 'object',
           fieldsets: [
             {
