@@ -82,7 +82,7 @@ export default {
   transform: translateY(6rem);
   animation: up 500ms linear forwards;
   z-index: 1;
-  text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
+  text-shadow: 0px 1px 1px rgba((var(--color-text-primary)), 1);
 
   &::before,
   &::after {
@@ -91,7 +91,7 @@ export default {
     width: 0px;
     height: 1px;
     left: 0;
-    background-color: rgba(34, 40, 49, 0.2);
+    background-color: rgba(var(--color-bg-primary), 0.2);
     z-index: -1;
   }
 

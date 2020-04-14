@@ -11,7 +11,7 @@
         function setTheme(newTheme) {
           window.__theme = newTheme
           preferredTheme = newTheme
-          document.body.setAttribute('data-theme', newTheme)
+          document.body.className = newTheme
           window.__onThemeChange(newTheme)
         }
 
@@ -27,12 +27,12 @@
           } catch (err) {}
         }
 
-        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark-mode)')
         darkQuery.addListener(function(e) {
-          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+          window.__setPreferredTheme(e.matches ? 'dark-mode' : 'light-mode')
         })
 
-        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark-mode' : 'light-mode'))
       })()
     </script>
 

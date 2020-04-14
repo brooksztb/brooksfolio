@@ -1,0 +1,35 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.dark-mode {
+  --color-bg-primary: #292f35;
+  --color-bg-secondary: #222831;
+  --color-bg-ternary: #84161b;
+  --color-bg-inverse: #ffffff;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #f7fafc;
+  --color-text-inverse: black;
+
+  --color-border-primary: #ffffff;
+}
+
+.light-mode {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #ffffff;
+  --color-bg-ternary: #84161b;
+  --color-bg-inverse: black;
+
+  --color-text-primary: black;
+  --color-text-secondary: #292f35;
+  --color-text-inverse: #ffffff;
+
+  --color-border-primary: black;
+}
+
+.content-wrapper {
+  transition: color 0.2s ease-out, background 0.2s ease-out;
+}

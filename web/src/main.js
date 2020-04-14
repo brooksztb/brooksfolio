@@ -1,5 +1,5 @@
 // Import main css
-import './assets/css/global.css'
+import './assets/css/main.css'
 
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'
@@ -31,7 +31,7 @@ export default function(Vue, { router, head, isClient }) {
     {
       rel: 'stylesheet',
       href:
-        'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Open+Sans&display=swap'
+        'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Open+Sans&display=swap'
     }
   )
 

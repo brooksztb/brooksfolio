@@ -1,18 +1,18 @@
 <template>
-  <div id="portfolio" class="font-display">
+  <div id="portfolio" class="content-wrapper font-display">
     <header
       class="fixed w-full z-10 sm:flex md:hidden items-center justify-between flex-wrap nav-bar p-3"
     >
-      <div class="flex items-center justify-between flex-shrink-0 text-white">
+      <div class="flex items-center justify-between flex-shrink-0 text-primary">
         <g-image
           class="inline-flex w-full h-10"
-          src="~/assets/images/logo_white.svg"
+          src="~/assets/images/logo_dark_mode.svg"
           alt="zachary brooks logo"
         />
         <div class="block">
           <button
             @click="mobileNavOpen = !mobileNavOpen"
-            class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white"
+            class="flex items-center px-3 py-2 border rounded text-primary border-primary hover:text-inverse hover:border-primary"
           >
             <svg
               class="fill-current h-3 w-3"
@@ -30,41 +30,41 @@
         <div v-show="mobileNavOpen" class="w-full block flex-grow pt-3">
           <div class="text-sm flex-grow">
             <g-link
-              class="inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/"
-              active-class="border border-white"
+              active-class="border border-primary"
             >
               <font-awesome class="mr-2" :icon="['fas', 'home']" size="lg" />
               <span class="block">Home</span>
             </g-link>
             <g-link
-              class="inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/about"
-              active-class="border border-white"
+              active-class="border border-primary"
             >
               <font-awesome class="mr-2" :icon="['fas', 'user']" size="lg" />
               <span class="block">About</span>
             </g-link>
             <g-link
-              class="inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/blog"
-              active-class="border border-white"
+              active-class="border border-primary"
             >
               <font-awesome class="mr-2" :icon="['fas', 'newspaper']" size="lg" />
               <span class="block">Blog</span>
             </g-link>
             <g-link
-              class="flex md:inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/projects"
-              active-class="border border-white"
+              active-class="border border-primary"
             >
               <font-awesome class="mr-2" :icon="['fas', 'code']" size="lg" />
               <span class="block">Projects</span>
             </g-link>
             <!-- <g-link
-							class="inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+							class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
 							to="/work"
-							active-class="border border-white"
+							active-class="border border-primary"
 						>
 							<font-awesome
 								class="mr-2"
@@ -85,45 +85,45 @@
       >
         <g-image
           class="flex md:inline-flex w-full h-6 sm:h-8 md:h-16 lg:h-logo p-2 lg:pb-5"
-          src="~/assets/images/logo_white.svg"
+          src="~/assets/images/logo_dark_mode.svg"
           alt="zachary brooks logo"
         />
         <g-link
-          class="flex md:inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/"
-          active-class="border border-white"
+          active-class="border border-primary"
         >
           <font-awesome class="lg:mr-2" :icon="['fas', 'home']" size="lg" />
           <span class="hidden lg:block">Home</span>
         </g-link>
         <g-link
-          class="flex md:inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/about"
-          active-class="border border-white"
+          active-class="border border-primary"
         >
           <font-awesome class="lg:mr-2" :icon="['fas', 'user']" size="lg" />
           <span class="hidden lg:block">About</span>
         </g-link>
         <g-link
-          class="flex md:inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/blog"
-          active-class="border border-white"
+          active-class="border border-primary"
         >
           <font-awesome class="lg:mr-2" :icon="['fas', 'newspaper']" size="lg" />
           <span class="hidden lg:block">Blog</span>
         </g-link>
         <g-link
-          class="flex md:inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/skills"
-          active-class="border border-white"
+          active-class="border border-primary"
         >
           <font-awesome class="lg:mr-2" :icon="['fas', 'code']" size="lg" />
           <span class="hidden lg:block">Projects</span>
         </g-link>
         <!-- <g-link
-					class="flex md:inline-flex items-center justify-center hover:bg-white hover:text-logo-gray text-white font-bold my-1 py-2 lg:px-6 rounded w-full"
+					class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
 					to="/work"
-					active-class="border border-white"
+					active-class="border border-primary"
 				>
 					<font-awesome
 						class="lg:mr-2"
@@ -132,6 +132,7 @@
 					/>
 					<span class="hidden lg:block">Contact</span>
 				</g-link> -->
+        <toggleTheme></toggleTheme>
       </div>
       <div
         class="flex flex-col items-center lg:flex-row justify-around md:mx-auto py-8 lg:py-10 px-4 lg:px-8 w-full"
@@ -140,7 +141,7 @@
           href="https://github.com/brooksztb"
           target="_blank"
           title="Github Profile"
-          class="text-white mx-2 my-2 lg:my-0"
+          class="text-primary mx-2 my-2 lg:my-0"
         >
           <font-awesome :icon="['fab', 'github']" size="lg" />
         </a>
@@ -148,7 +149,7 @@
           href="https://dev.to/zacann0n"
           target="_blank"
           title="Dev.to Profile"
-          class="text-white mx-2 my-2 lg:my-0"
+          class="text-primary mx-2 my-2 lg:my-0"
         >
           <font-awesome :icon="['fab', 'dev']" size="lg" />
         </a>
@@ -156,7 +157,7 @@
           href="https://twitter.com/zacann0n"
           target="_blank"
           title="Twitter Profile"
-          class="text-white mx-2 my-2 lg:my-0"
+          class="text-primary mx-2 my-2 lg:my-0"
         >
           <font-awesome :icon="['fab', 'twitter']" size="lg" />
         </a>
@@ -164,18 +165,18 @@
           href="https://www.linkedin.com/in/zachary-brooks-3b8b5b84/"
           target="_blank"
           title="Linkedin Profile"
-          class="text-white mx-2 my-2 lg:my-0"
+          class="text-primary mx-2 my-2 lg:my-0"
         >
           <font-awesome :icon="['fab', 'linkedin']" size="lg" />
         </a>
       </div>
-      <span class="">Copyright © {{ new Date().getFullYear() }}.</span>
+      <span class="text-primary">Copyright © {{ new Date().getFullYear() }}.</span>
     </header>
-    <body
-      class="flex flex-1 items-center pl-3 pr-3 pt-px64 md:pt-5 lg:pl-px320 xl:pl-px340 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-content-bg text-white"
+    <div
+      class="flex flex-1 items-center pl-3 pr-3 pt-px64 md:pt-5 lg:pl-px320 xl:pl-px340 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-secondary text-primary"
     >
       <slot></slot>
-    </body>
+    </div>
   </div>
 </template>
 
@@ -196,9 +197,17 @@ export default {
 
 <style lang="scss" scoped>
 .nav-bar {
-  background: -webkit-linear-gradient(121deg, #292f35 50%, #84161b 50%);
-  background: -o-linear-gradient(121deg, #292f35 50%, #84161b 50%);
-  background: -moz-linear-gradient(121deg, #292f35 50%, #84161b 50%);
-  background: linear-gradient(121deg, #292f35 50%, #84161b 50%);
+  background: -webkit-linear-gradient(
+    121deg,
+    var(--color-bg-primary) 50%,
+    var(--color-bg-ternary) 50%
+  );
+  background: -o-linear-gradient(121deg, var(--color-bg-primary) 50%, var(--color-bg-ternary) 50%);
+  background: -moz-linear-gradient(
+    121deg,
+    var(--color-bg-primary) 50%,
+    var(--color-bg-ternary) 50%
+  );
+  background: linear-gradient(121deg, var(--color-bg-primary) 50%, var(--color-bg-ternary) 50%);
 }
 </style>

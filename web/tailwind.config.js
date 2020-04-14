@@ -11,10 +11,24 @@ module.exports = {
       '1': '1 0 auto'
     },
     fontFamily: {
-      display: ['Lato', 'sans-serif'],
+      display: ['Montserrat', 'sans-serif'],
       body: ['Open Sans', 'sans-serif']
     },
     extend: {
+      textColor: {
+        primary: 'var(--color-text-primary)',
+        secondary: 'var(--color-text-secondary)',
+        inverse: 'var(--color-text-inverse)'
+      },
+      backgroundColor: {
+        primary: 'var(--color-bg-primary)',
+        secondary: 'var(--color-bg-secondary)',
+        ternary: 'var(--color-bg-ternary)',
+        inverse: 'var(--color-bg-inverse)'
+      },
+      borderColor: {
+        primary: 'var(--color-border-primary)'
+      },
       colors: {
         'logo-red': '#84161b',
         'logo-gray': '#292f35',

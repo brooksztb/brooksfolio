@@ -58,11 +58,11 @@ export default {
       this.darkTheme = !this.darkTheme
 
       // This is using a script that is added in index.html
-      window.__setPreferredTheme(this.darkTheme ? 'dark' : 'light')
+      window.__setPreferredTheme(this.darkTheme ? 'dark-mode' : 'light-mode')
     }
   },
   mounted() {
-    if (window.__theme == 'dark') this.darkTheme = true
+    if (window.__theme == 'dark-mode') this.darkTheme = true
   }
 }
 </script>
