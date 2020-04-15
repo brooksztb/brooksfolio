@@ -1,14 +1,10 @@
 <template>
-  <div id="portfolio" class="content-wrapper font-display">
+  <div id="portfolio" class="font-display">
     <header
-      class="fixed w-full z-10 sm:flex md:hidden items-center justify-between flex-wrap nav-bar p-3"
+      class="theme-transition fixed w-full z-10 sm:flex md:hidden items-center justify-between flex-wrap nav-bar p-3"
     >
       <div class="flex items-center justify-between flex-shrink-0 text-primary">
-        <g-image
-          class="inline-flex w-full h-10"
-          src="~/assets/images/logo_dark_mode.svg"
-          alt="zachary brooks logo"
-        />
+        <header-logo></header-logo>
         <div class="block">
           <button
             @click="mobileNavOpen = !mobileNavOpen"
@@ -61,6 +57,7 @@
               <font-awesome class="mr-2" :icon="['fas', 'code']" size="lg" />
               <span class="block">Projects</span>
             </g-link>
+            <toggleTheme></toggleTheme>
             <!-- <g-link
 							class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
 							to="/work"
@@ -78,16 +75,12 @@
       </transition>
     </header>
     <header
-      class="fixed top-0 xs:hidden md:flex flex-col items-center justify-between h-screen nav-bar md:w-15 lg:w-px300 xl:w-px320"
+      class="theme-transition fixed top-0 xs:hidden md:flex flex-col items-center justify-between h-screen nav-bar md:w-15 lg:w-px300 xl:w-px320"
     >
       <div
         class="flex flex-col items-center justify-start mx-auto w-full pt-0 md:pt-9 px-0 lg:px-8 md:h-full"
       >
-        <g-image
-          class="flex md:inline-flex w-full h-6 sm:h-8 md:h-16 lg:h-logo p-2 lg:pb-5"
-          src="~/assets/images/logo_dark_mode.svg"
-          alt="zachary brooks logo"
-        />
+        <header-logo></header-logo>
         <g-link
           class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/"
@@ -173,7 +166,7 @@
       <span class="text-primary">Copyright © {{ new Date().getFullYear() }}.</span>
     </header>
     <div
-      class="flex flex-1 items-center pl-3 pr-3 pt-px64 md:pt-5 lg:pl-px320 xl:pl-px340 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-secondary text-primary"
+      class="theme-transition flex flex-1 items-center pl-3 pr-3 pt-px64 md:pt-5 lg:pl-px320 xl:pl-px340 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-secondary text-primary"
     >
       <slot></slot>
     </div>
@@ -181,6 +174,7 @@
 </template>
 
 <script>
+import HeaderLogo from '~/components/HeaderLogo'
 import ToggleTheme from '~/components/ToggleTheme'
 
 export default {
@@ -190,6 +184,7 @@ export default {
     }
   },
   components: {
+    HeaderLogo,
     ToggleTheme
   }
 }

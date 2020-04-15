@@ -30,6 +30,6 @@
   --color-border-primary: black;
 }
 
-.content-wrapper {
+.theme-transition {
   transition: color 0.2s ease-out, background 0.2s ease-out;
 }

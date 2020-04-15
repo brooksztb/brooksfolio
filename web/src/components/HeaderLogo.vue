@@ -1,6 +1,11 @@
 <template>
-  <g-link class="logo" to="/">
-    <span class="logo__text">&larr; {{ $static.metadata.siteName }}</span>
+  <g-link to="/">
+    <g-image
+      class="flex md:inline-flex w-full h-10 sm:h-8 md:h-16 lg:h-logo p-0 sm:p-2 lg:pb-5"
+      :src="theme"
+      alt="zachary brooks logo"
+      immediate="true"
+    />
   </g-link>
 </template>
 
@@ -12,18 +17,23 @@ query {
 }
 </static-query>
 
-<style lang="scss">
-.logo {
-  text-decoration: none;
-  color: var(--body-color) !important;
-  font-size: 0.9em;
+<script>
+import WindowInstanceMap from '../utils/windowInstanceMap.js'
 
-  &__image {
-    vertical-align: middle;
-    border-radius: 99px;
-    height: 40px;
-    width: 40px;
-    margin-right: 0.5em;
+export default {
+  computed: {
+    theme() {
+      return this.setLogoUrl(WindowInstanceMap.theme)
+    }
+  },
+  methods: {
+    setLogoUrl(imageTheme) {
+      return require(`~/assets/images/logo_${imageTheme}.svg`)
+    }
+  },
+  components: {
+    WindowInstanceMap
   }
 }
-</style>
+</script>
+<style lang="scss"></style>

@@ -3,7 +3,7 @@
     role="button"
     aria-label="Toggle dark/light"
     @click.prevent="toggleTheme"
-    class="toggle-theme"
+    class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
   >
     <svg
       v-if="darkTheme"
@@ -67,18 +67,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.toggle-theme {
-  background-color: transparent;
-  border: 0;
-  color: var(--body-color);
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
-  &:focus {
-    outline: none;
-  }
-}
-</style>
+<style lang="scss"></style>
