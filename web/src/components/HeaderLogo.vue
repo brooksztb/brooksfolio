@@ -30,9 +30,6 @@ export default {
     setLogoUrl(imageTheme) {
       return require(`~/assets/images/logo_${imageTheme}.svg`)
     }
-  },
-  components: {
-    WindowInstanceMap
   }
 }
 </script>

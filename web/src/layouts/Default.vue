@@ -163,7 +163,7 @@
           <font-awesome :icon="['fab', 'linkedin']" size="lg" />
         </a>
       </div>
-      <span class="text-primary">Copyright © {{ new Date().getFullYear() }}.</span>
+      <span class="text-primary">© Zachary Brooks {{ new Date().getFullYear() }} </span>
     </header>
     <div
       class="theme-transition flex flex-1 items-center pl-3 pr-3 pt-px64 md:pt-5 lg:pl-px320 xl:pl-px340 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-secondary text-primary"
@@ -204,5 +204,6 @@ export default {
     var(--color-bg-ternary) 50%
   );
   background: linear-gradient(121deg, var(--color-bg-primary) 50%, var(--color-bg-ternary) 50%);
+  border-right: 1px solid var(--color-border-secondary);
 }
 </style>
