@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout page="blog">
     <div class="post-title">
       <h1 class="post-title__text">{{ $page.post.title }}</h1>
 
@@ -11,7 +11,12 @@
         <img
           alt="Cover image"
           v-if="$page.post.mainImage"
-          :src="$urlForImage($page.post.mainImage, $page.metadata.sanityOptions).width(600).auto('format').url()"
+          :src="
+            $urlForImage($page.post.mainImage, $page.metadata.sanityOptions)
+              .width(600)
+              .auto('format')
+              .url()
+          "
         />
       </div>
 
@@ -23,6 +28,21 @@
 
       <div class="post__footer">
         <post-tags :post="$page.post" v-if="$page.post" />
+        <g-link :to="nextBlogPath">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            x="0px"
+            y="0px"
+            viewBox="0 0 26 26"
+            enable-background="new 0 0 26 26"
+            fill="var(--color-text-primary)"
+          >
+            <path
+              d="M23.021,12.294l-8.714-8.715l-1.414,1.414l7.007,7.008H2.687v2h17.213l-7.007,7.006l1.414,1.414l8.714-8.713  C23.411,13.317,23.411,12.685,23.021,12.294z"
+            />
+          </svg>
+        </g-link>
       </div>
     </div>
 
@@ -58,6 +78,23 @@ export default {
       ]
     }
   }
+  // computed: {
+  // 	nextBlogPath() {
+  // 		const allPosts = this.$page.all.edges;
+  // 		const firstBlogPath = allPosts[0].node.path;
+  // 		const currentBlog = allPosts.filter(
+  // 			node => node.node.title === this.$page.post.title,
+  // 		);
+  // 		return this.isNull(currentBlog[0].next)
+  // 			? firstBlogPath
+  // 			: currentBlog[0].next.path;
+  // 	},
+  // },
+  // methods: {
+  // 	isNull(item) {
+  // 		return item == null || item == undefined;
+  // 	},
+  // },
 }
 </script>
 
@@ -71,7 +108,7 @@ query Post ($id: ID!) {
   }
   post: sanityPost (id: $id) {
     title
-    publishedAt (format: "D. MMMM YYYY")
+    publishedAt (format: "MMMM D YYYY")
     categories {
       id
       title
@@ -99,6 +136,17 @@ query Post ($id: ID!) {
       }
     }
   }
+  all: allSanityPost {
+        edges {
+            node {
+                path
+                title
+            }
+            next {
+                path
+            }
+        }
+    }
 }
 </page-query>
 

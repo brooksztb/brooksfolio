@@ -1,23 +1,40 @@
 <template>
-  <div class="post-card content-box" :class="{'post-card--has-poster' : post.poster}">
-    <div class="post-card__header">
-      <g-image
-        alt="Cover image"
-        v-if="post.mainImage"
-        class="post-card__image"
-        :src="$urlForImage(post.mainImage, $page.metadata.sanityOptions).height(440).width(800).auto('format').url()"
-      />
-    </div>
-    <div class="post-card__content">
-      <h2 class="post-card__title" v-html="post.title" />
-      <block-content :blocks="post._rawExcerpt" />
+  <g-link class="hover:opacity-100" :to="post.slug.current">
+    <li
+      class="flex md:flex-row flex-col justify-center md:min-h-px250 min-h-38 md:h-screen-1/3 mb-0 opacity-inherit"
+    >
+      <div class="w-full md:h-full h-screen-1/3 overflow-hidden bg-white">
+        <g-image
+          alt="Cover image"
+          v-if="post.mainImage"
+          class="object-cover opacity-100 md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto transition-opacity duration-300 ease-in-out hover:opacity-80"
+          :src="
+            $urlForImage(post.mainImage, $page.metadata.sanityOptions)
+              .height(300)
+              .width(300)
+              .quality(75)
+              .auto('format')
+              .url()
+          "
+        />
+      </div>
+      <div
+        class="flex flex-col justify-center py-6 px-5 xl:p-12 border border-solid border-gray-300 md:min-w-70"
+      >
+        <h2
+          class="font-display mb-2 md:translate-x-px10 translate-x-0 transition-transform duration-500 ease-out"
+          v-html="post.title"
+        />
+        <block-content
+          class="font-body max-w-px900 text-gray-700 md:translate-x-px10 translate-x-0 transition-transform duration-500 ease-out"
+          :blocks="post._rawExcerpt"
+        />
 
-      <post-meta class="post-card__meta" :post="post" />
-      <post-tags class="post-card__tags" :post="post" />
-
-      <g-link class="post-card__link" :to="post.slug.current">Link</g-link>
-    </div>
-  </div>
+        <post-meta class="post-card__meta" :post="post" />
+        <post-tags class="post-card__tags" :post="post" />
+      </div>
+    </li>
+  </g-link>
 </template>
 
 <script>

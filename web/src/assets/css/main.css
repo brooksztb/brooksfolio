@@ -16,6 +16,7 @@
 
   --color-border-primary: #ffffff;
   --color-border-secondary: #222831;
+  --color-border-inverse: black;
 }
 
 .light-mode {
@@ -30,6 +31,7 @@
 
   --color-border-primary: black;
   --color-border-secondary: #f9f9f9;
+  --color-border-inverse: #ffffff;
 }
 
 .theme-transition {
