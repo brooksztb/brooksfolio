@@ -1,12 +1,12 @@
 # Brooksfolio
 
-_Fully customizable blog template with a Vue.js front-end._
+_Personal Blog and Portfolio built from the Sanity.io Gridsome blog template, styled with Tailwindcss._
 
 Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-gridsome-blog).
 
 ## What you have
 
-- A fast by default blog with [Gridsome](https://gridsome.org)
+- A fast by default blog and Portfolio with [Gridsome](https://gridsome.org)
 - Structured content using [Sanity.io](https://www.sanity.io)
 - Global deployment on [Netlify](https://netlify.com)
 
