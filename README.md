@@ -2,6 +2,8 @@
 
 _Personal Blog and Portfolio built from the Sanity.io Gridsome blog template, styled with Tailwindcss._
 
+[Live Url](https://brooksfolio.netlify.app/)
+
 Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-gridsome-blog).
 
 ## What you have
