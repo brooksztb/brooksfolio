@@ -15,17 +15,6 @@ export default {
       type: 'bodyPortableText'
     },
     {
-      title: 'Highlighted Projects',
-      name: 'highlightedProjects',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'project'}]
-        }
-      ]
-    },
-    {
       title: 'Highlighted Blog Posts',
       name: 'highlightedBlogPosts',
       type: 'array',
@@ -33,6 +22,17 @@ export default {
         {
           type: 'reference',
           to: [{type: 'post'}]
+        }
+      ]
+    },
+    {
+      title: 'Highlighted Projects',
+      name: 'highlightedProjects',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'project'}]
         }
       ]
     }
