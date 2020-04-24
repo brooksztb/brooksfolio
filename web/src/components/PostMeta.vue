@@ -1,8 +1,10 @@
 <template>
-  <div class="post-meta">
-    Posted {{ post.publishedAt }}.
+  <div class="text-sm opacity-80">
+    <span>Posted {{ post.publishedAt }}</span>
     <template v-if="post.timeToRead">
-      <strong>{{ post.timeToRead }} min read.</strong>
+      <span class="post-ttr"
+        ><strong>{{ post.timeToRead }} min read</strong></span
+      >
     </template>
   </div>
 </template>
@@ -16,8 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
-.post-meta {
-  font-size: 0.8em;
-  opacity: 0.8;
+.post-ttr::before {
+  content: ' \2014';
 }
 </style>

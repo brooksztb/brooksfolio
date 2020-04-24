@@ -28,7 +28,9 @@ module.exports = {
         inverse: 'var(--color-bg-inverse)'
       },
       borderColor: {
-        primary: 'var(--color-border-primary)'
+        primary: 'var(--color-border-primary)',
+        secondary: 'var(--color-border-secondary)',
+        inverse: 'var(--color-border-inverse)'
       },
       colors: {
         'logo-red': '#84161b',

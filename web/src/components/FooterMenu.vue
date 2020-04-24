@@ -2,7 +2,7 @@
   <footer class="footer flex flex-col lg:hidden items-center">
     <div class="flex flex-row items-center justify-evenly pt-6 pb-3 px-12 w-full">
       <a
-        class="header-footer-anchor text-primary mx-2 my-2"
+        class="no-highlight-anchor text-primary mx-2 my-2"
         title="Email"
         href="mailto:brooksztb@gmail.com"
       >
@@ -12,7 +12,7 @@
         href="https://github.com/brooksztb"
         target="_blank"
         title="Github Profile"
-        class="header-footer-anchor text-primary mx-2 my-2"
+        class="no-highlight-anchor text-primary mx-2 my-2"
       >
         <font-awesome :icon="['fab', 'github']" size="lg" />
       </a>
@@ -20,7 +20,7 @@
         href="https://dev.to/zacann0n"
         target="_blank"
         title="Dev.to Profile"
-        class="header-footer-anchor text-primary mx-2 my-2"
+        class="no-highlight-anchor text-primary mx-2 my-2"
       >
         <font-awesome :icon="['fab', 'dev']" size="lg" />
       </a>
@@ -28,7 +28,7 @@
         href="https://twitter.com/zacann0n"
         target="_blank"
         title="Twitter Profile"
-        class="header-footer-anchor text-primary mx-2 my-2"
+        class="no-highlight-anchor text-primary mx-2 my-2"
       >
         <font-awesome :icon="['fab', 'twitter']" size="lg" />
       </a>
@@ -36,7 +36,7 @@
         href="https://www.linkedin.com/in/zachary-brooks-3b8b5b84/"
         target="_blank"
         title="Linkedin Profile"
-        class="header-footer-anchor text-primary mx-2 my-2"
+        class="no-highlight-anchor text-primary mx-2 my-2"
       >
         <font-awesome :icon="['fab', 'linkedin']" size="lg" />
       </a>

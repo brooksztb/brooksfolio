@@ -26,6 +26,16 @@
   }
   posts: allSanityPost(sortBy: "publishedAt") {
     edges {
+      next {
+        slug {
+          current
+        }
+      },
+      previous {
+        slug {
+          current
+        }
+      },
       node {
         id
         title
