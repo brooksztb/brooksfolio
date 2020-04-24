@@ -2,7 +2,7 @@
   <Layout>
     <div class="not-found">
       <h2>
-        <g-link to="/">
+        <g-link class="no-highlight-anchor" to="/">
           Sorry, couldn't find that page...
         </g-link>
       </h2>

@@ -1,5 +1,5 @@
 <template>
-  <g-link class="header-anchor" to="/" exact>
+  <g-link class="no-highlight-anchor" to="/" exact>
     <g-image
       class="flex md:inline-flex w-full h-10 sm:h-8 md:h-16 lg:h-logo p-0 sm:p-2 lg:pb-5"
       :src="theme"

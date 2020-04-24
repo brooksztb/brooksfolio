@@ -28,7 +28,7 @@
 
       <div class="post__footer">
         <post-tags :post="$page.post" v-if="$page.post" />
-        <g-link :to="nextBlogPath">
+        <g-link class="no-highlight-anchor" :to="nextBlogPath">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"

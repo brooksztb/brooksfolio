@@ -1,5 +1,5 @@
 <template>
-  <g-link class="hover:opacity-100" :to="post.slug.current">
+  <g-link class="no-highlight-anchor hover:opacity-100" :to="post.slug.current">
     <li
       class="flex md:flex-row flex-col justify-center md:min-h-px250 min-h-38 md:h-screen-1/3 mb-0 opacity-inherit"
     >

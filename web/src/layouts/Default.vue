@@ -1,9 +1,9 @@
 <template>
   <div id="portfolio" class="font-display">
     <header
-      class="theme-transition fixed w-full z-10 sm:flex md:hidden items-center justify-between flex-wrap nav-bar p-3"
+      class="theme-transition fixed w-full z-10 flex lg:hidden items-center justify-between flex-wrap nav-bar p-3"
     >
-      <div class="flex items-center justify-between flex-shrink-0 text-primary">
+      <div class="flex items-center justify-between flex-shrink-0 w-full text-primary">
         <header-logo></header-logo>
         <div class="flex flex-row items-center">
           <toggleTheme></toggleTheme>
@@ -29,7 +29,7 @@
         <div v-show="mobileNavOpen" class="w-full block flex-grow pt-3">
           <div class="text-sm flex-grow">
             <g-link
-              class="header-anchor inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="no-highlight-anchor inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/"
               active-class="border border-primary"
               exact
@@ -38,7 +38,7 @@
               <span class="block">Home</span>
             </g-link>
             <g-link
-              class="header-anchor inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="no-highlight-anchor inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/about"
               active-class="border border-primary"
               exact
@@ -47,7 +47,7 @@
               <span class="block">About</span>
             </g-link>
             <g-link
-              class="header-anchor inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="no-highlight-anchor inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/blog"
               active-class="border border-primary"
             >
@@ -55,7 +55,7 @@
               <span class="block">Blog</span>
             </g-link>
             <g-link
-              class="header-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="no-highlight-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/projects"
               active-class="border border-primary"
               exact
@@ -65,7 +65,7 @@
             </g-link>
 
             <g-link
-              class="header-anchor inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="no-highlight-anchor inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/contact"
               active-class="border border-primary"
               exact
@@ -78,14 +78,14 @@
       </transition>
     </header>
     <header
-      class="theme-transition fixed top-0 xs:hidden md:flex flex-col items-center justify-between h-screen nav-bar md:w-15 lg:w-px300 xl:w-px320"
+      class="theme-transition fixed top-0 hidden lg:flex flex-col items-center justify-between h-screen nav-bar md:w-15 lg:w-px300 xl:w-px320"
     >
       <div
         class="flex flex-col items-center justify-start mx-auto w-full pt-0 md:pt-9 px-0 lg:px-8 md:h-full"
       >
         <header-logo></header-logo>
         <g-link
-          class="header-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="no-highlight-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/"
           active-class="border border-primary"
           exact
@@ -94,7 +94,7 @@
           <span class="hidden lg:block">Home</span>
         </g-link>
         <g-link
-          class="header-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="no-highlight-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/about"
           active-class="border border-primary"
           exact
@@ -103,7 +103,7 @@
           <span class="hidden lg:block">About</span>
         </g-link>
         <g-link
-          class="header-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="no-highlight-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/blog"
           active-class="border border-primary"
         >
@@ -111,15 +111,15 @@
           <span class="hidden lg:block">Blog</span>
         </g-link>
         <g-link
-          class="header-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
-          to="/skills"
+          class="no-highlight-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          to="/projects"
           active-class="border border-primary"
         >
           <font-awesome class="lg:mr-2" :icon="['fas', 'code']" size="lg" />
           <span class="hidden lg:block">Projects</span>
         </g-link>
         <g-link
-          class="header-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="no-highlight-anchor flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/contact"
           active-class="border border-primary"
           exact
@@ -130,13 +130,36 @@
         <toggleTheme></toggleTheme>
       </div>
       <div
-        class="flex flex-col items-center lg:flex-row justify-around md:mx-auto py-8 lg:py-10 px-4 lg:px-8 w-full"
+        class="flex flex-col items-center lg:flex-row justify-evenly md:mx-auto pt-8 pb-4 lg:pt-10 lg:pb-5 px-4 lg:px-8 w-full"
       >
+        <a
+          class="no-highlight-anchor text-primary mx-2 my-2 lg:my-0"
+          title="Email"
+          href="mailto:brooksztb@gmail.com"
+        >
+          <font-awesome :icon="['fa', 'envelope']" size="lg" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/zachary-brooks-3b8b5b84/"
+          target="_blank"
+          title="Linkedin Profile"
+          class="no-highlight-anchor text-primary mx-2 my-2 lg:my-0"
+        >
+          <font-awesome :icon="['fab', 'linkedin']" size="lg" />
+        </a>
+        <a
+          href="https://twitter.com/zacann0n"
+          target="_blank"
+          title="Twitter Profile"
+          class="no-highlight-anchor text-primary mx-2 my-2 lg:my-0"
+        >
+          <font-awesome :icon="['fab', 'twitter']" size="lg" />
+        </a>
         <a
           href="https://github.com/brooksztb"
           target="_blank"
           title="Github Profile"
-          class="header-anchor text-primary mx-2 my-2 lg:my-0"
+          class="no-highlight-anchor text-primary mx-2 my-2 lg:my-0"
         >
           <font-awesome :icon="['fab', 'github']" size="lg" />
         </a>
@@ -144,40 +167,28 @@
           href="https://dev.to/zacann0n"
           target="_blank"
           title="Dev.to Profile"
-          class="header-anchor text-primary mx-2 my-2 lg:my-0"
+          class="no-highlight-anchor text-primary mx-2 my-2 lg:my-0"
         >
           <font-awesome :icon="['fab', 'dev']" size="lg" />
         </a>
-        <a
-          href="https://twitter.com/zacann0n"
-          target="_blank"
-          title="Twitter Profile"
-          class="header-anchor text-primary mx-2 my-2 lg:my-0"
-        >
-          <font-awesome :icon="['fab', 'twitter']" size="lg" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/zachary-brooks-3b8b5b84/"
-          target="_blank"
-          title="Linkedin Profile"
-          class="header-anchor text-primary mx-2 my-2 lg:my-0"
-        >
-          <font-awesome :icon="['fab', 'linkedin']" size="lg" />
-        </a>
       </div>
-      <span class="text-primary">© Zachary Brooks {{ new Date().getFullYear() }} </span>
+      <span class="text-primary pb-4 lg:pb-5"
+        >© Zachary Brooks {{ new Date().getFullYear() }}
+      </span>
     </header>
     <div
-      class="theme-transition font-body flex flex-1 items-center pl-3 pr-3 pt-px82 md:pt-5 lg:pl-px320 xl:pl-px340 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-secondary text-primary"
+      class="theme-transition font-body flex flex-1 items-center pl-3 pr-3 pt-px82 lg:pt-5 lg:pl-px320 xl:pl-px340 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-secondary text-primary"
     >
       <slot></slot>
     </div>
+    <footer-menu></footer-menu>
   </div>
 </template>
 
 <script>
 import HeaderLogo from '~/components/HeaderLogo'
 import ToggleTheme from '~/components/ToggleTheme'
+import FooterMenu from '~/components/FooterMenu'
 
 export default {
   data() {
@@ -187,7 +198,8 @@ export default {
   },
   components: {
     HeaderLogo,
-    ToggleTheme
+    ToggleTheme,
+    FooterMenu
   }
 }
 </script>

@@ -46,7 +46,7 @@
   transition: color 0.2s ease-out, background 0.2s ease-out;
 }
 
-a:not(.header-anchor) {
+a:not(.no-highlight-anchor) {
   text-decoration: none;
   background-image: linear-gradient(var(--color-primary--muted), var(--color-primary--muted)),
     linear-gradient(var(--color-primary), var(--color-primary));
@@ -58,6 +58,6 @@ a:not(.header-anchor) {
   background-position: 0 100%;
 }
 
-a:not(.header-anchor):hover {
+a:not(.no-highlight-anchor):hover {
   background-size: 100% 0.25vmin;
 }
