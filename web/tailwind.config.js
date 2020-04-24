@@ -18,6 +18,7 @@ module.exports = {
       textColor: {
         primary: 'var(--color-text-primary)',
         secondary: 'var(--color-text-secondary)',
+        ternary: 'var(--color-text-ternary)',
         inverse: 'var(--color-text-inverse)'
       },
       backgroundColor: {

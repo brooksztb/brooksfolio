@@ -10,7 +10,7 @@
           <div class="block">
             <button
               @click="mobileNavOpen = !mobileNavOpen"
-              class="flex items-center px-3 py-2 border rounded text-primary border-primary hover:text-inverse hover:border-inverse"
+              class="flex items-center px-3 py-2 border rounded text-primary border-primary hover:text-ternary hover:border-inverse"
             >
               <svg
                 class="fill-current h-3 w-3"
@@ -29,7 +29,7 @@
         <div v-show="mobileNavOpen" class="w-full block flex-grow pt-3">
           <div class="text-sm flex-grow">
             <g-link
-              class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/"
               active-class="border border-primary"
               exact
@@ -38,7 +38,7 @@
               <span class="block">Home</span>
             </g-link>
             <g-link
-              class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/about"
               active-class="border border-primary"
               exact
@@ -47,7 +47,7 @@
               <span class="block">About</span>
             </g-link>
             <g-link
-              class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/blog"
               active-class="border border-primary"
             >
@@ -55,7 +55,7 @@
               <span class="block">Blog</span>
             </g-link>
             <g-link
-              class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/projects"
               active-class="border border-primary"
               exact
@@ -65,7 +65,7 @@
             </g-link>
 
             <g-link
-              class="inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+              class="inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
               to="/contact"
               active-class="border border-primary"
               exact
@@ -85,7 +85,7 @@
       >
         <header-logo></header-logo>
         <g-link
-          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/"
           active-class="border border-primary"
           exact
@@ -94,7 +94,7 @@
           <span class="hidden lg:block">Home</span>
         </g-link>
         <g-link
-          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/about"
           active-class="border border-primary"
           exact
@@ -103,7 +103,7 @@
           <span class="hidden lg:block">About</span>
         </g-link>
         <g-link
-          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/blog"
           active-class="border border-primary"
         >
@@ -111,7 +111,7 @@
           <span class="hidden lg:block">Blog</span>
         </g-link>
         <g-link
-          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/skills"
           active-class="border border-primary"
         >
@@ -119,7 +119,7 @@
           <span class="hidden lg:block">Projects</span>
         </g-link>
         <g-link
-          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-inverse text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
+          class="flex md:inline-flex items-center justify-center hover:bg-inverse hover:text-ternary text-primary font-bold my-1 py-2 lg:px-6 rounded w-full"
           to="/contact"
           active-class="border border-primary"
           exact
@@ -168,7 +168,7 @@
       <span class="text-primary">© Zachary Brooks {{ new Date().getFullYear() }} </span>
     </header>
     <div
-      class="theme-transition flex flex-1 items-center pl-3 pr-3 pt-px64 md:pt-5 lg:pl-px320 xl:pl-px340 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-secondary text-primary"
+      class="theme-transition font-body flex flex-1 items-center pl-3 pr-3 pt-px64 md:pt-5 lg:pl-px320 xl:pl-px340 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-secondary text-primary"
     >
       <slot></slot>
     </div>
