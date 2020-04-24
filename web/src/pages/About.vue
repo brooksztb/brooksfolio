@@ -1,9 +1,9 @@
 <template>
   <Layout page="about">
-    <div class="flex-wrap">
+    <div class="text-primary">
       <div class="flex flex-col lg:flex-row max-w-sm w-full lg:max-w-full">
         <g-image
-          class="w-full lg:w-1/3 lg:mr-4 h-full rounded mr-0"
+          class="w-full h-1/2 lg:h-full lg:w-1/3 lg:mr-4 h-full rounded mr-0 mb-4 lg:mb-0"
           :src="
             $urlForImage($page.about.mainImage, $page.metadata.sanityOptions)
               .height(750)
@@ -18,12 +18,15 @@
           class=" w-full lg:w-2/3 border rounded border-white-400 p-4 flex flex-col justify-between leading-normal"
         >
           <div class="mb-2">
-            <div class="text-primary font-bold text-xl mb-2"></div>
-            <block-content class="text-primary" :blocks="$page.about._rawBiography" />
+            <div class="font-bold text-xl mb-2"></div>
+            <block-content :blocks="$page.about._rawBiography" />
           </div>
         </div>
       </div>
-      <timeline :data="$page.about.workHistory"></timeline>
+      <div class="flex w-full flex-col items-center">
+        <h2 class="self-start text-secondary font-bold text-3xl">Where I've Been</h2>
+        <timeline :data="$page.about.workHistory"></timeline>
+      </div>
     </div>
   </Layout>
 </template>

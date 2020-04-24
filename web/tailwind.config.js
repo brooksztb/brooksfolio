@@ -38,6 +38,7 @@ module.exports = {
       spacing: {
         px10: '10px',
         px64: '64px',
+        px82: '82px',
         px300: '300px',
         px320: '320px',
         px340: '340px',

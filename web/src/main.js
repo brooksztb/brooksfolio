@@ -8,9 +8,27 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { faGithub, faDev, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faHome, faEnvelope, faNewspaper, faCode, faUser } from '@fortawesome/free-solid-svg-icons'
+import {
+  faHome,
+  faEnvelope,
+  faNewspaper,
+  faCode,
+  faUser,
+  faAsterisk
+} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faGithub, faDev, faTwitter, faLinkedin, faHome, faCode, faUser, faNewspaper, faEnvelope)
+library.add(
+  faGithub,
+  faDev,
+  faTwitter,
+  faLinkedin,
+  faHome,
+  faCode,
+  faUser,
+  faNewspaper,
+  faEnvelope,
+  faAsterisk
+)
 // Import image url builder
 import urlForImage from './utils/urlForImage'
 

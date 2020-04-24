@@ -5,7 +5,12 @@
         <span></span>
         <div>{{ info.organization }} - {{ info.location }}</div>
         <div>{{ info.positionTitle }}</div>
-        <div v-for="(description, index) in info.positionDescription" :key="index">
+        <div
+          class="flex flex-row items-center pl-4"
+          v-for="(description, index) in info.positionDescription"
+          :key="index"
+        >
+          <font-awesome class="mr-2" :icon="['fas', 'asterisk']" size="sm" />
           <block-content :blocks="description._rawText" />
         </div>
         <div class="year">
@@ -38,6 +43,9 @@ $font-color: var(--color-text-primary);
 $bg-color: var(--color-bg-primary);
 $dot-color: var(--color-bg-ternary);
 
+@function font-color($color-name) {
+  @return var(--color-text-#{$color-name});
+}
 @mixin clearfix {
   content: '';
   position: absolute;
@@ -60,10 +68,13 @@ $dot-color: var(--color-bg-ternary);
   }
   li {
     position: relative;
-    margin: 60px 35px;
+    margin: 75px 35px;
     width: 100%;
     list-style: none;
     line-height: 25px;
+    &:first-of-type {
+      margin-top: 20px;
+    }
     & > span {
       @include clearfix();
       left: -25px;
@@ -89,10 +100,10 @@ $dot-color: var(--color-bg-ternary);
       &:nth-child(2) {
         font-size: 1.2em;
       }
-      //   &:nth-child(3) {
-      //     font-style: italic;
-      //     color: darken($font-color, 25%);
-      //   }
+      &:nth-child(3) {
+        font-style: italic;
+        color: var(--color-text-secondary);
+      }
     }
     .year span {
       position: absolute;
