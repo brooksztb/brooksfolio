@@ -18,8 +18,12 @@
       </div>
 
       <!-- Post Sidebar -->
-      <div class="pr-8 pb-2">
-        <post-meta :post="$page.post" v-if="$page.post" />
+      <div class="text-sm pr-8 pb-2">
+        <post-meta
+          :post="$page.post"
+          :timeToRead="readingTime($page.post._rawBody)"
+          v-if="$page.post"
+        />
         <post-tags :post="$page.post" v-if="$page.post.tags" />
         <g-link to="/blog">See more blog posts</g-link>
       </div>
@@ -91,6 +95,14 @@ export default {
   methods: {
     isNull(item) {
       return item == null || item == undefined
+    },
+    readingTime(content) {
+      let minutes = 0
+      const contentString = JSON.stringify(content)
+      const words = contentString.split(' ').length
+      const wordsPerMinute = 200
+      minutes = Math.ceil(words / wordsPerMinute)
+      return minutes
     }
   }
 }
