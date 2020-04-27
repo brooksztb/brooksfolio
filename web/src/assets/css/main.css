@@ -61,3 +61,11 @@ a:not(.no-highlight-anchor) {
 a:not(.no-highlight-anchor):hover {
   background-size: 100% 0.25vmin;
 }
+
+ul {
+  list-style: circle;
+}
+
+ol {
+  list-style: lower-alpha;
+}
