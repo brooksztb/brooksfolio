@@ -44,7 +44,8 @@ export default {
     {
       title: 'Position Responsibilites',
       name: 'positionDescription',
-      type: 'bodyPortableText'
+      type: 'bodyPortableText',
+      fieldset: 'details'
     }
   ]
 }

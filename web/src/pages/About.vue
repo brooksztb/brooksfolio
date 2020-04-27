@@ -63,9 +63,7 @@
     workHistory {
       organization,
       positionTitle,
-      positionDescription {
-      	_rawText
-      },
+      _rawPositionDescription,
       location,
       startDate,
       endDate

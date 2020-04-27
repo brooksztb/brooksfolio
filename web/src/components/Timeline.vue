@@ -5,8 +5,8 @@
         <span></span>
         <div>{{ info.organization }} - {{ info.location }}</div>
         <div>{{ info.positionTitle }}</div>
-        <div class="flex flex-row items-center pl-4">
-          <block-content :blocks="info.positionDescription" />
+        <div v-if="info._rawPositionDescription" class="flex flex-row items-center pl-4">
+          <block-content :blocks="info._rawPositionDescription" />
         </div>
         <div class="year">
           <span>{{ info.endDate }}</span>
