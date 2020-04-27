@@ -5,13 +5,8 @@
         <span></span>
         <div>{{ info.organization }} - {{ info.location }}</div>
         <div>{{ info.positionTitle }}</div>
-        <div
-          class="flex flex-row items-center pl-4"
-          v-for="(description, index) in info.positionDescription"
-          :key="index"
-        >
-          <font-awesome class="mr-2" :icon="['fas', 'asterisk']" size="sm" />
-          <block-content :blocks="description._rawText" />
+        <div class="flex flex-row items-center pl-4">
+          <block-content :blocks="info.positionDescription" />
         </div>
         <div class="year">
           <span>{{ info.endDate }}</span>

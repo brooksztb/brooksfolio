@@ -44,14 +44,7 @@ export default {
     {
       title: 'Position Responsibilites',
       name: 'positionDescription',
-      type: 'array',
-      of: [
-        {
-          title: 'Responsibility Description',
-          name: 'positionDescription',
-          type: 'positionDescription'
-        }
-      ]
+      type: 'bodyPortableText'
     }
   ]
 }
