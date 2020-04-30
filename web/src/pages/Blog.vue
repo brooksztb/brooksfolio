@@ -3,7 +3,7 @@
     <!-- List posts -->
     <div class="w-full">
       <section>
-        <ul>
+        <ul class="flex flex-col">
           <post-card
             v-for="edge in $page.posts.edges"
             :key="edge.node.id"

@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   theme: {
     screens: {
@@ -70,5 +72,94 @@ module.exports = {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     transitionProperty: ['responsive', 'hover', 'focus']
   },
-  plugins: []
+  plugins: [
+    plugin(function({ addBase, addUtilities, config }) {
+      addBase({
+        '*': {
+          boxSizing: 'border-box',
+          '-webkit-font-smoothing': 'antialiased',
+          '-moz-osx-font-smoothing': 'grayscale'
+        },
+        p: {
+          marginBottom: '1.25em'
+        },
+        h1: {
+          fontSize: config('theme.fontSize.4xl'),
+          transition: 'color .6s',
+          margin: '0 0 1rem',
+          fontWeight: config('theme.fontWeight.semibold')
+        },
+        h2: {
+          fontSize: config('theme.fontSize.3xl'),
+          transition: 'color .6s',
+          margin: '2.75rem 0 1rem',
+          fontWeight: config('theme.fontWeight.semibold')
+        },
+        h3: {
+          fontSize: config('theme.fontSize.2xl'),
+          transition: 'color .6s',
+          margin: '2.75rem 0 1rem',
+          fontWeight: config('theme.fontWeight.semibold')
+        },
+        h4: {
+          fontSize: config('theme.fontSize.xl'),
+          transition: 'color .6s',
+          margin: '2.75rem 0 1rem',
+          fontWeight: config('theme.fontWeight.semibold')
+        },
+        h5: {
+          fontSize: config('theme.fontSize.lg'),
+          transition: 'color .6s',
+          margin: '2.75rem 0 1rem',
+          fontWeight: config('theme.fontWeight.semibold')
+        },
+        small: { fontSize: config('theme.fontSize.sm') },
+        strong: { fontWeight: config('theme.fontWeight.semibold') },
+        blockquote: {
+          borderLeft: '4px solid var(--color-border-primary)',
+          paddingLeft: 'calc(var(--space) / 2)',
+          color: 'var(--color-text-primary)'
+        },
+        em: {
+          fontStyle: config('theme.fontStyle.italic')
+        },
+        ul: {
+          listStyleType: 'disc',
+          marginLeft: '1.25em',
+          marginBottom: '1.25em',
+          li: {
+            marginBottom: '.6em'
+          }
+        },
+        ol: {
+          listStyleType: 'decimal',
+          marginLeft: '1.25em',
+          marginBottom: '1.25em',
+          li: {
+            marginBottom: '.6em'
+          }
+        }
+      })
+      const newUtilities = {
+        '.theme-transition': {
+          transition: 'color 0.2s ease-out, background 0.2s ease-out'
+        },
+        'a:not(.no-highlight-anchor)': {
+          textDecoration: 'none',
+          backgroundImage:
+            'linear-gradient(var(--color-primary--muted), var(--color-primary--muted)), linear-gradient(var(--color-primary), var(--color-primary))',
+          backgroundSize: '100% 0.25vmin, 0 0.25vmin',
+          backgroundRepeat: 'no-repeat',
+          color: 'var(--color-primary)',
+          transition: 'background-size 0.3s cubic-bezier(0.77, 0, 0.175, 1)',
+          backgroundPosition: '0 100%'
+        },
+        'a:not(.no-highlight-anchor):hover': {
+          backgroundSize: '100% 0.25vmin'
+        }
+      }
+
+      addUtilities(newUtilities)
+    })
+  ]
 }

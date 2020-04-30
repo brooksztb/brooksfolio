@@ -35,17 +35,6 @@ export default {
           ),
           youtube: Youtube
         },
-        listItem: ({ node }) => {
-          return node.listItem == 'bullet' ? (
-            <ul>
-              <li>{node.children}</li>
-            </ul>
-          ) : (
-            <ol>
-              <li>{node.children}</li>
-            </ol>
-          )
-        },
         marks: {
           internalLink: ({ mark, children }) => {
             const { slug = {} } = mark

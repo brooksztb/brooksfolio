@@ -24,12 +24,12 @@
           :timeToRead="readingTime($page.post._rawBody)"
           v-if="$page.post"
         />
-        <post-tags :post="$page.post" v-if="$page.post.tags" />
+        <post-tags :post="$page.post" v-if="$page.post.categories" />
         <g-link to="/blog">See more blog posts</g-link>
       </div>
 
       <!-- Post Body -->
-      <div>
+      <div class="w-full md:col-start-1 md:col-end-3">
         <block-content
           class="border rounded border-primary p-4"
           :blocks="$page.post._rawBody"
@@ -167,7 +167,7 @@ query Post ($id: ID!) {
 <style lang="scss" scoped>
 .article {
   @media (min-width: 768px) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 5fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
   }
   grid-template-columns: 100%;
 }

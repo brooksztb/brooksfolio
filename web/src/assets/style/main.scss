@@ -42,30 +42,12 @@
   --color-border-inverse: #ffffff;
 }
 
-.theme-transition {
-  transition: color 0.2s ease-out, background 0.2s ease-out;
+body {
+  --space: 1.5rem;
 }
 
-a:not(.no-highlight-anchor) {
-  text-decoration: none;
-  background-image: linear-gradient(var(--color-primary--muted), var(--color-primary--muted)),
-    linear-gradient(var(--color-primary), var(--color-primary));
-  background-size: 100% 0.25vmin, 0 0.25vmin;
-  background-repeat: no-repeat;
-  color: var(--color-primary);
-  -webkit-transition: background-size 0.3s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: background-size 0.3s cubic-bezier(0.77, 0, 0.175, 1);
-  background-position: 0 100%;
-}
-
-a:not(.no-highlight-anchor):hover {
-  background-size: 100% 0.25vmin;
-}
-
-ul {
-  list-style: circle;
-}
-
-ol {
-  list-style: lower-alpha;
+@media (min-width: 768px) {
+  body {
+    --space: 3.5rem;
+  }
 }

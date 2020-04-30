@@ -1,8 +1,8 @@
 <template>
-  <div class="post-tags">
+  <div class="rounded my-2">
     <g-link
-      class="no-highlight-anchor post-tags__link"
-      v-for="tag in post.tags"
+      class="border rounded border-primary p-1 no-highlight-anchor text-primary text-sm mr-2"
+      v-for="tag in post.categories"
       :key="tag.id"
       :to="tag.path"
     >
@@ -20,19 +20,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.post-tags {
-  margin: 1em 0 0;
-
-  &__link {
-    margin-right: 0.7em;
-    font-size: 0.8em;
-    color: currentColor;
-    text-decoration: none;
-    background-color: var(--bg-color);
-    color: currentColor !important; //Todo: remove important;
-    padding: 0.5em;
-    border-radius: var(--radius);
-  }
-}
-</style>
+<style lang="scss"></style>
