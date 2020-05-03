@@ -73,7 +73,7 @@ module.exports = {
     transitionProperty: ['responsive', 'hover', 'focus']
   },
   plugins: [
-    plugin(function({ addBase, addUtilities, config }) {
+    plugin(function({ addBase, addComponents, addUtilities, config }) {
       addBase({
         '*': {
           boxSizing: 'border-box',
@@ -140,6 +140,7 @@ module.exports = {
           }
         }
       })
+
       const newUtilities = {
         '.theme-transition': {
           transition: 'color 0.2s ease-out, background 0.2s ease-out'
@@ -156,7 +157,7 @@ module.exports = {
         },
         'a:not(.no-highlight-anchor):hover': {
           backgroundSize: '100% 0.25vmin'
-        }
+        },
       }
 
       addUtilities(newUtilities)

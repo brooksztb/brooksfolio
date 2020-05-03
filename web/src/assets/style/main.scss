@@ -51,3 +51,7 @@ body {
     --space: 3.5rem;
   }
 }
+
+.time-to-read::before {
+  content: ' \2014';
+}

@@ -23,7 +23,7 @@ export default {
     },
     {
       title: 'Published Date',
-      name: 'date',
+      name: 'publishedAt',
       type: 'datetime'
     },
     {
@@ -87,7 +87,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      date: 'date',
+      publishedAt: 'publishedAt',
       slug: 'slug',
       media: 'image'
     },

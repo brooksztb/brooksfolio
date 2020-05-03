@@ -21,7 +21,7 @@
       <div class="text-sm pr-8 pb-2">
         <post-meta
           :post="$page.post"
-          :timeToRead="readingTime($page.post._rawBody)"
+          :timeToRead="timeToRead($page.post._rawBody)"
           v-if="$page.post"
         />
         <post-tags :post="$page.post" v-if="$page.post.categories" />
@@ -59,6 +59,7 @@ import BlockContent from '~/components/BlockContent'
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
 import AuthorCard from '~/components/AuthorCard'
+import readingTime from '../utils/timeToRead.js'
 
 export default {
   components: {
@@ -96,13 +97,8 @@ export default {
     isNull(item) {
       return item == null || item == undefined
     },
-    readingTime(content) {
-      let minutes = 0
-      const contentString = JSON.stringify(content)
-      const words = contentString.split(' ').length
-      const wordsPerMinute = 200
-      minutes = Math.ceil(words / wordsPerMinute)
-      return minutes
+    timeToRead(content) {
+      return readingTime(content)
     }
   }
 }
