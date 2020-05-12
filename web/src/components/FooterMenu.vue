@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer flex flex-col lg:hidden items-center">
+  <footer class="bg-secondary flex flex-col lg:hidden items-center">
     <div class="flex flex-row items-center justify-evenly pt-6 pb-3 px-12 w-full">
       <a
         class="no-highlight-anchor text-primary mx-2 my-2"
@@ -56,15 +56,15 @@ export default {
   background: -webkit-linear-gradient(
     121deg,
     var(--color-bg-primary) 50%,
-    var(--color-bg-ternary) 50%
+    var(--color-bg-tertiary) 50%
   );
-  background: -o-linear-gradient(121deg, var(--color-bg-primary) 50%, var(--color-bg-ternary) 50%);
+  background: -o-linear-gradient(121deg, var(--color-bg-primary) 50%, var(--color-bg-tertiary) 50%);
   background: -moz-linear-gradient(
     121deg,
     var(--color-bg-primary) 50%,
-    var(--color-bg-ternary) 50%
+    var(--color-bg-tertiary) 50%
   );
-  background: linear-gradient(121deg, var(--color-bg-primary) 50%, var(--color-bg-ternary) 50%);
+  background: linear-gradient(121deg, var(--color-bg-primary) 50%, var(--color-bg-tertiary) 50%);
   border-top: 1px solid var(--color-border-secondary);
 }
 </style>
