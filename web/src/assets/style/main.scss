@@ -7,12 +7,13 @@
 .dark-mode {
   --color-primary: #fbc758;
   --color-primary--muted: rgba(251, 199, 88, 0.3);
+  --color-secondary: #154a9f;
 
   --color-bg-primary: #1a1b23;
   --color-bg-secondary: #22242f;
   --color-bg-tertiary: #002470;
   --color-bg-inverse: #ffffff;
-  --color-bg-light: #5675d1;
+  --color-bg-tertiary--light: #5675d1;
 
   --color-text-primary: #ffffff;
   --color-text-primary--muted: rgba(255, 255, 255, 0.6);
@@ -30,11 +31,13 @@
 .light-mode {
   --color-primary: #154a9f;
   --color-primary--muted: rgba(21, 74, 159, 0.3);
+  --color-secondary: #fbc758;
 
   --color-bg-primary: #f9f9fb;
   --color-bg-secondary: #ffffff;
   --color-bg-tertiary: #fbc758;
   --color-bg-inverse: black;
+  --color-bg-tertiary--light: #fffa88;
 
   --color-text-primary: black;
   --color-text-primary--muted: rgba(0, 0, 0, 0.6);

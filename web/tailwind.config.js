@@ -30,6 +30,7 @@ module.exports = {
         primary: 'var(--color-bg-primary)',
         secondary: 'var(--color-bg-secondary)',
         tertiary: 'var(--color-bg-tertiary)',
+        'tertiary--light': 'var(--color-bg-tertiary--light)',
         inverse: 'var(--color-bg-inverse)'
       },
       borderColor: {
