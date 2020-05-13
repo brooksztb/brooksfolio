@@ -18,8 +18,10 @@ module.exports = {
     },
     extend: {
       textColor: {
-        base: 'var(--color-primary)',
+        initial: 'var(--color-primary)',
+        'initial--muted': 'var(--color-primary--muted)',
         primary: 'var(--color-text-primary)',
+        'primary--muted': 'var(--color-text-primary--muted)',
         secondary: 'var(--color-text-secondary)',
         tertiary: 'var(--color-text-tertiary)',
         inverse: 'var(--color-text-inverse)'
@@ -164,6 +166,9 @@ module.exports = {
           backgroundPosition: '0 100%'
         },
         'a:not(.no-highlight-anchor):hover': {
+          backgroundSize: '100% 0.25vmin'
+        },
+        'a:not(.no-highlight-anchor).active--exact': {
           backgroundSize: '100% 0.25vmin'
         }
       }

@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-center flex-grow w-auto text-base">
+  <div class="flex items-center flex-grow w-auto text-initial text-base md:text-2xl">
     <g-image class="h-8 w-auto mr-2" :src="theme" alt="zachary brooks logo" immediate="true" />
-    <g-link class="no-highlight-anchor text-2xl" to="/" exact>
+    <g-link class="no-highlight-anchor" to="/" exact>
       Zachary Brooks
     </g-link>
   </div>
