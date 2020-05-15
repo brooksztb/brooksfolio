@@ -18,8 +18,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.post-ttr::before {
-  content: ' \2014 ';
-}
-</style>
+<style lang="scss"></style>

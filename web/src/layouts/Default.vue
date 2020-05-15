@@ -1,5 +1,5 @@
 <template>
-  <div id="portfolio" class="font-display">
+  <div id="portfolio" class="font-display theme-transition">
     <header
       class="block theme-transition fixed top-0 w-full z-10 bg-secondary shadow leading-8 py-4"
     >
@@ -89,7 +89,7 @@
     </header>
 
     <main
-      class="theme-transition font-body flex flex-1 items-center py-16 lg:pt-24 h-full min-h-screen bg-primary text-primary text-left"
+      class="theme-transition font-body flex flex-1 items-center py-20 lg:pt-24 h-full min-h-screen bg-primary text-primary text-left"
     >
       <div class="relative w-90 max-w-1250 my-0 mx-auto">
         <slot></slot>

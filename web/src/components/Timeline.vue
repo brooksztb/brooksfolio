@@ -36,7 +36,7 @@ export default {
 <style lang="scss" scoped>
 $font-color: var(--color-text-primary);
 $bg-color: var(--color-bg-primary);
-$dot-color: var(--color-bg-tertiary);
+$dot-color: var(--color-primary);
 
 @function font-color($color-name) {
   @return var(--color-text-#{$color-name});

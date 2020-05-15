@@ -76,6 +76,9 @@ module.exports = {
       maxWidth: {
         '1080': '1080px',
         '1250': '1250px'
+      },
+      maxHeight: {
+        '400': '400px'
       }
     }
   },
