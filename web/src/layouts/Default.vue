@@ -87,10 +87,13 @@
         </div>
       </div>
     </header>
+
     <main
-      class="theme-transition font-body flex flex-1 items-center pl-3 pr-3 pt-px82 lg:pr-5 py-5 h-full min-h-screen mx-auto bg-primary text-primary"
+      class="theme-transition font-body flex flex-1 items-center py-16 lg:pt-24 h-full min-h-screen bg-primary text-primary text-left"
     >
-      <slot></slot>
+      <div class="relative w-90 max-w-1250 my-0 mx-auto">
+        <slot></slot>
+      </div>
     </main>
     <footer class="bg-primary shadow w-full leading-8 py-4">
       <div
