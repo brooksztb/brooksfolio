@@ -5,45 +5,56 @@
 @tailwind utilities;
 
 .dark-mode {
-  --color-primary: #9e3035;
-  --color-primary--muted: rgba(158, 48, 53, 0.3);
+  --color-primary: #fbc758;
+  --color-primary--muted: rgba(251, 199, 88, 0.3);
+  --color-secondary: #154a9f;
 
-  --color-bg-primary: #292f35;
-  --color-bg-secondary: #222831;
-  --color-bg-ternary: #84161b;
+  --color-bg-primary: #1a1b23;
+  --color-bg-secondary: #22242f;
+  --color-bg-tertiary: #002470;
   --color-bg-inverse: #ffffff;
+  --color-bg-tertiary--light: #5675d1;
 
   --color-text-primary: #ffffff;
+  --color-text-primary--muted: rgba(255, 255, 255, 0.6);
   --color-text-secondary: #f7fafc;
-  --color-text-ternary: #292f35;
+  --color-text-tertiary: #c59726;
   --color-text-inverse: black;
 
-  --color-border-primary: #ffffff;
-  --color-border-secondary: #222831;
-  --color-border-inverse: black;
+  --color-border-primary: #fbc758;
+  --color-border-secondary: rgba(251, 199, 88, 0.3);
+  --color-border-inverse: #154a9f;
+
+  --box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.4);
 }
 
 .light-mode {
-  --color-primary: #84161b;
-  --color-primary--muted: rgba(132, 22, 27, 0.3);
+  --color-primary: #154a9f;
+  --color-primary--muted: rgba(21, 74, 159, 0.3);
+  --color-secondary: #fbc758;
 
-  --color-bg-primary: #ffffff;
+  --color-bg-primary: #f9f9fb;
   --color-bg-secondary: #ffffff;
-  --color-bg-ternary: #84161b;
+  --color-bg-tertiary: #fbc758;
   --color-bg-inverse: black;
+  --color-bg-tertiary--light: #fffa88;
 
   --color-text-primary: black;
-  --color-text-secondary: #222831;
-  --color-text-ternary: #ffffff;
+  --color-text-primary--muted: rgba(0, 0, 0, 0.6);
+  --color-text-secondary: rgba(0, 0, 0, 0.87);
+  --color-text-tertiary: #002470;
   --color-text-inverse: #ffffff;
 
-  --color-border-primary: black;
-  --color-border-secondary: #f9f9f9;
-  --color-border-inverse: #ffffff;
+  --color-border-primary: #154a9f;
+  --color-border-secondary: rgba(21, 74, 159, 0.3);
+  --color-border-inverse: #fbc758;
+
+  --box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.2);
 }
 
 body {
   --space: 1.5rem;
+  --vh: 6.67px;
 }
 
 @media (min-width: 768px) {

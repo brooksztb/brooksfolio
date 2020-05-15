@@ -1,55 +1,57 @@
 <template>
   <Layout page="blog">
-    <article class="grid article">
-      <div class="w-full md:col-start-1 md:col-end-3">
-        <img
-          alt="Cover image"
-          v-if="$page.post.mainImage"
-          :src="
-            $urlForImage($page.post.mainImage, $page.metadata.sanityOptions)
-              .width(600)
-              .auto('format')
-              .url()
-          "
-        />
-        <div class="py-2">
-          <h1 class="text-4xl font-bold font-display text-center">{{ $page.post.title }}</h1>
-        </div>
+    <article class="w-full">
+      <!-- Post Header -->
+      <img
+        alt="Cover image"
+        v-if="$page.post.mainImage"
+        class="object-cover w-full max-h-400 rounded-t"
+        :src="
+          $urlForImage($page.post.mainImage, $page.metadata.sanityOptions)
+            .height(400)
+            .auto('format')
+            .url()
+        "
+      />
+      <div class="py-2 px-4 border border-b-0 border-primary">
+        <h1 class="text-4xl font-bold font-display text-center">{{ $page.post.title }}</h1>
       </div>
 
-      <!-- Post Sidebar -->
-      <div class="text-sm pr-8 pb-2">
-        <post-meta
-          :post="$page.post"
-          :timeToRead="timeToRead($page.post._rawBody)"
-          v-if="$page.post"
-        />
-        <post-tags :post="$page.post" v-if="$page.post.categories" />
-        <g-link to="/blog">See more blog posts</g-link>
-      </div>
-
-      <!-- Post Body -->
-      <div class="w-full md:col-start-1 md:col-end-3">
-        <block-content
-          class="border rounded border-primary p-4"
-          :blocks="$page.post._rawBody"
-          v-if="$page.post._rawBody"
-        />
-
-        <div class="flex items-center justify-between w-full py-4">
-          <g-link class="flex items-center text-primary no-highlight-anchor" :to="previousBlogPath">
-            <font-awesome :icon="['fa', 'arrow-left']" size="lg" />
-            <span class="no-highlight-anchor ml-1">previous post</span>
-          </g-link>
-          <g-link class="flex items-center text-primary no-highlight-anchor" :to="nextBlogPath">
-            <span class="no-highlight-anchor mr-1">next post</span>
-            <font-awesome :icon="['fa', 'arrow-right']" size="lg" />
-          </g-link>
+      <div class="w-full font-body p-4 border border-t-0 rounded-t-none rounded border-primary">
+        <!-- Post Topbar -->
+        <div class="pb-4 text-sm">
+          <post-meta
+            :post="$page.post"
+            :timeToRead="timeToRead($page.post._rawBody)"
+            v-if="$page.post"
+          />
+          <post-tags :post="$page.post" v-if="$page.post.categories" />
+          <g-link to="/blog">See more blog posts</g-link>
         </div>
+
+        <!-- Post Body -->
+        <block-content :blocks="$page.post._rawBody" v-if="$page.post._rawBody" />
+      </div>
+      <div class="flex items-center justify-between w-full py-4">
+        <g-link
+          class="flex items-center no-highlight-anchor text-primary hover:text-initial"
+          :to="previousBlogPath"
+        >
+          <font-awesome :icon="['fa', 'arrow-left']" size="md" />
+          <span class="no-highlight-anchor ml-1">previous post</span>
+        </g-link>
+        <g-link
+          class="flex items-center no-highlight-anchor text-primary hover:text-initial"
+          :to="nextBlogPath"
+        >
+          <span class="no-highlight-anchor mr-1">next post</span>
+          <font-awesome :icon="['fa', 'arrow-right']" size="md" />
+        </g-link>
+      </div>
+      <!-- Add comment widgets here
         <div class="post-comments">
-          <!-- Add comment widgets here -->
         </div>
-      </div>
+        -->
     </article>
   </Layout>
 </template>
@@ -58,12 +60,10 @@
 import BlockContent from '~/components/BlockContent'
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
-import AuthorCard from '~/components/AuthorCard'
 import readingTime from '../utils/timeToRead.js'
 
 export default {
   components: {
-    AuthorCard,
     PostMeta,
     PostTags,
     BlockContent
@@ -121,6 +121,8 @@ query Post ($id: ID!) {
     }
     _rawExcerpt
     _rawBody
+    _rawExcerpt
+    _rawBody
     mainImage {
       asset {
         _id
@@ -140,7 +142,7 @@ query Post ($id: ID!) {
         left
         right
       }
-    },
+    }
     path
   }
   all: allSanityPost {
@@ -161,10 +163,52 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="scss" scoped>
-.article {
-  @media (min-width: 768px) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
-  }
-  grid-template-columns: 100%;
+.header::before {
+  top: -6rem;
+
+  height: calc(100% + 9rem);
+  // background-image: repeating-linear-gradient(
+  //     310deg,
+  //     var(--color-bg-primary),
+  //     var(--color-bg-primary) 20px,
+  //     var(--color-bg-secondary) 20px,
+  //     var(--color-bg-secondary) 40px
+  //   ),
+  //   repeating-linear-gradient(
+  //     50deg,
+  //     var(--color-primary),
+  //     var(--color-primary) 20px,
+  //     var(--color-secondary) 20px,
+  //     var(--color-secondary) 40px
+  //   );
+
+  background-image: radial-gradient(var(--color-primary--muted) 0.075rem, transparent 0),
+    radial-gradient(var(--color-primary--muted) 0.075rem, transparent 0);
+
+  background-size: 0.75rem 0.75rem;
+
+  background-position: 0 0, 0.375rem 0.375rem;
+
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+  content: '';
+
+  height: 100%;
+
+  left: 50%;
+
+  position: absolute;
+
+  top: 0;
+
+  -webkit-transform: translateX(-50%);
+
+  transform: translateX(-50%);
+
+  width: 100vw;
+
+  z-index: -1;
 }
 </style>

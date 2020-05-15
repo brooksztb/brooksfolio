@@ -17,7 +17,7 @@ if (process.isClient) {
   WindowInstanceMap = new Vue({
     data() {
       return {
-        theme: 'dark-mode'
+        theme: 'light-mode'
       }
     }
   })

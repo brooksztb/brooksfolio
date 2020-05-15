@@ -1,12 +1,11 @@
 <template>
   <div class="rounded my-2">
     <div
-      class="border rounded border-primary p-1 no-highlight-anchor text-primary text-sm mr-2"
+      class="border rounded border-primary p-1 no-highlight-anchor text-initial text-sm mr-2"
       v-for="(tag, index) in project.tags"
       :key="index"
     >
-      <span>#</span>
-      {{ tag }}
+      <span>#{{ tag }}</span>
     </div>
   </div>
 </template>

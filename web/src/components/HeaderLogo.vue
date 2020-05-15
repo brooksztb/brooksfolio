@@ -1,12 +1,10 @@
 <template>
-  <g-link class="no-highlight-anchor" to="/" exact>
-    <g-image
-      class="flex md:inline-flex w-full h-10 sm:h-8 md:h-16 lg:h-logo p-0 sm:p-2 lg:pb-5"
-      :src="theme"
-      alt="zachary brooks logo"
-      immediate="true"
-    />
-  </g-link>
+  <div class="flex items-center flex-grow w-auto text-initial text-base md:text-2xl">
+    <g-image class="h-8 w-auto mr-2" :src="theme" alt="zachary brooks logo" immediate="true" />
+    <g-link class="no-highlight-anchor" to="/" exact>
+      Zachary Brooks
+    </g-link>
+  </div>
 </template>
 
 <static-query>

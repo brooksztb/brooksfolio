@@ -18,26 +18,25 @@ module.exports = {
     },
     extend: {
       textColor: {
+        initial: 'var(--color-primary)',
+        'initial--muted': 'var(--color-primary--muted)',
         primary: 'var(--color-text-primary)',
+        'primary--muted': 'var(--color-text-primary--muted)',
         secondary: 'var(--color-text-secondary)',
-        ternary: 'var(--color-text-ternary)',
+        tertiary: 'var(--color-text-tertiary)',
         inverse: 'var(--color-text-inverse)'
       },
       backgroundColor: {
         primary: 'var(--color-bg-primary)',
         secondary: 'var(--color-bg-secondary)',
-        ternary: 'var(--color-bg-ternary)',
+        tertiary: 'var(--color-bg-tertiary)',
+        'tertiary--light': 'var(--color-bg-tertiary--light)',
         inverse: 'var(--color-bg-inverse)'
       },
       borderColor: {
         primary: 'var(--color-border-primary)',
         secondary: 'var(--color-border-secondary)',
         inverse: 'var(--color-border-inverse)'
-      },
-      colors: {
-        'logo-red': '#84161b',
-        'logo-gray': '#292f35',
-        'content-bg': '#222831'
       },
       spacing: {
         px10: '10px',
@@ -52,12 +51,20 @@ module.exports = {
         inherit: 'inherit',
         '80': '.80'
       },
+      boxShadow: {
+        shadow: 'var(--box-shadow)'
+      },
       height: {
+        auto: 'auto',
         logo: '220px',
         'screen-1/3': '33vh'
       },
+      inset: {
+        '1/2': '50%'
+      },
       width: {
-        auto: 'auto'
+        auto: 'auto',
+        '90': '90%'
       },
       minHeight: {
         '38': '38vh',
@@ -65,6 +72,13 @@ module.exports = {
       },
       minWidth: {
         '70': '70%'
+      },
+      maxWidth: {
+        '1080': '1080px',
+        '1250': '1250px'
+      },
+      maxHeight: {
+        '400': '400px'
       }
     }
   },
@@ -158,6 +172,9 @@ module.exports = {
         'a:not(.no-highlight-anchor):hover': {
           backgroundSize: '100% 0.25vmin'
         },
+        'a:not(.no-highlight-anchor).active--exact': {
+          backgroundSize: '100% 0.25vmin'
+        }
       }
 
       addUtilities(newUtilities)

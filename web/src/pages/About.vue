@@ -15,7 +15,7 @@
           :alt="$page.about.mainImage.alt"
         ></g-image>
         <div
-          class="w-full md:w-2/3 border rounded border-white-400 p-4 flex flex-col justify-between leading-normal"
+          class="w-full md:w-2/3 border rounded border-primary p-4 flex flex-col justify-between leading-normal"
         >
           <div class="mb-2">
             <div class="font-bold text-xl mb-2"></div>
