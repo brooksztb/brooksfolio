@@ -4,7 +4,7 @@ module.exports = {
     dataset: process.env.GRIDSOME_SANITY_DATASET || 'production'
   },
   siteInfo: {
-    title: 'ZacharyBrooks.io',
+    title: 'ZacharyBrooks.dev',
     description: 'Personal portfolio and blog of Zachary Brooks built with Forestry and Gridsome.',
     contact: {
       email: 'brooksztb@gmail.com',

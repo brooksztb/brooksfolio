@@ -19,7 +19,7 @@ module.exports = {
     siteName: clientConfig.siteInfo.title,
     siteDescription: clientConfig.siteInfo.description
   },
-  siteUrl: 'https://zacharybrooks.io',
+  siteUrl: 'https://zacharybrooks.dev',
   titleTemplate: `%s - ${clientConfig.siteInfo.title}`,
 
   templates: {
