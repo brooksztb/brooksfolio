@@ -27,21 +27,15 @@
   posts: allSanityPost(sortBy: "publishedAt") {
     edges {
       next {
-        slug {
-          current
-        }
+        path
       },
       previous {
-        slug {
-          current
-        }
+        path
       },
       node {
         id
         title
-        slug {
-          current
-        }
+        path
         categories {
           id
           title

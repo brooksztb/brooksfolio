@@ -5,7 +5,7 @@ module.exports = {
   },
   siteInfo: {
     title: 'Zachary Brooks',
-    description: 'Personal portfolio and blog of Zachary Brooks built with Forestry and Gridsome.',
+    description: 'Personal portfolio and blog of Zachary Brooks built with Sanity.io and Gridsome.',
     contact: {
       email: 'brooksztb@gmail.com',
       linkedin_handle: 'zachary-brooks-3b8b5b84',
