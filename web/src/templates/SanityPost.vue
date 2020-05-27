@@ -5,7 +5,7 @@
       <img
         alt="Cover image"
         v-if="$page.post.mainImage"
-        class="object-cover w-full max-h-400 rounded-t"
+        class="object-cover w-full max-h-400 rounded"
         :src="
           $urlForImage($page.post.mainImage, $page.metadata.sanityOptions)
             .height(400)
@@ -13,11 +13,9 @@
             .url()
         "
       />
-      <div class="py-2 px-4 border border-b-0 border-primary">
-        <h1 class="text-4xl font-bold font-display text-center">{{ $page.post.title }}</h1>
-      </div>
+      <h1 class="text-4xl font-bold font-display text-center pt-4">{{ $page.post.title }}</h1>
 
-      <div class="w-full font-body p-4 border border-t-0 rounded-t-none rounded border-primary">
+      <div class="w-full font-body">
         <!-- Post Topbar -->
         <div class="pb-4 text-sm">
           <post-meta
