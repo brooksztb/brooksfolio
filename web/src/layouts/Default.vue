@@ -12,60 +12,30 @@
           :class="mobileNavOpen ? 'flex' : 'hidden'"
         >
           <ol class="block list-none lg:relative lg:top-auto lg:left-auto lg:float-right mb-0 ml-0">
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mr-4">
-              <g-link
-                class="flex items-center justify-center text-primary font-bold w-full"
-                to="/"
-                active-class="text-secondary"
-                exact
-              >
-                <font-awesome class="mr-2" :icon="['fas', 'home']" size="lg" />
-                <span class="block">Home</span>
-              </g-link>
+            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
+              <header-button :route="{ path: '/', exact: true }" :icon="['fas', 'home']">
+                Home
+              </header-button>
             </li>
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mr-4">
-              <g-link
-                class="flex items-center justify-center text-primary font-bold w-full"
-                to="/about"
-                active-class="text-secondary"
-                exact
-              >
-                <font-awesome class="mr-2" :icon="['fas', 'user']" size="lg" />
-                <span class="block">About</span>
-              </g-link>
+            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
+              <header-button :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
+                About
+              </header-button>
             </li>
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mr-4">
-              <g-link
-                class="flex items-center justify-center text-primary font-bold w-full"
-                to="/blog"
-                active-class="text-secondary"
-                exact
-              >
-                <font-awesome class="mr-2" :icon="['fas', 'newspaper']" size="lg" />
-                <span class="block">Blog</span>
-              </g-link>
+            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
+              <header-button :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
+                Blog
+              </header-button>
             </li>
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mr-4">
-              <g-link
-                class="flex items-center justify-center text-primary font-bold w-full"
-                to="/projects"
-                active-class="text-secondary"
-                exact
-              >
-                <font-awesome class="mr-2" :icon="['fas', 'code']" size="lg" />
-                <span class="block">Projects</span>
-              </g-link>
+            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
+              <header-button :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
+                Projects
+              </header-button>
             </li>
-            <li class="relative lg:inline-block mb-0 lg:mr-4">
-              <g-link
-                class="flex items-center justify-center text-primary font-bold w-full"
-                to="/contact"
-                active-class="text-secondary"
-                exact
-              >
-                <font-awesome class="mr-2" :icon="['fas', 'envelope']" size="lg" />
-                <span class="block">Contact</span>
-              </g-link>
+            <li class="relative lg:inline-block mb-0 lg:mx-2">
+              <header-button :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
+                Contact
+              </header-button>
             </li>
           </ol>
         </nav>
@@ -150,6 +120,7 @@
 
 <script>
 import HeaderLogo from '~/components/HeaderLogo'
+import HeaderButton from '~/components/HeaderButton'
 import ToggleTheme from '~/components/ToggleTheme'
 
 export default {
@@ -160,6 +131,7 @@ export default {
   },
   components: {
     HeaderLogo,
+    HeaderButton,
     ToggleTheme
   }
 }

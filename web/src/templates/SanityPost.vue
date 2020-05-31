@@ -24,7 +24,7 @@
             v-if="$page.post"
           />
           <post-tags :post="$page.post" v-if="$page.post.categories" />
-          <g-link to="/blog">See more blog posts</g-link>
+          <g-link to="/blog" exact>See more blog posts</g-link>
         </div>
 
         <!-- Post Body -->

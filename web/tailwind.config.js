@@ -172,6 +172,9 @@ module.exports = {
         'a:not(.no-highlight-anchor):hover': {
           backgroundSize: '100% 0.25vmin'
         },
+        'a:not(.no-highlight-anchor).active': {
+          backgroundSize: '100% 0.25vmin'
+        },
         'a:not(.no-highlight-anchor).active--exact': {
           backgroundSize: '100% 0.25vmin'
         }
