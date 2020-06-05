@@ -144,6 +144,10 @@ module.exports = {
           li: {
             marginBottom: '.6em'
           }
+        },
+        '::selection': {
+          backgroundColor: 'var(--color-primary--muted)',
+          textShadow: 'none'
         }
       })
 
@@ -190,9 +194,112 @@ module.exports = {
           borderBottomColor: 'transparent',
           backgroundColor: 'var(--color-primary)'
         }
+        // '.loading': {
+        //   width: '2em',
+        //   height: '2em',
+        //   borderColor: 'var(--color-primary) var(--color-bg-primary) var(--color-bg-primary)',
+        //   borderStyle: 'solid',
+        //   borderWidth: '5px',
+        //   borderImage: 'none 100% / 1 / 0 stretch',
+        //   boxSizing: 'border-box',
+        //   borderRadius: '100%',
+        //   animation: 'circle-spin 1s infinite linear',
+        //   position: 'absolute',
+        //   top: 0,
+        //   left: 'calc(50% - 40px)'
+        // },
+        // '@Keyframes circle-spin': {
+        //   '100%': {
+        //     transform: 'rotate(1turn)'
+        //   }
+        // }
       }
 
       addUtilities(newUtilities)
+
+      const newComponents = {
+        '.form-input': {
+          display: 'block',
+          marginTop: '.5rem',
+          position: 'relative',
+          '&:not(:last-child)': {
+            marginBottom: '1.5rem'
+          },
+          'input, textarea': {
+            background: 'var(--color-bg-secondary)',
+            borderRadius: '5px',
+            border: '1px solid var(--color-primary--muted)',
+            boxShadow: 'var(--box-shadow)',
+            color: 'var(--color-text-primary)',
+            display: 'block',
+            padding: '1rem 1rem .75rem',
+            resize: 'none',
+            transition: 'border-color .15s cubic-bezier(.445,.05,.55,.95)',
+            width: '100%',
+            '&:focus': {
+              borderColor: 'var(--color-primary)',
+              outline: 'none',
+              '~ span': {
+                color: 'var(--color-primary)'
+              }
+            }
+          },
+          textarea: {
+            minHeight: '8rem'
+          },
+          span: {
+            bottom: '100%',
+            color: 'var(--color-text-primary--muted)',
+            left: '.5rem',
+            marginBottom: '-.75rem',
+            overflow: 'hidden',
+            padding: '0 .5rem',
+            position: 'absolute',
+            zIndex: 1
+          },
+          'span::before, span::after': {
+            content: '""',
+            filter: 'blur(.125rem)',
+            height: '100%',
+            left: '-50%',
+            position: 'absolute',
+            width: '200%',
+            zIndex: -1
+          },
+          'span::before': {
+            backgroundColor: 'var(--color-bg-primary)',
+            bottom: '-.5rem'
+          },
+          'span::after': {
+            backgroundColor: 'var(--color-bg-secondary)',
+            bottom: '-60%'
+          }
+        },
+        '.form-button': {
+          display: 'inline-block',
+          backgroundColor: 'var(--color-primary)',
+          color: 'var(--color-bg-primary)',
+          transition: 'all .25s cubic-bezier(.4,.25,.3,1)',
+          boxSizing: 'border-box',
+          padding: '10px 20px',
+          borderRadius: '.3em',
+          textTransform: 'uppercase',
+          textAlign: 'center',
+          textDecoration: 'none',
+          fontWeight: '400',
+          fontSize: '1em',
+          lineHeight: 'normal',
+          opacity: '.7',
+          outline: 'none',
+          position: 'relative',
+          'backface-visibility': 'hidden',
+          '&:hover, &:focus': {
+            opacity: 1
+          }
+        }
+      }
+
+      addComponents(newComponents)
     })
   ]
 }
