@@ -13,7 +13,7 @@
             .url()
         "
       />
-      <h1 class="text-4xl font-bold font-display text-center pt-4">{{ $page.post.title }}</h1>
+      <h1 class="font-display text-center pt-4">{{ $page.post.title }}</h1>
 
       <div class="w-full font-body">
         <!-- Post Topbar -->

@@ -39,7 +39,7 @@
             </li>
           </ol>
         </nav>
-        <div class="flex items-center lg:block h-full order-2 lg:order-3">
+        <div class="flex items-center lg:block h-full order-2 lg:order-3 mb-0 lg:mb-1">
           <toggleTheme></toggleTheme>
           <button
             @click="mobileNavOpen = !mobileNavOpen"

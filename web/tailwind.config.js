@@ -97,35 +97,27 @@ module.exports = {
         p: {
           marginBottom: '1.25em'
         },
+        'h1, h2, h3, h4, h5': {
+          transition: 'color .6s',
+          margin: '2.75rem 0 1rem',
+          fontWeight: config('theme.fontWeight.semibold')
+        },
         h1: {
           fontSize: config('theme.fontSize.4xl'),
-          transition: 'color .6s',
           margin: '0 0 1rem',
-          fontWeight: config('theme.fontWeight.semibold')
+          fontWeight: config('theme.fontWeight.bold')
         },
         h2: {
-          fontSize: config('theme.fontSize.3xl'),
-          transition: 'color .6s',
-          margin: '2.75rem 0 1rem',
-          fontWeight: config('theme.fontWeight.semibold')
+          fontSize: config('theme.fontSize.3xl')
         },
         h3: {
-          fontSize: config('theme.fontSize.2xl'),
-          transition: 'color .6s',
-          margin: '2.75rem 0 1rem',
-          fontWeight: config('theme.fontWeight.semibold')
+          fontSize: config('theme.fontSize.2xl')
         },
         h4: {
-          fontSize: config('theme.fontSize.xl'),
-          transition: 'color .6s',
-          margin: '2.75rem 0 1rem',
-          fontWeight: config('theme.fontWeight.semibold')
+          fontSize: config('theme.fontSize.xl')
         },
         h5: {
-          fontSize: config('theme.fontSize.lg'),
-          transition: 'color .6s',
-          margin: '2.75rem 0 1rem',
-          fontWeight: config('theme.fontWeight.semibold')
+          fontSize: config('theme.fontSize.lg')
         },
         small: { fontSize: config('theme.fontSize.sm') },
         strong: { fontWeight: config('theme.fontWeight.semibold') },
@@ -159,24 +151,44 @@ module.exports = {
         '.theme-transition': {
           transition: 'color 0.2s ease-out, background 0.2s ease-out'
         },
-        'a:not(.no-highlight-anchor)': {
-          textDecoration: 'none',
-          backgroundImage:
-            'linear-gradient(var(--color-primary--muted), var(--color-primary--muted)), linear-gradient(var(--color-primary), var(--color-primary))',
-          backgroundSize: '100% 0.25vmin, 0 0.25vmin',
-          backgroundRepeat: 'no-repeat',
+        'a.nav-link': {
+          position: 'relative',
+          opacity: '.75',
+          cursor: 'pointer',
+          transition: 'opacity .25s cubic-bezier(.4,.25,.3,1)',
+          color: 'var(--color-primary)'
+        },
+        'a.nav-link:hover, a.nav-link.active, a.nav-link.active--exact': {
+          opacity: 1
+        },
+        'a.nav-link:hover::after, a.nav-link.active::after, a.nav-link.active--exact::after': {
+          opacity: 1,
+          transform: 'translateZ(0)'
+        },
+        'a.nav-link::after': {
+          content: '""',
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '2px',
+          backgroundColor: 'var(--color-primary)',
+          opacity: 0,
+          transform: 'translate3d(0,.5rem,0)',
+          transition:
+            'opacity .25s cubic-bezier(.4,.25,.3,1),transform 325ms cubic-bezier(.4,.25,.3,1),-webkit-transform 325ms cubic-bezier(.4,.25,.3,1)'
+        },
+        'a:not(.nav-link):not(.no-highlight-anchor)': {
+          transition: 'all .3s',
           color: 'var(--color-primary)',
-          transition: 'background-size 0.3s cubic-bezier(0.77, 0, 0.175, 1)',
-          backgroundPosition: '0 100%'
+          textDecoration: 'none',
+          borderBottom: '1px solid var(--color-primary)'
         },
-        'a:not(.no-highlight-anchor):hover': {
-          backgroundSize: '100% 0.25vmin'
-        },
-        'a:not(.no-highlight-anchor).active': {
-          backgroundSize: '100% 0.25vmin'
-        },
-        'a:not(.no-highlight-anchor).active--exact': {
-          backgroundSize: '100% 0.25vmin'
+        'a:not(.nav-link):not(.no-highlight-anchor):hover': {
+          color: 'var(--color-bg-primary)',
+          textDecoration: 'none',
+          borderBottomColor: 'transparent',
+          backgroundColor: 'var(--color-primary)'
         }
       }
 

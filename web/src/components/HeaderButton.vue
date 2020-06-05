@@ -1,6 +1,6 @@
 <template>
   <g-link
-    class="flex items-center justify-center text-primary font-bold w-full"
+    class="nav-link flex items-center justify-center text-primary font-bold w-full"
     :to="route.path"
     :exact="route.exact"
   >

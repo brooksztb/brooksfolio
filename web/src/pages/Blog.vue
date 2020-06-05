@@ -72,6 +72,9 @@
 <script>
 import PostCard from '~/components/PostCard'
 export default {
+  metaInfo: {
+    title: 'Blog'
+  },
   components: {
     PostCard
   }
