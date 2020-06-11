@@ -1,45 +1,39 @@
 <template>
   <div id="portfolio" class="font-display theme-transition">
     <header
-      class="block theme-transition fixed top-0 w-full z-10 bg-secondary shadow leading-8 py-4"
+      id="header"
+      class="block theme-transition fixed top-0 left-0 right-0 w-full z-1000 bg-secondary shadow leading-8 py-3"
     >
+      <a href="#content" id="skip-navigation" class="sr-only">Skip to Content</a>
       <div
         class="relative flex flex-wrap items-center lg:justify-between w-90 max-w-1250 my-0 mx-auto"
       >
         <header-logo class="order-1"></header-logo>
         <nav
-          class="flex-col lg:flex lg:flex-row items-start lg:items-center relative w-full lg:h-auto lg:w-auto lg:top-auto lg:left-auto order-3 lg:order-2 py-4 lg:py-0"
+          class="flex-col lg:flex lg:flex-row items-start lg:items-center relative w-full lg:h-auto lg:w-auto order-3 lg:order-2 py-4 lg:py-0"
           :class="mobileNavOpen ? 'flex' : 'hidden'"
         >
-          <ol class="block list-none lg:relative lg:top-auto lg:left-auto lg:float-right mb-0 ml-0">
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-button :route="{ path: '/', exact: true }" :icon="['fas', 'home']">
-                Home
-              </header-button>
-            </li>
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-button :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
-                About
-              </header-button>
-            </li>
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-button :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
-                Blog
-              </header-button>
-            </li>
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-button :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
-                Projects
-              </header-button>
-            </li>
-            <li class="relative lg:inline-block mb-0 lg:mx-2">
-              <header-button :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
-                Contact
-              </header-button>
-            </li>
-          </ol>
+          <div
+            class="flex flex-col justify-start lg:flex-row lg:justify-center lg:relative mb-0 ml-0"
+          >
+            <header-button :route="{ path: '/', exact: true }" :icon="['fas', 'home']">
+              Home
+            </header-button>
+            <header-button :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
+              About
+            </header-button>
+            <header-button :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
+              Blog
+            </header-button>
+            <header-button :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
+              Projects
+            </header-button>
+            <header-button :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
+              Contact
+            </header-button>
+          </div>
         </nav>
-        <div class="flex items-center lg:block h-full order-2 lg:order-3 mb-0 lg:mb-1">
+        <div class="flex items-center h-full order-2 lg:order-3">
           <toggleTheme></toggleTheme>
           <button
             @click="mobileNavOpen = !mobileNavOpen"
@@ -59,13 +53,14 @@
     </header>
 
     <main
+      id="content"
       class="theme-transition font-body flex flex-1 items-center py-20 lg:pt-24 h-full min-h-screen bg-primary text-primary text-left"
     >
       <div class="relative w-90 max-w-1250 my-0 mx-auto">
         <slot></slot>
       </div>
     </main>
-    <footer class="bg-primary shadow w-full leading-8 py-4">
+    <footer id="footer" class="bg-primary shadow w-full leading-8 py-4">
       <div
         class="flex flex-col lg:flex-row items-center lg:justify-between w-90 max-w-1250 my-0 mx-auto"
       >

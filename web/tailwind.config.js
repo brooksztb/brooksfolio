@@ -79,6 +79,9 @@ module.exports = {
       },
       maxHeight: {
         '400': '400px'
+      },
+      zIndex: {
+        '1000': 1000
       }
     }
   },
