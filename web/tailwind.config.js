@@ -106,21 +106,36 @@ module.exports = {
           fontWeight: config('theme.fontWeight.semibold')
         },
         h1: {
-          fontSize: config('theme.fontSize.4xl'),
+          fontSize: 'calc(1.2rem + 4vw)',
           margin: '0 0 1rem',
-          fontWeight: config('theme.fontWeight.bold')
+          fontWeight: config('theme.fontWeight.bold'),
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 48px)'
+          }
         },
         h2: {
-          fontSize: config('theme.fontSize.3xl')
+          fontSize: 'calc(1.2rem + 2vw)',
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 24px)'
+          }
         },
         h3: {
-          fontSize: config('theme.fontSize.2xl')
+          fontSize: 'calc(1.2rem + 1vw)',
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 16px)'
+          }
         },
         h4: {
-          fontSize: config('theme.fontSize.xl')
+          fontSize: 'calc(1.2rem + .5vw)',
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 8px)'
+          }
         },
         h5: {
-          fontSize: config('theme.fontSize.lg')
+          fontSize: 'calc(1.2rem + .25vw)',
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 6px)'
+          }
         },
         small: { fontSize: config('theme.fontSize.sm') },
         strong: { fontWeight: config('theme.fontWeight.semibold') },
@@ -147,6 +162,10 @@ module.exports = {
           li: {
             marginBottom: '.6em'
           }
+        },
+        '::selection': {
+          backgroundColor: 'var(--color-primary--muted)',
+          textShadow: 'none'
         }
       })
 
@@ -193,9 +212,112 @@ module.exports = {
           borderBottomColor: 'transparent',
           backgroundColor: 'var(--color-primary)'
         }
+        // '.loading': {
+        //   width: '2em',
+        //   height: '2em',
+        //   borderColor: 'var(--color-primary) var(--color-bg-primary) var(--color-bg-primary)',
+        //   borderStyle: 'solid',
+        //   borderWidth: '5px',
+        //   borderImage: 'none 100% / 1 / 0 stretch',
+        //   boxSizing: 'border-box',
+        //   borderRadius: '100%',
+        //   animation: 'circle-spin 1s infinite linear',
+        //   position: 'absolute',
+        //   top: 0,
+        //   left: 'calc(50% - 40px)'
+        // },
+        // '@Keyframes circle-spin': {
+        //   '100%': {
+        //     transform: 'rotate(1turn)'
+        //   }
+        // }
       }
 
       addUtilities(newUtilities)
+
+      const newComponents = {
+        '.form-input': {
+          display: 'block',
+          marginTop: '.5rem',
+          position: 'relative',
+          '&:not(:last-child)': {
+            marginBottom: '1.5rem'
+          },
+          'input, textarea': {
+            background: 'var(--color-bg-secondary)',
+            borderRadius: config('theme.borderRadius.md'),
+            border: '1px solid var(--color-primary--muted)',
+            boxShadow: 'var(--box-shadow)',
+            color: 'var(--color-text-primary)',
+            display: 'block',
+            padding: '1rem 1rem .75rem',
+            resize: 'none',
+            transition: 'border-color .15s cubic-bezier(.445,.05,.55,.95)',
+            width: '100%',
+            '&:focus': {
+              borderColor: 'var(--color-primary)',
+              outline: 'none',
+              '~ span': {
+                color: 'var(--color-primary)'
+              }
+            }
+          },
+          textarea: {
+            minHeight: '9rem'
+          },
+          span: {
+            bottom: '100%',
+            color: 'var(--color-text-primary--muted)',
+            left: '.5rem',
+            marginBottom: '-.75rem',
+            overflow: 'hidden',
+            padding: '0 .5rem',
+            position: 'absolute',
+            zIndex: 1
+          },
+          'span::before, span::after': {
+            content: '""',
+            filter: 'blur(.125rem)',
+            height: '100%',
+            left: '-50%',
+            position: 'absolute',
+            width: '200%',
+            zIndex: -1
+          },
+          'span::before': {
+            backgroundColor: 'var(--color-bg-primary)',
+            bottom: '-.5rem'
+          },
+          'span::after': {
+            backgroundColor: 'var(--color-bg-secondary)',
+            bottom: '-60%'
+          }
+        },
+        '.form-button': {
+          display: 'inline-block',
+          backgroundColor: 'var(--color-primary)',
+          color: 'var(--color-bg-primary)',
+          transition: 'all .25s cubic-bezier(.4,.25,.3,1)',
+          boxSizing: 'border-box',
+          padding: '10px 20px',
+          borderRadius: config('theme.borderRadius.md'),
+          textTransform: 'uppercase',
+          textAlign: 'center',
+          textDecoration: 'none',
+          fontWeight: '700',
+          fontSize: '1em',
+          lineHeight: 'normal',
+          opacity: '.7',
+          outline: 'none',
+          position: 'relative',
+          'backface-visibility': 'hidden',
+          '&:hover, &:focus': {
+            opacity: 1
+          }
+        }
+      }
+
+      addComponents(newComponents)
     })
   ]
 }
