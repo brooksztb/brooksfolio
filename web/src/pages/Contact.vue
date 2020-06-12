@@ -2,7 +2,7 @@
   <layout>
     <!-- Header Text -->
     <div class="flex flex-col items-start">
-      <h1 class="font-display">LETS GET IN TOUCH</h1>
+      <h1 class="font-display uppercase">{{ $page.contact.header }}</h1>
       <div class="flex flex-row w-full">
         <div class="flex flex-col items-start justify-start w-full lg:w-1/2">
           <!-- Body Text -->
