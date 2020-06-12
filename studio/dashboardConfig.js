@@ -6,7 +6,7 @@ export default {
         templateRepoId: 'sanity-io/sanity-template-gridsome-blog'
       }
     },
-    {name: 'structure-menu'},
+    { name: 'structure-menu' },
     {
       name: 'project-info',
       options: {
@@ -18,13 +18,13 @@ export default {
                 'NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.',
               sites: [
                 {
-                  buildHookId: '5e8e2a15bb1632d8b108e971',
+                  buildHookId: '5ee3be0cb2863f51d3b7490e',
                   title: 'Sanity Studio',
                   name: 'brooksfolio-studio',
                   apiId: 'd012216e-87b2-42b2-b119-c9596ba041a5'
                 },
                 {
-                  buildHookId: '5e8e2a155ca10cdb61c904f8',
+                  buildHookId: '5ee3be437e0d3bc2029f187a',
                   title: 'Blog Website',
                   name: 'brooksfolio',
                   apiId: 'fd432674-6c72-4d49-9f88-47179dd9047c'
@@ -39,15 +39,15 @@ export default {
             value: 'https://github.com/brooksztb/brooksfolio',
             category: 'Code'
           },
-          {title: 'Frontend', value: 'https://brooksfolio.netlify.com', category: 'apps'}
+          { title: 'Frontend', value: 'https://brooksfolio.netlify.com', category: 'apps' }
         ]
       }
     },
-    {name: 'project-users', layout: {height: 'auto'}},
+    { name: 'project-users', layout: { height: 'auto' } },
     {
       name: 'document-list',
-      options: {title: 'Recent blog posts', order: '_createdAt desc', types: ['post']},
-      layout: {width: 'medium'}
+      options: { title: 'Recent blog posts', order: '_createdAt desc', types: ['post'] },
+      layout: { width: 'medium' }
     }
   ]
 }
