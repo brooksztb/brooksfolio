@@ -11,25 +11,19 @@ export default {
       // you want and decide how you want to deal with it where you want to
       // use your content.
       styles: [
-        {title: 'Normal', value: 'normal'},
-        {title: 'H1', value: 'h1'},
-        {title: 'H2', value: 'h2'},
-        {title: 'H3', value: 'h3'},
-        {title: 'H4', value: 'h4'},
-        {title: 'Quote', value: 'blockquote'}
+        { title: 'Normal', value: 'normal' },
+        { title: 'H1', value: 'h1' },
+        { title: 'H2', value: 'h2' },
+        { title: 'H3', value: 'h3' },
+        { title: 'H4', value: 'h4' },
+        { title: 'Quote', value: 'blockquote' }
       ],
-      lists: [
-        {title: 'Bullet', value: 'bullet'},
-        {title: 'Number', value: 'number'}
-      ],
+      lists: [{ title: 'Bullet', value: 'bullet' }, { title: 'Number', value: 'number' }],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting by editors.
-        decorators: [
-          {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'}
-        ],
+        decorators: [{ title: 'Strong', value: 'strong' }, { title: 'Emphasis', value: 'em' }],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
@@ -40,7 +34,11 @@ export default {
               {
                 title: 'URL',
                 name: 'href',
-                type: 'url'
+                type: 'url',
+                validation: Rule =>
+                  Rule.uri({
+                    scheme: ['http', 'https', 'mailto', 'tel']
+                  })
               },
               {
                 title: 'Open in a new tab',
@@ -60,7 +58,7 @@ export default {
                 type: 'reference',
                 weak: 'true',
                 to: [
-                  {type: 'post'}
+                  { type: 'post' }
                   // other types you may want to link to
                 ]
               }
@@ -68,11 +66,11 @@ export default {
           }
         ]
       },
-      of: [{type: 'authorReference'}]
+      of: [{ type: 'authorReference' }]
     },
     {
       type: 'mainImage',
-      options: {hotspot: true}
+      options: { hotspot: true }
     },
     {
       type: 'youtube'
