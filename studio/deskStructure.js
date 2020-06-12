@@ -3,11 +3,19 @@ import MdSettings from 'react-icons/lib/md/settings'
 import MdHome from 'react-icons/lib/md/home'
 import MdInfo from 'react-icons/lib/md/info'
 import MdPerson from 'react-icons/lib/md/person'
+import MdContactMail from 'react-icons/lib/md/contact-mail'
 
 const hiddenDocTypes = listItem =>
-  !['homePage', 'aboutPage', 'category', 'author', 'post', 'project', 'siteSettings'].includes(
-    listItem.getId()
-  )
+  ![
+    'homePage',
+    'aboutPage',
+    'contactPage',
+    'category',
+    'author',
+    'post',
+    'project',
+    'siteSettings'
+  ].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -41,6 +49,16 @@ export default () =>
             .title('About Page')
             .schemaType('aboutPage')
             .documentId('aboutPage')
+        ),
+      S.listItem()
+        .title('Contact Page')
+        .icon(MdContactMail)
+        .child(
+          S.editor()
+            .id('contactPage')
+            .title('Contact Page')
+            .schemaType('contactPage')
+            .documentId('contactPage')
         ),
       S.listItem()
         .title('Blog posts')

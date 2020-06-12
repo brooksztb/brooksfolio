@@ -14,13 +14,11 @@ export default {
       type: 'bodyPortableText'
     },
     {
-      title: 'ContactLinks',
+      title: 'Contact Links',
       name: 'contactLinks',
       type: 'array',
       of: [
         {
-          title: 'Links',
-          name: 'links',
           type: 'contactLink'
         }
       ]

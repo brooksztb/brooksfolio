@@ -23,6 +23,8 @@ import authorReference from './objects/authorReference'
 import position from './objects/position'
 import youtube from './objects/youtube'
 import contactLink from './objects/contactLink'
+import link from './objects/link'
+import icon from './objects/icon'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -48,7 +50,9 @@ export default createSchema({
     excerptPortableText,
     position,
     youtube,
-    contactLink
+    contactLink,
+    link,
+    icon
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
