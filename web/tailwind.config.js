@@ -103,21 +103,36 @@ module.exports = {
           fontWeight: config('theme.fontWeight.semibold')
         },
         h1: {
-          fontSize: config('theme.fontSize.4xl'),
+          fontSize: 'calc(1.2rem + 4vw)',
           margin: '0 0 1rem',
-          fontWeight: config('theme.fontWeight.bold')
+          fontWeight: config('theme.fontWeight.bold'),
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 48px)'
+          }
         },
         h2: {
-          fontSize: config('theme.fontSize.3xl')
+          fontSize: 'calc(1.2rem + 2vw)',
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 24px)'
+          }
         },
         h3: {
-          fontSize: config('theme.fontSize.2xl')
+          fontSize: 'calc(1.2rem + 1vw)',
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 16px)'
+          }
         },
         h4: {
-          fontSize: config('theme.fontSize.xl')
+          fontSize: 'calc(1.2rem + .5vw)',
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 8px)'
+          }
         },
         h5: {
-          fontSize: config('theme.fontSize.lg')
+          fontSize: 'calc(1.2rem + .25vw)',
+          '@media (min-width: 1024px)': {
+            fontSize: 'calc(1.2rem + 6px)'
+          }
         },
         small: { fontSize: config('theme.fontSize.sm') },
         strong: { fontWeight: config('theme.fontWeight.semibold') },
@@ -227,7 +242,7 @@ module.exports = {
           },
           'input, textarea': {
             background: 'var(--color-bg-secondary)',
-            borderRadius: '5px',
+            borderRadius: config('theme.borderRadius.md'),
             border: '1px solid var(--color-primary--muted)',
             boxShadow: 'var(--box-shadow)',
             color: 'var(--color-text-primary)',
@@ -245,7 +260,7 @@ module.exports = {
             }
           },
           textarea: {
-            minHeight: '8rem'
+            minHeight: '9rem'
           },
           span: {
             bottom: '100%',
@@ -282,11 +297,11 @@ module.exports = {
           transition: 'all .25s cubic-bezier(.4,.25,.3,1)',
           boxSizing: 'border-box',
           padding: '10px 20px',
-          borderRadius: '.3em',
+          borderRadius: config('theme.borderRadius.md'),
           textTransform: 'uppercase',
           textAlign: 'center',
           textDecoration: 'none',
-          fontWeight: '400',
+          fontWeight: '700',
           fontSize: '1em',
           lineHeight: 'normal',
           opacity: '.7',

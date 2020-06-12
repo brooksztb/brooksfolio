@@ -7,7 +7,7 @@
         <g-image
           alt="Cover image"
           v-if="post.mainImage"
-          class="object-cover opacity-100 rounded-l md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto transition-opacity duration-300 ease-in-out hover:opacity-80"
+          class="object-cover opacity-100 rounded-t-md lg:rounded-l-md lg:rounded-tr-none md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto transition-opacity duration-300 ease-in-out hover:opacity-80"
           :src="
             $urlForImage(post.mainImage, $page.metadata.sanityOptions)
               .height(300)
@@ -19,10 +19,10 @@
         />
       </div>
       <div
-        class="flex flex-col justify-center py-6 px-5 xl:p-12 border rounded-r border-primary md:min-w-70"
+        class="flex flex-col justify-center py-6 px-5 xl:p-12 border rounded-b-md lg:rounded-r-md lg:rounded-bl-none border-primary md:min-w-70"
       >
-        <h2
-          class="font-display mb-2 text-primary md:translate-x-px10 translate-x-0 transition-transform duration-500 ease-out"
+        <h3
+          class="font-display m-0 text-primary md:translate-x-px10 translate-x-0 transition-transform duration-500 ease-out"
           v-html="post.title"
         />
         <block-content

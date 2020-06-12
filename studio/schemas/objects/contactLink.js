@@ -30,6 +30,11 @@ export default {
       type: 'object',
       fields: [
         {
+          title: 'Title',
+          name: 'title',
+          type: 'string'
+        },
+        {
           title: 'URL',
           name: 'href',
           type: 'url'

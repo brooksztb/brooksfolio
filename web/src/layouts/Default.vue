@@ -13,29 +13,29 @@
         >
           <ol class="block list-none lg:relative lg:top-auto lg:left-auto lg:float-right mb-0 ml-0">
             <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-button :route="{ path: '/', exact: true }" :icon="['fas', 'home']">
+              <header-link :route="{ path: '/', exact: true }" :icon="['fas', 'home']">
                 Home
-              </header-button>
+              </header-link>
             </li>
             <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-button :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
+              <header-link :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
                 About
-              </header-button>
+              </header-link>
             </li>
             <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-button :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
+              <header-link :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
                 Blog
-              </header-button>
+              </header-link>
             </li>
             <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-button :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
+              <header-link :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
                 Projects
-              </header-button>
+              </header-link>
             </li>
             <li class="relative lg:inline-block mb-0 lg:mx-2">
-              <header-button :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
+              <header-link :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
                 Contact
-              </header-button>
+              </header-link>
             </li>
           </ol>
         </nav>
@@ -120,7 +120,7 @@
 
 <script>
 import HeaderLogo from '~/components/HeaderLogo'
-import HeaderButton from '~/components/HeaderButton'
+import HeaderLink from '~/components/HeaderLink'
 import ToggleTheme from '~/components/ToggleTheme'
 
 export default {
@@ -131,7 +131,7 @@ export default {
   },
   components: {
     HeaderLogo,
-    HeaderButton,
+    HeaderLink,
     ToggleTheme
   }
 }
