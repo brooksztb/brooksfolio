@@ -5,7 +5,7 @@
       <img
         alt="Cover image"
         v-if="$page.post.mainImage"
-        class="object-cover w-full max-h-400 rounded"
+        class="object-cover w-full max-h-400 rounded-md"
         :src="
           $urlForImage($page.post.mainImage, $page.metadata.sanityOptions)
             .height(400)
