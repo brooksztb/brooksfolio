@@ -13,33 +13,25 @@
           class="flex-col lg:flex lg:flex-row items-start lg:items-center relative w-full lg:h-auto lg:w-auto order-3 lg:order-2 py-4 lg:py-0"
           :class="mobileNavOpen ? 'flex' : 'hidden'"
         >
-          <ol class="block list-none lg:relative lg:top-auto lg:left-auto lg:float-right mb-0 ml-0">
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-link :route="{ path: '/', exact: true }" :icon="['fas', 'home']">
-                Home
-              </header-link>
-            </li>
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-link :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
-                About
-              </header-link>
-            </li>
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-link :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
-                Blog
-              </header-link>
-            </li>
-            <li class="relative lg:inline-block mb-4 lg:mb-0 lg:mx-2">
-              <header-link :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
-                Projects
-              </header-link>
-            </li>
-            <li class="relative lg:inline-block mb-0 lg:mx-2">
-              <header-link :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
-                Contact
-              </header-link>
-            </li>
-          </ol>
+          <div
+            class="flex flex-col justify-start lg:flex-row lg:justify-center lg:relative mb-0 ml-0"
+          >
+            <header-link :route="{ path: '/', exact: true }" :icon="['fas', 'home']">
+              Home
+            </header-link>
+            <header-link :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
+              About
+            </header-link>
+            <header-link :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
+              Blog
+            </header-link>
+            <header-link :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
+              Projects
+            </header-link>
+            <header-link :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
+              Contact
+            </header-link>
+          </div>
         </nav>
         <div class="flex items-center h-full order-2 lg:order-3">
           <toggleTheme></toggleTheme>
