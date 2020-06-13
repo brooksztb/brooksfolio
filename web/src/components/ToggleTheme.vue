@@ -3,7 +3,7 @@
     role="button"
     aria-label="Toggle dark/light"
     @click.prevent="toggleTheme"
-    class="flex items-center justify-center hover:text-initial text-primary font-bold py-1 px-4 lg:py-0 w-full"
+    class="flex items-center justify-center hover:text-initial text-primary font-bold py-1 lg:py-0 w-full"
   >
     <svg
       v-if="darkTheme"
