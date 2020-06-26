@@ -31,20 +31,19 @@
         <block-content :blocks="$page.post._rawBody" v-if="$page.post._rawBody" />
       </div>
       <div class="flex items-center justify-between w-full py-4">
-        <g-link
-          class="flex items-center no-highlight-anchor text-primary hover:text-initial"
-          :to="previousBlogPath"
-        >
-          <font-awesome :icon="['fa', 'arrow-left']" size="md" />
-          <span class="no-highlight-anchor ml-1">previous post</span>
-        </g-link>
-        <g-link
-          class="flex items-center no-highlight-anchor text-primary hover:text-initial"
-          :to="nextBlogPath"
-        >
-          <span class="no-highlight-anchor mr-1">next post</span>
-          <font-awesome :icon="['fa', 'arrow-right']" size="md" />
-        </g-link>
+        <p class="more-info">
+          <g-link :to="previousBlogPath">
+            <font-awesome class="left" :icon="['fa', 'arrow-left']" size="md" />
+            <span>Previous Post</span>
+          </g-link>
+        </p>
+
+        <p class="more-info">
+          <g-link :to="nextBlogPath">
+            <span>Next Post</span>
+            <font-awesome class="right" :icon="['fa', 'arrow-right']" size="md" />
+          </g-link>
+        </p>
       </div>
       <!-- Add comment widgets here
         <div class="post-comments">

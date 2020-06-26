@@ -1,5 +1,25 @@
 <template>
-  <g-link class="no-highlight-anchor my-4 hover:opacity-100" :to="post.path">
+  <div class="post-card">
+    <div class="meta">
+      <div class="photo" :style="`--bg-img:url(${postImageUrl})`"></div>
+      <ul class="details">
+        <!-- <post-meta :post="post" /> -->
+        <!-- <post-tags :post="post" /> -->
+      </ul>
+    </div>
+    <div class="description">
+      <h1 class="font-display" v-html="post.title" />
+      <block-content class="font-body" :blocks="post._rawExcerpt" />
+      <p class="more-info">
+        <g-link :to="post.path">
+          <span>Read More</span>
+          <font-awesome class="right" :icon="['fa', 'arrow-right']" size="md" />
+        </g-link>
+      </p>
+    </div>
+  </div>
+
+  <!-- <g-link class="no-highlight-anchor my-4 hover:opacity-100" :to="post.path">
     <li
       class="flex md:flex-row flex-col justify-center md:min-h-px250 min-h-38 md:h-screen-1/3 mb-0 opacity-inherit"
     >
@@ -34,7 +54,7 @@
         <post-tags :post="post" />
       </div>
     </li>
-  </g-link>
+  </g-link> -->
 </template>
 
 <script>
@@ -50,6 +70,16 @@ export default {
   },
   props: {
     post: Object
+  },
+  computed: {
+    postImageUrl() {
+      return this.$urlForImage(this.post.mainImage, this.$page.metadata.sanityOptions)
+        .height(300)
+        .width(300)
+        .quality(75)
+        .auto('format')
+        .url()
+    }
   }
 }
 </script>
