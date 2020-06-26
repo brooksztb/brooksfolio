@@ -1,25 +1,18 @@
 <template>
-  <div class="post-card">
+  <!-- <div class="post-card">
     <div class="meta">
       <div class="photo" :style="`--bg-img:url(${postImageUrl})`"></div>
       <ul class="details">
-        <!-- <post-meta :post="post" /> -->
-        <!-- <post-tags :post="post" /> -->
       </ul>
     </div>
     <div class="description">
       <h1 class="font-display" v-html="post.title" />
       <block-content class="font-body" :blocks="post._rawExcerpt" />
-      <p class="more-info">
-        <g-link :to="post.path">
-          <span>Read More</span>
-          <font-awesome class="right" :icon="['fa', 'arrow-right']" size="md" />
-        </g-link>
-      </p>
+      <arrow-link :path="post.path" arrowDirection="right">Read More</arrow-link>
     </div>
-  </div>
+  </div> -->
 
-  <!-- <g-link class="no-highlight-anchor my-4 hover:opacity-100" :to="post.path">
+  <div class="my-4 hover:opacity-100">
     <li
       class="flex md:flex-row flex-col justify-center md:min-h-px250 min-h-38 md:h-screen-1/3 mb-0 opacity-inherit"
     >
@@ -27,7 +20,7 @@
         <g-image
           alt="Cover image"
           v-if="post.mainImage"
-          class="object-cover opacity-100 rounded-t-md lg:rounded-l-md lg:rounded-tr-none md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto transition-opacity duration-300 ease-in-out hover:opacity-80"
+          class="object-cover opacity-100 rounded-t-md lg:rounded-l-md lg:rounded-tr-none md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto"
           :src="
             $urlForImage(post.mainImage, $page.metadata.sanityOptions)
               .height(300)
@@ -39,34 +32,40 @@
         />
       </div>
       <div
-        class="flex flex-col justify-center py-6 px-5 xl:p-12 border rounded-b-md lg:rounded-r-md lg:rounded-bl-none border-primary md:min-w-70"
+        class="flex flex-col justify-center p-4 border rounded-b-md lg:rounded-r-md lg:rounded-bl-none border-primary md:min-w-70"
       >
-        <h3
-          class="font-display m-0 text-primary md:translate-x-px10 translate-x-0 transition-transform duration-500 ease-out"
-          v-html="post.title"
-        />
+        <h3 class="font-display m-0 text-primary md:translate-x-px10" v-html="post.title" />
         <block-content
-          class="font-body max-w-px900 text-secondary md:translate-x-px10 translate-x-0 transition-transform duration-500 ease-out"
+          class="font-body max-w-px900 text-secondary md:translate-x-px10"
           :blocks="post._rawExcerpt"
         />
 
         <post-meta :post="post" />
         <post-tags :post="post" />
+        <arrow-link
+          class="flex justify-start lg:justify-end"
+          :path="post.path"
+          arrowDirection="right"
+        >
+          Read More
+        </arrow-link>
       </div>
     </li>
-  </g-link> -->
+  </div>
 </template>
 
 <script>
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
 import BlockContent from '~/components/BlockContent'
+import ArrowLink from '~/components/ArrowLink'
 
 export default {
   components: {
     PostMeta,
     PostTags,
-    BlockContent
+    BlockContent,
+    ArrowLink
   },
   props: {
     post: Object

@@ -1,6 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+  purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.js'],
   theme: {
     screens: {
       xs: '375px',
@@ -87,7 +88,8 @@ module.exports = {
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    transitionProperty: ['responsive', 'hover', 'focus']
+    transitionProperty: ['responsive', 'hover', 'focus'],
+    margin: ['responsive', 'hover', 'first']
   },
   plugins: [
     plugin(function({ addBase, addComponents, addUtilities, config }) {
@@ -315,175 +317,29 @@ module.exports = {
             opacity: 1
           }
         },
-        '.post-card': {
-          display: 'flex',
-          flexDirection: 'column',
-          margin: '1rem auto',
-          boxShadow: 'var(--box-shadow)',
-          marginBottom: '1.6%',
-          background: 'var(--color-bg-primary)',
-          lineHeight: 1.4,
-          borderRadius: '.375rem',
-          overflow: 'hidden',
-          height: '14rem',
-          width: '100%',
-          border: 'solid 1px var(--color-border-primary)',
-          zIndex: 0,
-          '&:hover': {
-            '.photo': {
-              transform: 'scale(1.3) rotate(3deg)'
-            },
-            '.details': {
-              left: '0%'
-            }
-          },
-          a: {
-            color: 'inherit',
-            '&:hover': {
-              color: 'var(--color-primary)'
-            }
-          },
-          '.meta': {
-            position: 'relative',
-            zIndex: 0
-            // height: '14rem'
-          },
-          '.photo': {
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            backgroundSize: 'cover',
-            backgroundImage: 'var(--bg-img)',
-            backgroundPosition: 'center',
-            transition: 'transform .3s'
-          },
-          '.details, .details ul': {
-            margin: 'auto',
-            padding: 0,
-            listStyle: 'none'
-          },
-          '.details': {
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            left: '-100%',
-            margin: 'auto',
-            transition: 'left .3s',
-            background: 'var(--color-bg-primary--muted)',
-            color: 'var(--color-text-primary)',
-            padding: '10px',
-            width: '100%',
-            fontSize: '.9rem',
-            a: {
-              textDecoration: 'solid underline'
-            },
-            'ul li': {
-              display: 'inline-block'
-            }
-          },
-          '.description': {
-            padding: '1rem',
-            background: 'var(--color-bg-primary)',
-            position: 'relative',
-            zIndex: 1,
-            h1: {
-              lineHeight: 1,
-              margin: 0,
-              marginBottom: '.375rem',
-              fontSize: '1.7rem'
-            },
-            h2: {
-              fontSize: '1rem',
-              fontWeight: 300,
-              textTransform: 'uppercase',
-              color: 'var(--color-text-secondary)',
-              marginTop: '5px'
-            }
-          },
-          p: {
-            position: 'relative',
-            margin: '1rem 0 0',
-            '&:first-of-type': {
-              marginTop: '1.25rem',
-              '&:before': {
-                content: '""',
-                position: 'absolute',
-                height: '3px',
-                background: 'var(--color-primary)',
-                width: '35px',
-                top: '-0.75rem'
-              }
-            }
-          },
-          '@media (min-width: 640px)': {
-            flexDirection: 'row',
-            '.meta': {
-              flexBasis: '40%',
-              height: 'auto'
-            },
-            '.description': {
-              flexBasis: '60%',
-              '&:before': {
-                transform: 'skewX(-3deg)',
-                content: '""',
-                background: 'var(--color-bg-primary)',
-                width: '30px',
-                position: 'absolute',
-                left: '-10px',
-                top: 0,
-                bottom: 0,
-                zIndex: '-1'
-              }
-            },
-            '&.alt': {
-              flexRirection: 'row-reverse',
-              '.description': {
-                '&:before': {
-                  left: 'inherit',
-                  right: '-10px',
-                  transform: 'skew(3deg)'
-                }
-              },
-              '.details': {
-                paddingLeft: '25px'
-              }
-            }
-          }
-        },
-        '.tags': {
-          '.tag': {
-            marginRight: '2px',
-            '&:first-child': {
-              marginLeft: '-4px'
-            }
-          }
-        },
-        '.more-info': {
+        '.arrow-link': {
           textAlign: 'right',
           a: {
-            color: 'var(--color-primary)',
             display: 'flex',
             alignItems: 'center',
-            position: 'relative',
+            color: 'var(--color-primary)',
             '.right': {
-              marginLeft: '-10px',
+              marginLeft: '-1rem',
               opacity: 0,
               transition: 'margin .3s, opacity .3s'
             },
             '.left': {
-              marginRight: '-10px',
+              marginRight: '-1rem',
               opacity: 0,
               transition: 'margin .3s, opacity .3s'
             },
 
             '&:hover .right': {
-              marginLeft: '5px',
+              marginLeft: '.375rem',
               opacity: 1
             },
             '&:hover .left': {
-              marginRight: '5px',
+              marginRight: '.375rem',
               opacity: 1
             }
           }

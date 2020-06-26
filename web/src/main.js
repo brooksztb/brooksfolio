@@ -16,7 +16,8 @@ import {
   faUser,
   faAsterisk,
   faArrowRight,
-  faArrowLeft
+  faArrowLeft,
+  faTag
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -31,7 +32,8 @@ library.add(
   faEnvelope,
   faAsterisk,
   faArrowRight,
-  faArrowLeft
+  faArrowLeft,
+  faTag
 )
 // Import image url builder
 import urlForImage from './utils/urlForImage'

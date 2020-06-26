@@ -1,7 +1,8 @@
 <template>
-  <div class="tags">
-    <g-link class="tag" v-for="tag in post.categories" :key="tag.id" :to="tag.path">
-      <span>#{{ tag.title }}</span>
+  <div class="my-2">
+    <g-link class="mx-2 first:ml-0" v-for="tag in post.categories" :key="tag.id" :to="tag.path">
+      <font-awesome :icon="['fas', 'tag']" size="md" />
+      <span class="ml-1">{{ tag.title }}</span>
     </g-link>
   </div>
 </template>

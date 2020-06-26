@@ -31,19 +31,9 @@
         <block-content :blocks="$page.post._rawBody" v-if="$page.post._rawBody" />
       </div>
       <div class="flex items-center justify-between w-full py-4">
-        <p class="more-info">
-          <g-link :to="previousBlogPath">
-            <font-awesome class="left" :icon="['fa', 'arrow-left']" size="md" />
-            <span>Previous Post</span>
-          </g-link>
-        </p>
+        <arrow-link :path="previousBlogPath" arrowDirection="left">Previous Post</arrow-link>
 
-        <p class="more-info">
-          <g-link :to="nextBlogPath">
-            <span>Next Post</span>
-            <font-awesome class="right" :icon="['fa', 'arrow-right']" size="md" />
-          </g-link>
-        </p>
+        <arrow-link :path="nextBlogPath" arrowDirection="right">Next Post</arrow-link>
       </div>
       <!-- Add comment widgets here
         <div class="post-comments">
@@ -57,13 +47,15 @@
 import BlockContent from '~/components/BlockContent'
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
+import ArrowLink from '~/components/ArrowLink'
 import readingTime from '../utils/timeToRead.js'
 
 export default {
   components: {
     PostMeta,
     PostTags,
-    BlockContent
+    BlockContent,
+    ArrowLink
   },
   metaInfo() {
     return {
