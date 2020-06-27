@@ -4,6 +4,9 @@ import MdHome from 'react-icons/lib/md/home'
 import MdInfo from 'react-icons/lib/md/info'
 import MdPerson from 'react-icons/lib/md/person'
 import MdContactMail from 'react-icons/lib/md/contact-mail'
+import FaNewspaper from 'react-icons/lib/fa/newspaper'
+import FaTag from 'react-icons/lib/fa/tag'
+import FaCode from 'react-icons/lib/fa/code'
 
 const hiddenDocTypes = listItem =>
   ![
@@ -62,10 +65,12 @@ export default () =>
         ),
       S.listItem()
         .title('Blog posts')
+        .icon(FaNewspaper)
         .schemaType('post')
         .child(S.documentTypeList('post').title('Blog posts')),
       S.listItem()
         .title('Projects')
+        .icon(FaCode)
         .schemaType('project')
         .child(S.documentTypeList('project').title('Projects')),
       S.listItem()
@@ -74,9 +79,10 @@ export default () =>
         .schemaType('author')
         .child(S.documentTypeList('author').title('Authors')),
       S.listItem()
-        .title('Categories')
-        .schemaType('category')
-        .child(S.documentTypeList('category').title('Categories')),
+        .title('Tags')
+        .icon(FaTag)
+        .schemaType('tag')
+        .child(S.documentTypeList('tag').title('Tags')),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

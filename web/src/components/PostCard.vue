@@ -1,26 +1,15 @@
 <template>
-  <!-- <div class="post-card">
-    <div class="meta">
-      <div class="photo" :style="`--bg-img:url(${postImageUrl})`"></div>
-      <ul class="details">
-      </ul>
-    </div>
-    <div class="description">
-      <h1 class="font-display" v-html="post.title" />
-      <block-content class="font-body" :blocks="post._rawExcerpt" />
-      <arrow-link :path="post.path" arrowDirection="right">Read More</arrow-link>
-    </div>
-  </div> -->
-
-  <div class="my-4 hover:opacity-100">
+  <div class="my-4">
     <li
-      class="flex md:flex-row flex-col justify-center md:min-h-px250 min-h-38 md:h-screen-1/3 mb-0 opacity-inherit"
+      class="flex md:flex-row flex-col justify-center md:min-h-px250 min-h-38 md:h-screen-1/4 mb-0 bg-secondary shadow-lg rounded-md transform hover:scale-105 transition-all duration-300"
     >
-      <div class="w-full md:h-full h-screen-1/3 overflow-hidden bg-primary">
+      <div
+        class="w-full md:h-full h-screen-1/3 overflow-hidden rounded-t-md lg:rounded-l-md lg:rounded-tr-none"
+      >
         <g-image
           alt="Cover image"
           v-if="post.mainImage"
-          class="object-cover opacity-100 rounded-t-md lg:rounded-l-md lg:rounded-tr-none md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto"
+          class="object-cover md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto"
           :src="
             $urlForImage(post.mainImage, $page.metadata.sanityOptions)
               .height(300)
@@ -32,7 +21,7 @@
         />
       </div>
       <div
-        class="flex flex-col justify-center p-4 border rounded-b-md lg:rounded-r-md lg:rounded-bl-none border-primary md:min-w-70"
+        class="flex flex-col justify-center p-4 rounded-b-md lg:rounded-r-md lg:rounded-bl-none md:min-w-70"
       >
         <h3 class="font-display m-0 text-primary md:translate-x-px10" v-html="post.title" />
         <block-content
@@ -41,7 +30,7 @@
         />
 
         <post-meta :post="post" />
-        <post-tags :post="post" />
+        <tags :post="post" />
         <arrow-link
           class="flex justify-start lg:justify-end"
           :path="post.path"
@@ -56,14 +45,14 @@
 
 <script>
 import PostMeta from '~/components/PostMeta'
-import PostTags from '~/components/PostTags'
+import Tags from '~/components/Tags'
 import BlockContent from '~/components/BlockContent'
 import ArrowLink from '~/components/ArrowLink'
 
 export default {
   components: {
     PostMeta,
-    PostTags,
+    Tags,
     BlockContent,
     ArrowLink
   },

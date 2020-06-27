@@ -104,7 +104,7 @@ query Post ($id: ID!) {
   post: sanityPost (id: $id) {
     title
     publishedAt (format: "MMMM D YYYY")
-    categories {
+    tags {
       id
       title
     }

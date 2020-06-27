@@ -23,10 +23,11 @@
   --color-text-inverse: black;
 
   --color-border-primary: #fbc758;
-  --color-border-secondary: rgba(251, 199, 88, 0.3);
+  --color-border-primary--muted: rgba(251, 199, 88, 0.3);
   --color-border-inverse: #154a9f;
 
   --box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.4);
+  --box-shadow--lg: 0 0 4rem -2rem rgba(0, 0, 0, 0.6);
 }
 
 .light-mode {
@@ -48,10 +49,11 @@
   --color-text-inverse: #ffffff;
 
   --color-border-primary: #154a9f;
-  --color-border-secondary: rgba(21, 74, 159, 0.3);
+  --color-border-primary--muted: rgba(21, 74, 159, 0.3);
   --color-border-inverse: #fbc758;
 
   --box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.2);
+  --box-shadow--lg: 0 0 4rem -2rem rgba(0, 0, 0, 0.4);
 }
 
 body {

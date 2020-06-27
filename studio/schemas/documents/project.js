@@ -1,4 +1,4 @@
-import {format} from 'date-fns'
+import { format } from 'date-fns'
 
 export default {
   title: 'Project',
@@ -47,10 +47,14 @@ export default {
       title: 'Tags',
       name: 'tags',
       type: 'array',
-      of: [{type: 'string'}],
-      options: {
-        layout: 'tags'
-      },
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'tag'
+          }
+        }
+      ],
       description: 'Tools or languages used with this project.'
     }
   ],
@@ -91,7 +95,7 @@ export default {
       slug: 'slug',
       media: 'image'
     },
-    prepare ({title = 'No title', date, slug = {}, media}) {
+    prepare({ title = 'No title', date, slug = {}, media }) {
       const dateSegment = format(date, 'MM/YYYY')
       const path = `/${dateSegment}/${slug.current}/`
       return {
