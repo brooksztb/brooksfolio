@@ -35,7 +35,10 @@
         slug {
           current
         }
-        tags,
+        tags {
+          id
+          title
+        }
         publishedAt(format: "MMMM D YYYY")
         _rawExcerpt
         image {

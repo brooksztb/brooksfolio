@@ -4,7 +4,7 @@ import MdHome from 'react-icons/lib/md/home'
 import MdInfo from 'react-icons/lib/md/info'
 import MdPerson from 'react-icons/lib/md/person'
 import MdContactMail from 'react-icons/lib/md/contact-mail'
-import FaNewspaper from 'react-icons/lib/fa/newspaper'
+import FaNewspaper from 'react-icons/lib/fa/newspaper-o'
 import FaTag from 'react-icons/lib/fa/tag'
 import FaCode from 'react-icons/lib/fa/code'
 
