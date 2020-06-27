@@ -23,7 +23,7 @@
             :timeToRead="timeToRead($page.post._rawBody)"
             v-if="$page.post"
           />
-          <post-tags :post="$page.post" v-if="$page.post.categories" />
+          <tags :post="$page.post" v-if="$page.post" />
           <g-link to="/blog" exact>See more blog posts</g-link>
         </div>
 
@@ -46,14 +46,14 @@
 <script>
 import BlockContent from '~/components/BlockContent'
 import PostMeta from '~/components/PostMeta'
-import PostTags from '~/components/PostTags'
+import Tags from '~/components/Tags'
 import ArrowLink from '~/components/ArrowLink'
 import readingTime from '../utils/timeToRead.js'
 
 export default {
   components: {
     PostMeta,
-    PostTags,
+    Tags,
     BlockContent,
     ArrowLink
   },
@@ -108,8 +108,6 @@ query Post ($id: ID!) {
       id
       title
     }
-    _rawExcerpt
-    _rawBody
     _rawExcerpt
     _rawBody
     mainImage {
