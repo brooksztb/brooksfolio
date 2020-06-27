@@ -41,7 +41,7 @@ export default createSchema({
     contactPage,
     post,
     project,
-    category,
+    tag,
     author,
     mainImage,
     authorReference,
