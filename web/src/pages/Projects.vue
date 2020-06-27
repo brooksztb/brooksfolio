@@ -69,6 +69,9 @@
 import ProjectCard from '~/components/ProjectCard'
 
 export default {
+  metaInfo: {
+    title: 'Projects'
+  },
   components: {
     ProjectCard
   }

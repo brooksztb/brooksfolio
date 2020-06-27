@@ -1,6 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+  purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.js'],
   theme: {
     screens: {
       xs: '375px',
@@ -35,7 +36,7 @@ module.exports = {
       },
       borderColor: {
         primary: 'var(--color-border-primary)',
-        secondary: 'var(--color-border-secondary)',
+        'primary-muted': 'var(--color-border-primary--muted)',
         inverse: 'var(--color-border-inverse)'
       },
       spacing: {
@@ -52,11 +53,13 @@ module.exports = {
         '80': '.80'
       },
       boxShadow: {
-        shadow: 'var(--box-shadow)'
+        base: 'var(--box-shadow)',
+        lg: 'var(--box-shadow--lg)'
       },
       height: {
         auto: 'auto',
         logo: '220px',
+        'screen-1/4': '25vh',
         'screen-1/3': '33vh'
       },
       inset: {
@@ -87,7 +90,9 @@ module.exports = {
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    transitionProperty: ['responsive', 'hover', 'focus']
+    transitionProperty: ['responsive', 'hover', 'focus'],
+    transitionDuration: ['responsive', 'hover', 'focus'],
+    margin: ['responsive', 'hover', 'first']
   },
   plugins: [
     plugin(function({ addBase, addComponents, addUtilities, config }) {
@@ -313,6 +318,33 @@ module.exports = {
           'backface-visibility': 'hidden',
           '&:hover, &:focus': {
             opacity: 1
+          }
+        },
+        '.arrow-link': {
+          textAlign: 'right',
+          a: {
+            display: 'flex',
+            alignItems: 'center',
+            color: 'var(--color-primary)',
+            '.right': {
+              marginLeft: '-1rem',
+              opacity: 0,
+              transition: 'margin .3s, opacity .3s'
+            },
+            '.left': {
+              marginRight: '-1rem',
+              opacity: 0,
+              transition: 'margin .3s, opacity .3s'
+            },
+
+            '&:hover .right': {
+              marginLeft: '.375rem',
+              opacity: 1
+            },
+            '&:hover .left': {
+              marginRight: '.375rem',
+              opacity: 1
+            }
           }
         }
       }

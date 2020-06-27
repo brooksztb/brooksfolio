@@ -31,20 +31,9 @@
         <block-content :blocks="$page.post._rawBody" v-if="$page.post._rawBody" />
       </div>
       <div class="flex items-center justify-between w-full py-4">
-        <g-link
-          class="flex items-center no-highlight-anchor text-primary hover:text-initial"
-          :to="previousBlogPath"
-        >
-          <font-awesome :icon="['fa', 'arrow-left']" size="md" />
-          <span class="no-highlight-anchor ml-1">previous post</span>
-        </g-link>
-        <g-link
-          class="flex items-center no-highlight-anchor text-primary hover:text-initial"
-          :to="nextBlogPath"
-        >
-          <span class="no-highlight-anchor mr-1">next post</span>
-          <font-awesome :icon="['fa', 'arrow-right']" size="md" />
-        </g-link>
+        <arrow-link :path="previousBlogPath" arrowDirection="left">Previous Post</arrow-link>
+
+        <arrow-link :path="nextBlogPath" arrowDirection="right">Next Post</arrow-link>
       </div>
       <!-- Add comment widgets here
         <div class="post-comments">
@@ -58,13 +47,15 @@
 import BlockContent from '~/components/BlockContent'
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
+import ArrowLink from '~/components/ArrowLink'
 import readingTime from '../utils/timeToRead.js'
 
 export default {
   components: {
     PostMeta,
     PostTags,
-    BlockContent
+    BlockContent,
+    ArrowLink
   },
   metaInfo() {
     return {
@@ -113,7 +104,7 @@ query Post ($id: ID!) {
   post: sanityPost (id: $id) {
     title
     publishedAt (format: "MMMM D YYYY")
-    categories {
+    tags {
       id
       title
     }
