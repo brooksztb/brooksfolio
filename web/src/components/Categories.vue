@@ -4,7 +4,7 @@
       class="mx-2 first:ml-0"
       v-for="category in content.categories"
       :key="category.id"
-      :to="tag.path"
+      :to="category.path"
     >
       <font-awesome :icon="['fas', 'tag']" size="sm" />
       <span class="ml-1">{{ category.title }}</span>

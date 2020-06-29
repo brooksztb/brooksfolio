@@ -18,12 +18,12 @@
       <div class="w-full font-body">
         <!-- Post Topbar -->
         <div class="pb-4 text-sm">
-          <meta
+          <meta-info
+            v-if="$page.post"
             :content="$page.post"
             :timeToRead="timeToRead($page.post._rawBody)"
-            v-if="$page.post"
           />
-          <categories :content="$page.post" v-if="$page.post" />
+          <categories v-if="$page.post" :content="$page.post" />
           <g-link to="/blog" exact>See more blog posts</g-link>
         </div>
 
@@ -45,14 +45,14 @@
 
 <script>
 import BlockContent from '~/components/BlockContent'
-import Meta from '~/components/Meta'
+import MetaInfo from '~/components/MetaInfo'
 import Categories from '~/components/Categories'
 import ArrowLink from '~/components/ArrowLink'
 import readingTime from '../utils/timeToRead.js'
 
 export default {
   components: {
-    Meta,
+    MetaInfo,
     Categories,
     BlockContent,
     ArrowLink

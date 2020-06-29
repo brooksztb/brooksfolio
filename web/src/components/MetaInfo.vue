@@ -1,11 +1,9 @@
 <template>
   <div class="text-sm opacity-80">
     <span>{{ content.publishedAt }}</span>
-    <template v-if="timeToRead">
-      <span class="time-to-read">
-        <strong> {{ timeToRead }} min read</strong>
-      </span>
-    </template>
+    <span v-if="timeToRead" class="time-to-read">
+      <strong> {{ timeToRead }} min read</strong>
+    </span>
   </div>
 </template>
 
