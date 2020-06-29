@@ -39,7 +39,7 @@ export default {
             value: 'https://github.com/brooksztb/brooksfolio',
             category: 'Code'
           },
-          { title: 'Frontend', value: 'https://brooksfolio.netlify.com', category: 'apps' }
+          { title: 'Frontend', value: 'https://zacharybrooks.dev', category: 'apps' }
         ]
       }
     },
