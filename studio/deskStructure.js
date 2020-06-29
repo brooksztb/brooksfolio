@@ -79,10 +79,10 @@ export default () =>
         .schemaType('author')
         .child(S.documentTypeList('author').title('Authors')),
       S.listItem()
-        .title('Tags')
+        .title('Categories')
         .icon(FaTag)
-        .schemaType('tag')
-        .child(S.documentTypeList('tag').title('Tags')),
+        .schemaType('category')
+        .child(S.documentTypeList('category').title('Categories')),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

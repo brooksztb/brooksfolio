@@ -36,7 +36,7 @@
         id
         title
         path
-        tags {
+        categories {
           id
           title
         }
