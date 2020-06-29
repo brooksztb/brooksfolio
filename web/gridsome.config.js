@@ -23,7 +23,8 @@ module.exports = {
   titleTemplate: `%s - ${clientConfig.siteInfo.title}`,
 
   templates: {
-    SanityPost: '/blog/:slug__current'
+    SanityPost: '/blog/:slug__current',
+    SanityProject: '/projects/:slug__current'
   },
 
   css: {

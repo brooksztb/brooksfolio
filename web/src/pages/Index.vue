@@ -25,7 +25,7 @@
         slug {
           current
         }
-        tags {
+        categories {
           id
           title
         }

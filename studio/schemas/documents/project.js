@@ -22,7 +22,7 @@ export default {
       }
     },
     {
-      title: 'Published Date',
+      title: 'Published At',
       name: 'publishedAt',
       type: 'datetime'
     },
@@ -44,14 +44,14 @@ export default {
       type: 'bodyPortableText'
     },
     {
-      title: 'Tags',
-      name: 'tags',
+      title: 'Categories',
+      name: 'categories',
       type: 'array',
       of: [
         {
           type: 'reference',
           to: {
-            type: 'tag'
+            type: 'category'
           }
         }
       ],
@@ -60,11 +60,11 @@ export default {
   ],
   orderings: [
     {
-      title: 'Date new–>old',
-      name: 'dateAsc',
+      title: 'Publishing date new–>old',
+      name: 'publishingDateAsc',
       by: [
         {
-          field: 'date',
+          field: 'publishedAt',
           direction: 'asc'
         },
         {
@@ -74,11 +74,11 @@ export default {
       ]
     },
     {
-      title: 'Date old->new',
-      name: 'dateDesc',
+      title: 'Publishing date old->new',
+      name: 'publishingDateDesc',
       by: [
         {
-          field: 'date',
+          field: 'publishedAt',
           direction: 'desc'
         },
         {
@@ -95,13 +95,13 @@ export default {
       slug: 'slug',
       media: 'image'
     },
-    prepare({ title = 'No title', date, slug = {}, media }) {
-      const dateSegment = format(date, 'MM/YYYY')
+    prepare({ title = 'No title', publishedAt, slug = {}, media }) {
+      const dateSegment = format(publishedAt, 'MM/YYYY')
       const path = `/${dateSegment}/${slug.current}/`
       return {
         title,
         media,
-        subtitle: date ? path : 'Missing publishing date'
+        subtitle: publishedAt ? path : 'Missing publishing date'
       }
     }
   }

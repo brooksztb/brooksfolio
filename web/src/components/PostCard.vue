@@ -23,14 +23,11 @@
       <div
         class="flex flex-col justify-center p-4 rounded-b-md lg:rounded-r-md lg:rounded-bl-none md:min-w-70"
       >
-        <h3 class="font-display m-0 text-primary md:translate-x-px10" v-html="post.title" />
-        <block-content
-          class="font-body max-w-px900 text-secondary md:translate-x-px10"
-          :blocks="post._rawExcerpt"
-        />
+        <h3 class="font-display m-0 text-primary" v-html="post.title" />
+        <block-content class="font-body max-w-px900 text-secondary" :blocks="post._rawExcerpt" />
 
-        <post-meta :post="post" />
-        <tags :post="post" />
+        <post-meta :content="post" />
+        <categories :content="post" />
         <arrow-link
           class="flex justify-start lg:justify-end"
           :path="post.path"
@@ -44,15 +41,15 @@
 </template>
 
 <script>
-import PostMeta from '~/components/PostMeta'
-import Tags from '~/components/Tags'
+import Meta from '~/components/Meta'
+import Categories from '~/components/Categories'
 import BlockContent from '~/components/BlockContent'
 import ArrowLink from '~/components/ArrowLink'
 
 export default {
   components: {
-    PostMeta,
-    Tags,
+    Meta,
+    Categories,
     BlockContent,
     ArrowLink
   },
