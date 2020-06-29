@@ -26,8 +26,8 @@
         <h3 class="font-display m-0 text-primary" v-html="post.title" />
         <block-content class="font-body max-w-px900 text-secondary" :blocks="post._rawExcerpt" />
 
-        <post-meta :content="post" />
-        <categories :content="post" />
+        <meta-info v-if="post" :content="post" />
+        <categories v-if="post" :content="post" />
         <arrow-link
           class="flex justify-start lg:justify-end"
           :path="post.path"
@@ -41,30 +41,20 @@
 </template>
 
 <script>
-import Meta from '~/components/Meta'
+import MetaInfo from '~/components/MetaInfo'
 import Categories from '~/components/Categories'
 import BlockContent from '~/components/BlockContent'
 import ArrowLink from '~/components/ArrowLink'
 
 export default {
   components: {
-    Meta,
+    MetaInfo,
     Categories,
     BlockContent,
     ArrowLink
   },
   props: {
     post: Object
-  },
-  computed: {
-    postImageUrl() {
-      return this.$urlForImage(this.post.mainImage, this.$page.metadata.sanityOptions)
-        .height(300)
-        .width(300)
-        .quality(75)
-        .auto('format')
-        .url()
-    }
   }
 }
 </script>
