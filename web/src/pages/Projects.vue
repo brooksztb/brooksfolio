@@ -3,7 +3,14 @@
     <!-- List posts -->
     <div class="w-full">
       <section>
-        <ul class="flex flex-col"></ul>
+        <ul class="flex flex-row justify-between ml-0">
+          <project-card
+            v-for="edge in $page.projects.edges"
+            :key="edge.node.id"
+            :project="edge.node"
+            :metadata="$page.metadata"
+          />
+        </ul>
       </section>
     </div>
   </Layout>
@@ -17,25 +24,19 @@
       dataset
     }
   }
-  posts: allSanityProject(sortBy: "publishedAt") {
+  projects: allSanityProject(sortBy: "publishedAt") {
     edges {
       next {
-        slug {
-          current
-        }
+        path
       },
       previous {
-        slug {
-          current
-        }
+        path
       },
       node {
         id
         title
-        slug {
-          current
-        }
-        tags {
+        path
+        categories {
           id
           title
         }

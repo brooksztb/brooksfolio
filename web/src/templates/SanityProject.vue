@@ -1,42 +1,42 @@
 <template>
   <Layout page="blog">
     <article class="w-full">
-      <!-- Post Header -->
+      <!-- project Header -->
       <img
         alt="Cover image"
-        v-if="$page.post.mainImage"
-        class="object-cover w-full max-h-400 rounded-md"
+        v-if="$page.project.image"
+        class="object-cover object-top w-full max-h-400 rounded-md"
         :src="
-          $urlForImage($page.post.mainImage, $page.metadata.sanityOptions)
-            .height(400)
+          $urlForImage($page.project.image, $page.metadata.sanityOptions)
+            .height(600)
             .auto('format')
             .url()
         "
       />
-      <h1 class="font-display text-center pt-4">{{ $page.post.title }}</h1>
+      <h1 class="font-display text-center pt-4">{{ $page.project.title }}</h1>
 
       <div class="w-full font-body">
-        <!-- Post Topbar -->
+        <!-- project Topbar -->
         <div class="pb-4 text-sm">
           <meta
-            :content="$page.post"
-            :timeToRead="timeToRead($page.post._rawBody)"
-            v-if="$page.post"
+            :content="$page.project"
+            :timeToRead="timeToRead($page.project._rawBody)"
+            v-if="$page.project"
           />
-          <categories :content="$page.post" v-if="$page.post" />
-          <g-link to="/blog" exact>See more blog posts</g-link>
+          <categories :content="$page.project" v-if="$page.project" />
+          <g-link to="/projects" exact>See more projects</g-link>
         </div>
 
-        <!-- Post Body -->
-        <block-content :blocks="$page.post._rawBody" v-if="$page.post._rawBody" />
+        <!-- project Body -->
+        <block-content :blocks="$page.project._rawBody" v-if="$page.project._rawBody" />
       </div>
       <div class="flex items-center justify-between w-full py-4">
-        <arrow-link :path="previousBlogPath" arrowDirection="left">Previous Post</arrow-link>
+        <arrow-link :path="previousProjectPath" arrowDirection="left">Previous Project</arrow-link>
 
-        <arrow-link :path="nextBlogPath" arrowDirection="right">Next Post</arrow-link>
+        <arrow-link :path="nextProjectPath" arrowDirection="right">Next Project</arrow-link>
       </div>
       <!-- Add comment widgets here
-        <div class="post-comments">
+        <div class="project-comments">
         </div>
         -->
     </article>
@@ -59,27 +59,33 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.$page.post.title,
+      title: this.$page.project.title,
       meta: [
         {
           name: 'description',
-          content: this.$page.post.description
+          content: this.$page.project.description
         }
       ]
     }
   },
   computed: {
-    nextBlogPath() {
-      const allPosts = this.$page.all.edges
-      const firstBlogPath = allPosts[0].node.path
-      const currentBlog = allPosts.filter(node => node.node.title === this.$page.post.title)
-      return this.isNull(currentBlog[0].next) ? firstBlogPath : currentBlog[0].next.path
+    nextProjectPath() {
+      const allProjects = this.$page.all.edges
+      const firstProjectPath = allProjects[0].node.path
+      const currentProject = allProjects.filter(
+        node => node.node.title === this.$page.project.title
+      )
+      return this.isNull(currentProject[0].next) ? firstProjectPath : currentProject[0].next.path
     },
-    previousBlogPath() {
-      const allPosts = this.$page.all.edges
-      const lastBlogPath = allPosts[allPosts.length - 1].node.path
-      const currentBlog = allPosts.filter(node => node.node.title === this.$page.post.title)
-      return this.isNull(currentBlog[0].previous) ? lastBlogPath : currentBlog[0].previous.path
+    previousProjectPath() {
+      const allProjects = this.$page.all.edges
+      const lastProjectPath = allProjects[allProjects.length - 1].node.path
+      const currentProject = allProjects.filter(
+        node => node.node.title === this.$page.project.title
+      )
+      return this.isNull(currentProject[0].previous)
+        ? lastProjectPath
+        : currentProject[0].previous.path
     }
   },
   methods: {
@@ -94,14 +100,14 @@ export default {
 </script>
 
 <page-query>
-query Post ($id: ID!) {
+query Project ($id: ID!) {
   metadata {
     sanityOptions {
       projectId
       dataset
     }
   }
-  post: sanityPost (id: $id) {
+  project: sanityProject (id: $id) {
     title
     publishedAt (format: "MMMM D YYYY")
     categories {
@@ -110,7 +116,7 @@ query Post ($id: ID!) {
     }
     _rawExcerpt
     _rawBody
-    mainImage {
+    image {
       asset {
         _id
         url
@@ -132,14 +138,14 @@ query Post ($id: ID!) {
     }
     path
   }
-  all: allSanityPost {
+  all: allSanityProject {
         edges {
             node {
-              path
-              title
+                path
+                title
             }
             next {
-              path
+                path
             },
             previous {
               path

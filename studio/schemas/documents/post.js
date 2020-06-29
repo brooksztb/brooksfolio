@@ -50,14 +50,14 @@ export default {
       ]
     },
     {
-      title: 'Tags',
-      name: 'tags',
+      title: 'Categories',
+      name: 'categories',
       type: 'array',
       of: [
         {
           type: 'reference',
           to: {
-            type: 'tag'
+            type: 'category'
           }
         }
       ]

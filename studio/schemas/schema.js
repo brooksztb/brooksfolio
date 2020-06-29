@@ -9,7 +9,7 @@ import homePage from './documents/homePage'
 import aboutPage from './documents/aboutPage'
 import contactPage from './documents/contactPage'
 import author from './documents/author'
-import tag from './documents/tag'
+import category from './documents/category'
 import post from './documents/post'
 import project from './documents/project'
 import siteSettings from './documents/siteSettings'
@@ -41,7 +41,7 @@ export default createSchema({
     contactPage,
     post,
     project,
-    tag,
+    category,
     author,
     mainImage,
     authorReference,
