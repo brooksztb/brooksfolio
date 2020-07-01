@@ -68,7 +68,6 @@ module.exports = function(api) {
       title: String
       publishedAt: Date
       mainImage: SanityMainImage
-      categories: [SanityCategory]
       _rawExcerpt: JSON
       path: String
       slug: SanitySlug
@@ -78,7 +77,6 @@ module.exports = function(api) {
       title: String
       publishedAt: Date
       mainImage: SanityMainImage
-      categories: [SanityCategory]
       _rawExcerpt: JSON
       path: String
       slug: SanitySlug
@@ -98,7 +96,9 @@ module.exports = function(api) {
             await client.fetch(categoriesQuery, categoriesParams).then(category => {
               category.forEach(categoryPosts => {
                 categoryPosts.posts.forEach(post => {
-                  //Dynamically set the path since that is created from gridsome
+                  //Dynamically set the variables that are created by gridsome
+                  post['id'] = post._id
+                  post['_rawExcerpt'] = post.excerpt
                   post['path'] = `/blog/${post.slug.current}`
                   posts.push(post)
                 })
@@ -117,7 +117,9 @@ module.exports = function(api) {
             await client.fetch(categoriesQuery, categoriesParams).then(category => {
               category.forEach(categoryProjects => {
                 categoryProjects.projects.forEach(project => {
-                  //Dynamically set the path since that is created from gridsome
+                  //Dynamically set the variables that are created by gridsome
+                  project['id'] = project._id
+                  project['_rawExcerpt'] = project.excerpt
                   project['path'] = `/projects/${project.slug.current}`
                   projects.push(project)
                 })

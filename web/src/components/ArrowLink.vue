@@ -5,7 +5,7 @@
         v-show="arrowDirection === 'left'"
         :class="arrowDirection"
         :icon="['fa', `arrow-${arrowDirection}`]"
-        size="md"
+        size="1x"
       />
       <span>
         <slot></slot>
@@ -14,7 +14,7 @@
         v-show="arrowDirection === 'right'"
         :class="arrowDirection"
         :icon="['fa', `arrow-${arrowDirection}`]"
-        size="md"
+        size="1x"
       />
     </g-link>
   </div>
