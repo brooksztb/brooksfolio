@@ -1,5 +1,5 @@
 <template>
-  <layout>
+  <layout page="contact">
     <!-- Header Text -->
     <div v-if="$page.contact" class="flex flex-col items-start">
       <h1 class="font-display uppercase">{{ $page.contact.header }}</h1>

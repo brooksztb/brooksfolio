@@ -107,6 +107,9 @@ query Post ($id: ID!) {
     categories {
       id
       title
+      slug {
+        current
+      }
     }
     _rawExcerpt
     _rawBody
