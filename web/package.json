@@ -12,6 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "@gridsome/plugin-google-analytics": "^0.1.1",
+    "@sanity/client": "^1.149.16",
     "@sanity/image-url": "^0.140.19",
     "dotenv": "^8.2.0",
     "get-youtube-id": "^1.0.1",

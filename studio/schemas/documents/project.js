@@ -27,8 +27,8 @@ export default {
       type: 'datetime'
     },
     {
-      title: 'Image',
-      name: 'image',
+      title: 'Main Image',
+      name: 'mainImage',
       type: 'mainImage'
     },
     {

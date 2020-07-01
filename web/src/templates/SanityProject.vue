@@ -113,10 +113,13 @@ query Project ($id: ID!) {
     categories {
       id
       title
+      slug {
+        current
+      }
     }
     _rawExcerpt
     _rawBody
-    image {
+    mainImage {
       asset {
         _id
         url

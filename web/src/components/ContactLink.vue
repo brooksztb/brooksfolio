@@ -20,7 +20,7 @@ export default {
       type: Object,
       required: true
     },
-    icon: Array
+    icon: Object
   }
 }
 </script>

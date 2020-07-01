@@ -27,7 +27,7 @@
         <block-content class="font-body max-w-px900 text-secondary" :blocks="post._rawExcerpt" />
 
         <meta-info v-if="post" :content="post" />
-        <categories v-if="post" :content="post" />
+        <categories v-if="post.categories" :content="post" />
         <arrow-link
           class="flex justify-start lg:justify-end"
           :path="post.path"
