@@ -6,10 +6,10 @@
       <div class="w-full md:h-full overflow-hidden rounded-t-md">
         <g-image
           alt="Cover image"
-          v-if="project.image"
+          v-if="project.mainImage"
           class="object-cover object-top md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto"
           :src="
-            $urlForImage(project.image, $page.metadata.sanityOptions)
+            $urlForImage(project.mainImage, $page.metadata.sanityOptions)
               .height(300)
               .width(600)
               .quality(75)
@@ -22,7 +22,7 @@
         <h3 class="font-display m-0 text-primary" v-html="project.title" />
         <block-content class="font-body max-w-px900 text-secondary" :blocks="project._rawExcerpt" />
 
-        <categories :content="project" />
+        <categories v-if="project.categories" :content="project" />
         <arrow-link
           class="flex justify-start lg:justify-end"
           :path="project.path"

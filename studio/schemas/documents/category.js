@@ -17,7 +17,7 @@ export default {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
-      description: 'Some frontends will require a slug to be set to be able to show the person',
+      description: 'Some frontends will require a slug to be set to be able to show the category',
       options: {
         source: 'title',
         maxLength: 96

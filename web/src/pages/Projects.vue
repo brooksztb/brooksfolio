@@ -39,10 +39,13 @@
         categories {
           id
           title
+          slug {
+            current
+          }
         }
         publishedAt(format: "MMMM D YYYY")
         _rawExcerpt
-        image {
+        mainImage {
           asset {
             _id
             url
