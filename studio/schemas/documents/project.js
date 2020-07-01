@@ -92,7 +92,7 @@ export default {
     select: {
       title: 'title',
       slug: 'slug',
-      media: 'image'
+      media: 'mainImage'
     },
     prepare({ title = 'No title', slug = {}, media }) {
       const path = `/${slug.current}/`

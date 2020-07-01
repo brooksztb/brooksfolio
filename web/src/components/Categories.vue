@@ -6,7 +6,7 @@
       :key="category.id"
       :to="`/categories/${category.slug.current}`"
     >
-      <font-awesome :icon="['fas', 'tag']" size="sm" />
+      <font-awesome :icon="['fas', 'tag']" size="1x" />
       <span class="ml-1">{{ category.title }}</span>
     </g-link>
   </div>
