@@ -68,6 +68,7 @@ module.exports = function(api) {
       title: String
       publishedAt: Date
       mainImage: SanityMainImage
+      _rawBody: JSON
       _rawExcerpt: JSON
       path: String
       slug: SanitySlug
@@ -98,6 +99,7 @@ module.exports = function(api) {
                 categoryPosts.posts.forEach(post => {
                   //Dynamically set the variables that are created by gridsome
                   post['id'] = post._id
+                  post['_rawBody'] = post.body
                   post['_rawExcerpt'] = post.excerpt
                   post['path'] = `/blog/${post.slug.current}`
                   posts.push(post)

@@ -1,8 +1,9 @@
 <template>
-  <Layout page="blog">
-    <!-- List posts -->
-    <div class="w-full">
-      <section>
+  <layout page="blog">
+    <div class="flex flex-col items-start">
+      <h1 class="font-display uppercase">My <span class="text-initial">Projects</span></h1>
+      <!-- List projects -->
+      <section class="w-full">
         <ul class="flex flex-row justify-between ml-0">
           <project-card
             v-for="edge in $page.projects.edges"
@@ -13,7 +14,7 @@
         </ul>
       </section>
     </div>
-  </Layout>
+  </layout>
 </template>
 
 <page-query>

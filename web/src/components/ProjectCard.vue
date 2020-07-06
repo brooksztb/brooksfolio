@@ -23,11 +23,7 @@
         <block-content class="font-body max-w-px900 text-secondary" :blocks="project._rawExcerpt" />
 
         <categories v-if="project.categories" :content="project" />
-        <arrow-link
-          class="flex justify-start lg:justify-end"
-          :path="project.path"
-          arrowDirection="right"
-        >
+        <arrow-link class="flex justify-end" :path="project.path" arrowDirection="right">
           Read More
         </arrow-link>
       </div>
