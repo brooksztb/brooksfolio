@@ -2,14 +2,14 @@
   <layout page="contact">
     <!-- Header Text -->
     <div v-if="$page.contact" class="flex flex-col items-start">
-      <h1 class="font-display uppercase">{{ $page.contact.header }}</h1>
-      <div class="flex flex-col lg:flex-row w-full">
+      <h1 class="font-display uppercase">Lets Get in <span class="text-initial">Touch</span></h1>
+      <section class="flex flex-col lg:flex-row w-full">
         <div class="flex flex-col items-start justify-start w-full lg:w-1/2 lg:pr-2">
           <!-- Body Text -->
           <block-content :blocks="$page.contact._rawInformation"></block-content>
           <!-- Social Media Links from the Contact Page query-->
           <div class="flex flex-col items-start justify-start">
-            <!-- TODO: Loop for each contact link from the query-->
+            <!-- Loop for each contact link from the query-->
             <contact-link
               class="ml-0"
               v-for="(link, index) in $page.contact.contactLinks"
@@ -22,7 +22,7 @@
         <div class="flex justify-end w-full pt-4 lg:pt-0 lg:w-1/2 lg:pl-2">
           <contact-form class="w-full"></contact-form>
         </div>
-      </div>
+      </section>
     </div>
   </layout>
 </template>

@@ -54,9 +54,9 @@
 
     <main
       id="content"
-      class="theme-transition font-body flex flex-1 items-center py-20 lg:pt-24 h-full min-h-screen bg-primary text-primary text-left"
+      class="theme-transition font-body flex flex-1 items-center pb-15 pt-20 lg:pt-30 h-full min-h-screen bg-primary text-primary text-left"
     >
-      <div class="relative w-90 max-w-1250 my-0 mx-auto">
+      <div class="relative w-90 max-w-1250 min-h-screen h-full my-0 mx-auto">
         <slot></slot>
       </div>
     </main>

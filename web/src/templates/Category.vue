@@ -1,38 +1,36 @@
 <template>
-  <Layout page="Categories">
-    <article class="flex flex-col items-start">
-      <h1>Category: {{ $page.category.title }}</h1>
+  <layout page="Categories">
+    <div class="flex flex-col items-start">
+      <h1 class="font-display uppercase">
+        Category: <span class="text-initial">{{ $page.category.title }}</span>
+      </h1>
 
-      <div v-if="$page.category.posts && $page.category.posts.length > 0" class="w-full">
+      <section v-if="$page.category.posts && $page.category.posts.length > 0" class="w-full">
         <h2>
           Blog Posts
         </h2>
-        <section>
-          <ul class="flex flex-col ml-0">
-            <post-card
-              v-for="post in $page.category.posts"
-              :key="post.id"
-              :post="post"
-              :metadata="$page.metadata"
-            />
-          </ul>
-        </section>
-      </div>
-      <div v-if="$page.category.projects && $page.category.projects.length > 0" class="w-full">
+        <ul class="flex flex-col ml-0">
+          <post-card
+            v-for="post in $page.category.posts"
+            :key="post.id"
+            :post="post"
+            :metadata="$page.metadata"
+          />
+        </ul>
+      </section>
+      <section v-if="$page.category.projects && $page.category.projects.length > 0" class="w-full">
         <h2>
           Projects
         </h2>
-        <section>
-          <ul class="flex flex-row justify-between ml-0">
-            <project-card
-              v-for="project in $page.category.projects"
-              :key="project.id"
-              :project="project"
-              :metadata="$page.metadata"
-            />
-          </ul>
-        </section>
-      </div>
+        <ul class="flex flex-row justify-between ml-0">
+          <project-card
+            v-for="project in $page.category.projects"
+            :key="project.id"
+            :project="project"
+            :metadata="$page.metadata"
+          />
+        </ul>
+      </section>
       <!-- <ul>
       <li v-for="edge in $page.category.belongsTo.edges" :key="edge.node.id">
         <g-link :to="edge.node.path">
@@ -40,8 +38,8 @@
         </g-link>
       </li>
     </ul> -->
-    </article>
-  </Layout>
+    </div>
+  </layout>
 </template>
 
 <script>
@@ -78,6 +76,7 @@ query Category ($id: ID!) {
       path
       publishedAt(format: "MMMM D YYYY")
       _rawExcerpt
+      _rawBody
       mainImage {
         asset {
           _id

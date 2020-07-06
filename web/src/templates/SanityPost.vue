@@ -1,8 +1,8 @@
 <template>
   <Layout page="blog">
-    <article class="w-full">
+    <article class="w-full max-w-900 mx-auto">
       <!-- Post Header -->
-      <img
+      <!-- <img
         alt="Cover image"
         v-if="$page.post.mainImage"
         class="object-cover w-full max-h-400 rounded-md"
@@ -12,8 +12,10 @@
             .auto('format')
             .url()
         "
-      />
-      <h1 class="font-display text-center pt-4">{{ $page.post.title }}</h1>
+      /> -->
+      <h1 class="font-display text-center pt-4 border-b border-primary">
+        {{ $page.post.title }}
+      </h1>
 
       <div class="w-full font-body">
         <!-- Post Topbar -->
@@ -30,7 +32,7 @@
         <!-- Post Body -->
         <block-content :blocks="$page.post._rawBody" v-if="$page.post._rawBody" />
       </div>
-      <div class="flex items-center justify-between w-full py-4">
+      <div class="flex items-center justify-between w-full max-w-900 mx-auto py-4">
         <arrow-link :path="previousBlogPath" arrowDirection="left">Previous Post</arrow-link>
 
         <arrow-link :path="nextBlogPath" arrowDirection="right">Next Post</arrow-link>
