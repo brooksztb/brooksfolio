@@ -26,13 +26,9 @@
         <h3 class="font-display m-0 text-primary" v-html="post.title" />
         <block-content class="font-body max-w-px900 text-secondary" :blocks="post._rawExcerpt" />
 
-        <meta-info v-if="post" :content="post" />
+        <meta-info v-if="post" :content="post" :timeToRead="timeToRead(post._rawBody)" />
         <categories v-if="post.categories" :content="post" />
-        <arrow-link
-          class="flex justify-start lg:justify-end"
-          :path="post.path"
-          arrowDirection="right"
-        >
+        <arrow-link class="flex justify-end" :path="post.path" arrowDirection="right">
           Read More
         </arrow-link>
       </div>
@@ -45,6 +41,7 @@ import MetaInfo from '~/components/MetaInfo'
 import Categories from '~/components/Categories'
 import BlockContent from '~/components/BlockContent'
 import ArrowLink from '~/components/ArrowLink'
+import readingTime from '../utils/timeToRead.js'
 
 export default {
   components: {
@@ -55,6 +52,11 @@ export default {
   },
   props: {
     post: Object
+  },
+  methods: {
+    timeToRead(content) {
+      return readingTime(content)
+    }
   }
 }
 </script>

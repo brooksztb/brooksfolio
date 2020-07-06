@@ -40,6 +40,8 @@ module.exports = {
         inverse: 'var(--color-border-inverse)'
       },
       spacing: {
+        '15': '3.75rem',
+        '30': '7.5rem',
         px10: '10px',
         px64: '64px',
         px82: '82px',
@@ -78,6 +80,8 @@ module.exports = {
       },
       maxWidth: {
         '500': '500px',
+        '800': '800px',
+        '900': '900px',
         '1080': '1080px',
         '1250': '1250px'
       },
@@ -237,7 +241,7 @@ module.exports = {
         //   '100%': {
         //     transform: 'rotate(1turn)'
         //   }
-        // }
+        // },
       }
 
       addUtilities(newUtilities)

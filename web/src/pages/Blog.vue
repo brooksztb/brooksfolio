@@ -1,8 +1,9 @@
 <template>
-  <Layout page="blog">
-    <!-- List posts -->
-    <div class="w-full">
-      <section>
+  <layout page="blog">
+    <div class="flex flex-col items-start">
+      <h1 class="font-display uppercase">My <span class="text-initial">Blog</span> Posts</h1>
+      <!-- List posts -->
+      <section class="w-full">
         <ul class="flex flex-col ml-0">
           <post-card
             v-for="edge in $page.posts.edges"
@@ -13,7 +14,7 @@
         </ul>
       </section>
     </div>
-  </Layout>
+  </layout>
 </template>
 
 <page-query>
@@ -45,6 +46,7 @@
         }
         publishedAt(format: "MMMM D YYYY")
         _rawExcerpt
+        _rawBody
         mainImage {
           asset {
             _id
