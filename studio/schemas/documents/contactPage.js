@@ -4,11 +4,6 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Header',
-      name: 'header',
-      type: 'string'
-    },
-    {
       title: 'Information',
       name: 'information',
       type: 'bodyPortableText'

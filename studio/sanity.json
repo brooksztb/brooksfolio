@@ -20,7 +20,8 @@
     "media",
     "asset-source-unsplash",
     "dark-theme-blue",
-    "@sanity/vision"
+    "@sanity/vision",
+    "@sanity/code-input"
   ],
   "parts": [
     {
