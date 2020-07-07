@@ -7,6 +7,12 @@ import DefaultLayout from '~/layouts/Default.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
+import '@deckdeckgo/highlight-code'
+import {
+  applyPolyfills,
+  defineCustomElements as deckDeckGoElement
+} from '@deckdeckgo/highlight-code/dist/loader'
+
 import { faGithub, faDev, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import {
   faHome,
@@ -41,6 +47,10 @@ library.add(
 import urlForImage from './utils/urlForImage'
 
 import VueYoutube from 'vue-youtube'
+
+applyPolyfills().then(() => {
+  defineCustomElements()
+})
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 export default function(Vue, { router, head, isClient }) {

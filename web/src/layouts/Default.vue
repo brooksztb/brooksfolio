@@ -60,7 +60,7 @@
         <slot></slot>
       </div>
     </main>
-    <footer id="footer" class="bg-primary shadow w-full leading-8 py-4">
+    <footer id="footer" class="bg-primary shadow-lg w-full leading-8 py-4">
       <div
         class="flex flex-col lg:flex-row items-center lg:justify-between w-90 max-w-1250 my-0 mx-auto"
       >

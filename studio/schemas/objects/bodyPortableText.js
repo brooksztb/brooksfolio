@@ -1,3 +1,6 @@
+import internalLinkIcon from 'react-icons/lib/fa/paperclip'
+import externalLinkIcon from 'react-icons/lib/fa/external-link-square'
+
 export default {
   title: 'Post body',
   name: 'bodyPortableText',
@@ -16,20 +19,30 @@ export default {
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
         { title: 'H4', value: 'h4' },
+        { title: 'H5', value: 'h5' },
         { title: 'Quote', value: 'blockquote' }
       ],
-      lists: [{ title: 'Bullet', value: 'bullet' }, { title: 'Number', value: 'number' }],
+      lists: [
+        { title: 'Bullet', value: 'bullet' },
+        { title: 'Number', value: 'number' }
+      ],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting by editors.
-        decorators: [{ title: 'Strong', value: 'strong' }, { title: 'Emphasis', value: 'em' }],
+        decorators: [
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' }
+        ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
             title: 'Link',
             name: 'link',
             type: 'object',
+            blockEditor: {
+              icon: externalLinkIcon
+            },
             fields: [
               {
                 title: 'URL',
@@ -51,6 +64,9 @@ export default {
             title: 'Internal link',
             name: 'internalLink',
             type: 'object',
+            blockEditor: {
+              icon: internalLinkIcon
+            },
             fields: [
               {
                 title: 'Reference',
@@ -58,15 +74,25 @@ export default {
                 type: 'reference',
                 weak: 'true',
                 to: [
-                  { type: 'post' }
+                  { type: 'post' },
+                  { type: 'project' },
+                  { type: 'authorReference' }
                   // other types you may want to link to
                 ]
               }
             ]
           }
         ]
-      },
-      of: [{ type: 'authorReference' }]
+      }
+    },
+    {
+      title: 'Code Block',
+      name: 'codeBlock',
+      type: 'code',
+      options: {
+        theme: 'monokai',
+        withFilename: true
+      }
     },
     {
       type: 'mainImage',
