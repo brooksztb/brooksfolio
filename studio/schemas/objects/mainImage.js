@@ -1,3 +1,5 @@
+import imageIcon from 'react-icons/lib/fa/image'
+
 export default {
   title: 'Image',
   name: 'mainImage',
@@ -5,6 +7,7 @@ export default {
   options: {
     hotspot: true
   },
+  icon: imageIcon,
   fields: [
     {
       title: 'Caption',

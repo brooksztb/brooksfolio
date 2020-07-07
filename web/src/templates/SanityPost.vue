@@ -26,7 +26,7 @@
             :timeToRead="timeToRead($page.post._rawBody)"
           />
           <categories v-if="$page.post" :content="$page.post" />
-          <g-link to="/blog" exact>See more blog posts</g-link>
+          <g-link to="/blog" exact>See all blog posts</g-link>
         </div>
 
         <!-- Post Body -->

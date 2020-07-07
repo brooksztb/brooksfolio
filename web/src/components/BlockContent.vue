@@ -22,6 +22,13 @@ export default {
     return {
       serializers: {
         types: {
+          code: ({ props }) => (
+            <pre>
+              <deckgo-highlight-code theme="cobalt" language={props.node.language}>
+                {props.node.code}
+              </deckgo-highlight-code>
+            </pre>
+          ),
           mainImage: ({ node }) => (
             <figure>
               <img
