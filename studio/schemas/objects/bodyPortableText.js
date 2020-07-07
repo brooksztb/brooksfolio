@@ -2,7 +2,7 @@ import internalLinkIcon from 'react-icons/lib/fa/paperclip'
 import externalLinkIcon from 'react-icons/lib/fa/external-link-square'
 
 export default {
-  title: 'Post body',
+  title: 'Body Text',
   name: 'bodyPortableText',
   type: 'array',
   of: [
@@ -80,8 +80,6 @@ export default {
       of: [{ type: 'authorReference' }]
     },
     {
-      title: 'Code Block',
-      name: 'codeBlock',
       type: 'code',
       options: {
         theme: 'monokai',
