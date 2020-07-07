@@ -36,7 +36,6 @@
     }
   },
   contact: sanityContactPage(id: "contactPage") {
-    header,
     _rawInformation,
     contactLinks {
       link {
