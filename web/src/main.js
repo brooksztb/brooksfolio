@@ -45,6 +45,8 @@ import urlForImage from './utils/urlForImage'
 
 import VueYoutube from 'vue-youtube'
 
+const clientConfig = require('../client-config')
+
 applyPolyfills()
   .then(() => {
     defineCustomElements()
@@ -54,11 +56,16 @@ applyPolyfills()
   })
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-export default function(Vue, { router, head, isClient }) {
+export default function(Vue, { head }) {
   head.link.push({
     rel: 'stylesheet',
     href:
       'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Open+Sans&display=swap'
+  })
+
+  head.meta.push({
+    name: 'keywords',
+    content: clientConfig.siteInfo.keywords.join()
   })
 
   Vue.use(VueYoutube)

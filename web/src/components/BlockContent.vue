@@ -10,6 +10,7 @@
 <script>
 import PortableText from 'sanity-blocks-vue-component'
 import Youtube from './Youtube'
+import HighlightCode from './HighlightCode'
 
 export default {
   props: {
@@ -22,13 +23,7 @@ export default {
     return {
       serializers: {
         types: {
-          code: ({ props }) => (
-            <pre>
-              <deckgo-highlight-code theme="cobalt" language={props.node.language}>
-                {props.node.code}
-              </deckgo-highlight-code>
-            </pre>
-          ),
+          code: HighlightCode,
           mainImage: ({ node }) => (
             <figure>
               <img
