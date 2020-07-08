@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="flex w-full flex-col items-center">
-          <h2 class="self-start text-secondary font-bold text-3xl">Where I've Been</h2>
+          <h2 class="self-start font-bold text-3xl">Where I've Been</h2>
           <timeline :data="$page.about.workHistory"></timeline>
         </div>
       </section>
@@ -92,8 +92,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-// [class^='gb-']:not(.gb-base-icon) {
-//   font-family: ;
-// }
-</style>
+<style lang="scss" scoped></style>

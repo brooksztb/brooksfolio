@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.js'],
+  // purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.js'],
   theme: {
     screens: {
       xs: '375px',
@@ -31,7 +31,6 @@ module.exports = {
         primary: 'var(--color-bg-primary)',
         secondary: 'var(--color-bg-secondary)',
         tertiary: 'var(--color-bg-tertiary)',
-        'tertiary--light': 'var(--color-bg-tertiary--light)',
         inverse: 'var(--color-bg-inverse)'
       },
       borderColor: {
