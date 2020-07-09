@@ -25,7 +25,9 @@ module.exports = {
         'primary--muted': 'var(--color-text-primary--muted)',
         secondary: 'var(--color-text-secondary)',
         tertiary: 'var(--color-text-tertiary)',
-        inverse: 'var(--color-text-inverse)'
+        inverse: 'var(--color-text-inverse)',
+        success: 'var(--color-text-success)',
+        error: 'var(--color-text-error)'
       },
       backgroundColor: {
         primary: 'var(--color-bg-primary)',
@@ -221,6 +223,12 @@ module.exports = {
           textDecoration: 'none',
           borderBottomColor: 'transparent',
           backgroundColor: 'var(--color-primary)'
+        },
+        '.fade-enter-active, .fade-leave-active': {
+          transition: 'opacity 0.5s'
+        },
+        '.fade-enter, .fade-leave-to ': {
+          opacity: 0
         }
         // '.loading': {
         //   width: '2em',

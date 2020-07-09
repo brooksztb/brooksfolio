@@ -3,9 +3,9 @@
     <form
       name="contact"
       method="post"
+      action="/contact"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true"
       @submit.prevent="handleSubmit"
     >
       <input type="hidden" name="form-name" value="contact" />
@@ -28,19 +28,26 @@
         <textarea name="message" required="required" v-model="form.message"></textarea>
         <span>Message</span>
       </label>
-      <div data-netlify-recaptcha="true"></div>
       <button class="form-button" type="submit">Send Message</button>
     </form>
-    <div v-show="success">
-      <span>Thanks for your message! I'll be sure to take a look at it!</span>
-    </div>
-    <div v-show="failure">
-      <span>Woops, looks like something went wrong.</span>
-    </div>
+    <transition name="fade">
+      <div class="flex items-center text-xl text-success mt-2" v-show="success">
+        <font-awesome class="mr-2" :icon="['fas', 'thumbs-up']" size="1x" />
+        <span>Thanks for your message! I'll be sure to take a look at it!</span>
+      </div>
+    </transition>
+    <transition name="fade">
+      <div class="flex items-center text-xl text-error mt-2" v-show="failure">
+        <font-awesome class="mr-2" :icon="['fas', 'times-circle']" size="1x" />
+        <span>Woops, looks like something went wrong.</span>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'ContactForm',
   data() {
@@ -51,8 +58,7 @@ export default {
         name: '',
         email: '',
         subject: '',
-        message: '',
-        gRecaptchaResponse: {}
+        message: ''
       }
     }
   },
@@ -65,25 +71,39 @@ export default {
     handleSubmit() {
       this.success = false
       this.failure = false
-      fetch('/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: this.encode({
-          'form-name': 'contact',
-          ...this.form
-        })
-      })
-        .then(() => {
-          this.success = true
-          this.form = {
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-            gRecaptchaResponse: {}
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }
+      axios
+        .post(
+          '/contact',
+          this.encode({
+            'form-name': 'contact',
+            ...this.form
+          }),
+          axiosConfig
+        )
+        .then(response => {
+          if (response.status === 200) {
+            this.success = true
+            this.form = {
+              name: '',
+              email: '',
+              subject: '',
+              message: '',
+              'g-recaptcha-response': ''
+            }
+          } else {
+            this.failure = true
           }
         })
         .catch(() => (this.failure = true))
+        .finally(() => {
+          setTimeout(() => {
+            this.success = false
+            this.failure = false
+          }, 10000)
+        })
     }
   }
 }
