@@ -5,6 +5,7 @@
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true"
       @submit.prevent="handleSubmit"
     >
       <input type="hidden" name="form-name" value="contact" />
@@ -27,6 +28,7 @@
         <textarea name="message" required="required" v-model="form.message"></textarea>
         <span>Message</span>
       </label>
+      <div data-netlify-recaptcha="true"></div>
       <button class="form-button" type="submit">Send Message</button>
     </form>
     <div v-show="success">
@@ -49,7 +51,8 @@ export default {
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
+        gRecaptchaResponse: {}
       }
     }
   },
@@ -76,7 +79,8 @@ export default {
             name: '',
             email: '',
             subject: '',
-            message: ''
+            message: '',
+            gRecaptchaResponse: {}
           }
         })
         .catch(() => (this.failure = true))
