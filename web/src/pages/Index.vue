@@ -13,6 +13,9 @@
       projectId
       dataset
     }
+    siteInfo {
+      description
+    }
   }
   posts: allSanityPost(sortBy: "publishedAt") {
     edges {
@@ -58,8 +61,16 @@
 <script>
 export default {
   components: {},
-  metaInfo: {
-    title: 'Home'
+  metaInfo() {
+    return {
+      title: 'Home',
+      meta: [
+        {
+          name: 'description',
+          content: this.$page.metadata.siteInfo.description
+        }
+      ]
+    }
   }
 }
 </script>
