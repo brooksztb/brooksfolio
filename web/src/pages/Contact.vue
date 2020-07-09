@@ -29,7 +29,7 @@
 
 <page-query>
 {
-    metadata {
+  metadata {
     sanityOptions {
       projectId
       dataset

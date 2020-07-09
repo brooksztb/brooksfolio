@@ -15,6 +15,7 @@ module.exports = function(api) {
   api.loadSource(store => {
     // Use the Data store API here: https://gridsome.org/docs/data-store-api
     store.addMetadata('sanityOptions', clientConfig.sanity)
+    store.addMetadata('siteInfo', clientConfig.siteInfo)
   })
   api.createPages(async ({ createPage, graphql }) => {
     const { data } = await graphql(`

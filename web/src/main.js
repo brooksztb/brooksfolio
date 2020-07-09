@@ -65,7 +65,8 @@ export default function(Vue, { head }) {
 
   head.meta.push({
     name: 'keywords',
-    content: clientConfig.siteInfo.keywords.join()
+    content: clientConfig.siteInfo.keywords.join(),
+    vmid: 'keywords'
   })
 
   Vue.use(VueYoutube)
