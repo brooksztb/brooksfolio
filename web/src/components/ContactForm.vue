@@ -31,7 +31,7 @@
       <button class="form-button" type="submit">Send Message</button>
     </form>
     <transition name="fade">
-      <div class="flex items-center text-xl text-success mt-2" v-show="success">
+      <div class="flex items-start md:items-center text-xl text-success mt-2" v-show="success">
         <font-awesome class="mr-2" :icon="['fas', 'thumbs-up']" size="1x" />
         <span>Thanks for your message! I'll be sure to take a look at it!</span>
       </div>
@@ -90,8 +90,7 @@ export default {
               name: '',
               email: '',
               subject: '',
-              message: '',
-              'g-recaptcha-response': ''
+              message: ''
             }
           } else {
             this.failure = true
