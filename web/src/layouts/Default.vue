@@ -9,34 +9,38 @@
         class="relative flex flex-wrap items-center lg:justify-between w-90 max-w-1250 my-0 mx-auto"
       >
         <header-logo class="order-1"></header-logo>
-        <nav
-          class="flex-col lg:flex lg:flex-row items-start lg:items-center relative w-full lg:h-auto lg:w-auto order-3 lg:order-2 py-4 lg:py-0"
-          :class="mobileNavOpen ? 'flex' : 'hidden'"
-        >
-          <div
-            class="flex flex-col justify-start lg:flex-row lg:justify-center lg:relative mb-0 ml-0"
+        <transition name="slide">
+          <nav
+            v-show="menuVisible"
+            class="flex-col flex lg:flex-row items-start lg:items-center relative w-full
+          lg:h-auto lg:w-auto order-3 lg:order-2 py-4 lg:py-0"
           >
-            <header-link :route="{ path: '/', exact: true }" :icon="['fas', 'home']">
-              Home
-            </header-link>
-            <header-link :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
-              About
-            </header-link>
-            <header-link :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
-              Blog
-            </header-link>
-            <header-link :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
-              Projects
-            </header-link>
-            <header-link :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
-              Contact
-            </header-link>
-          </div>
-        </nav>
+            <div
+              class="flex flex-col justify-start items-start lg:flex-row lg:justify-center lg:items-center lg:relative mb-0 ml-0"
+            >
+              <header-link :route="{ path: '/', exact: true }" :icon="['fas', 'home']">
+                Home
+              </header-link>
+              <header-link :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
+                About
+              </header-link>
+              <header-link :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
+                Projects
+              </header-link>
+              <header-link :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
+                Blog
+              </header-link>
+              <header-link :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
+                Contact
+              </header-link>
+            </div>
+          </nav>
+        </transition>
+
         <div class="flex items-center h-full order-2 lg:order-3">
           <toggleTheme></toggleTheme>
           <button
-            @click="mobileNavOpen = !mobileNavOpen"
+            @click="clickMenu"
             class="lg:hidden flex items-center text-primary hover:text-secondary"
           >
             <svg
@@ -118,11 +122,35 @@ import HeaderLogo from '~/components/HeaderLogo'
 import HeaderLink from '~/components/HeaderLink'
 import ToggleTheme from '~/components/ToggleTheme'
 
+const tailwindConfig = require('../../tailwind.config.js')
+
 export default {
   data() {
     return {
-      mobileNavOpen: false
+      windowWidth: 0,
+      menuOpen: false,
+      lgBreakpoint: Number(tailwindConfig.theme.screens.lg.replace('px', ''))
     }
+  },
+  computed: {
+    menuVisible() {
+      return this.windowWidth > this.lgBreakpoint ? true : this.menuOpen
+    }
+  },
+  methods: {
+    updateWindowSize() {
+      this.windowWidth = window.innerWidth
+    },
+    clickMenu() {
+      this.menuOpen = !this.menuOpen
+    }
+  },
+  mounted() {
+    this.updateWindowSize()
+    window.addEventListener('resize', this.updateWindowSize)
+  },
+  beforeDestroyed() {
+    window.removeEventListener('resize', this.updateWindowSize)
   },
   components: {
     HeaderLogo,
