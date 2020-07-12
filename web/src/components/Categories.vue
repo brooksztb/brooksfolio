@@ -1,13 +1,13 @@
 <template>
-  <div class="my-2">
+  <div class="flex flex-wrap my-2">
     <g-link
-      class="mx-2 first:ml-0"
+      class="mr-2"
       v-for="category in content.categories"
       :key="category.id"
       :to="`/categories/${category.slug.current}`"
     >
-      <font-awesome :icon="['fas', 'tag']" size="1x" />
-      <span class="ml-1">{{ category.title }}</span>
+      <font-awesome class="mr-1" :icon="['fas', 'tag']" size="1x" />
+      {{ category.title }}
     </g-link>
   </div>
 </template>

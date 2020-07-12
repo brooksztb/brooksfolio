@@ -61,9 +61,9 @@ module.exports = {
       },
       height: {
         auto: 'auto',
-        logo: '220px',
         'screen-1/4': '25vh',
-        'screen-1/3': '33vh'
+        'screen-1/3': '33vh',
+        'screen-1/2': '50vh'
       },
       inset: {
         '1/2': '50%'
@@ -74,7 +74,9 @@ module.exports = {
       },
       minHeight: {
         '38': '38vh',
-        px250: '250px'
+        px250: '250px',
+        px275: '275px',
+        px300: '300px'
       },
       minWidth: {
         '70': '70%'
@@ -229,6 +231,22 @@ module.exports = {
         },
         '.fade-enter, .fade-leave-to ': {
           opacity: 0
+        },
+        '.slide-enter-active': {
+          'transition-duration': '0.3s',
+          'transition-timing-function': 'ease-in'
+        },
+        '.slide-leave-active': {
+          'transition-duration': '0.3s',
+          'transition-timing-function': 'cubic-bezier(0, 1, 0.5, 1)'
+        },
+        '.slide-enter-to, .slide-leave': {
+          maxHeight: '300px',
+          overflow: 'hidden'
+        },
+        '.slide-enter, .slide-leave-to': {
+          overflow: 'hidden',
+          maxHeight: 0
         }
         // '.loading': {
         //   width: '2em',
