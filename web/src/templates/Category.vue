@@ -77,6 +77,7 @@ query Category ($id: ID!) {
       publishedAt(format: "MMMM D YYYY")
       _rawExcerpt
       _rawBody
+      categories
       mainImage {
         asset {
           _id
@@ -104,6 +105,7 @@ query Category ($id: ID!) {
       path
       publishedAt(format: "MMMM D YYYY")
       _rawExcerpt
+      categories
       mainImage {
         asset {
           _id

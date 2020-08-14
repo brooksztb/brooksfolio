@@ -73,6 +73,7 @@ module.exports = {
         '90': '90%'
       },
       minHeight: {
+        '33': '33vh',
         '38': '38vh',
         px250: '250px',
         px275: '275px',
@@ -86,10 +87,12 @@ module.exports = {
         '800': '800px',
         '900': '900px',
         '1080': '1080px',
-        '1250': '1250px'
+        '1250': '1250px',
+        '1/2': '50%'
       },
       maxHeight: {
         '400': '400px',
+        '300': '300px',
         '600': '600px'
       },
       zIndex: {
@@ -117,6 +120,7 @@ module.exports = {
         'h1, h2, h3, h4, h5': {
           transition: 'color .6s',
           margin: '2.75rem 0 1rem',
+          lineHeight: 1.4,
           fontWeight: config('theme.fontWeight.semibold')
         },
         h1: {
@@ -375,6 +379,16 @@ module.exports = {
             '&:hover .left': {
               marginRight: '.375rem',
               opacity: 1
+            }
+          },
+          '&.left': {
+            span: {
+              paddingLeft: '.125rem'
+            }
+          },
+          '&.right': {
+            span: {
+              paddingRight: '.125rem'
             }
           }
         }

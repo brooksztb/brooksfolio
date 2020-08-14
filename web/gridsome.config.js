@@ -42,8 +42,11 @@ module.exports = {
         ...clientConfig.sanity,
         typeName: 'Sanity',
         token: process.env.SANITY_TOKEN,
-        overlayDrafts: !isProd,
-        watchMode: !isProd
+        // Enable this if you want preview mode enabled
+        // overlayDrafts: !isProd,
+        // watchMode: !isProd
+        overlayDrafts: false,
+        watchMode: false
       }
     }
     /* {

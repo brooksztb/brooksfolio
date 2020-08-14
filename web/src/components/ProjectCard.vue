@@ -8,6 +8,7 @@
           alt="Cover image"
           v-if="project.mainImage"
           class="object-cover object-top md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto"
+          immediate="true"
           :src="
             $urlForImage(project.mainImage, $page.metadata.sanityOptions)
               .height(300)
