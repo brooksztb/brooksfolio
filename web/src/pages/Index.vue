@@ -1,49 +1,60 @@
 <template>
   <layout page="Home">
-    <div class="title-container flex flex-1 items-center">
-      <h1 class="title-animated">Front end Developer, looking to JAM!</h1>
-    </div>
-
-    <!-- TODO: Query the featured projects and posts
-      <div class="flex flex-col items-start">
-      <h1 class="font-display uppercase">
-        Category: <span class="text-initial">{{ $page.category.title }}</span>
-      </h1>
-
-      <section v-if="$page.category.posts && $page.category.posts.length > 0" class="w-full">
-        <h2>
-          Blog Posts
-        </h2>
+    <div class="flex flex-col items-start">
+      <div class="title-container flex items-center">
+        <h1 class="font-display uppercase title-animated">{{ $page.home.introHeader }}</h1>
+      </div>
+      <div class="flex flex-row text-lg md:max-w-1/2 py-4">
+        <block-content :blocks="$page.home._rawIntroBody" />
+      </div>
+      <!--
+        Need to take a couple photos and have one animate up only once when the site is loaded and have that tracked.
+        <img
+        alt="Cover image"
+        v-if="$page.home.mainImage"
+        class="object-cover w-full max-h-400 rounded-md"
+        :src="
+          $urlForImage($page.home.mainImage, $page.metadata.sanityOptions)
+            .height(400)
+            .auto('format')
+            .url()
+        "
+      /> -->
+      <section
+        v-if="$page.home.posts && $page.home.posts.length > 0"
+        class="flex flex-col w-full py-4"
+      >
+        <h3 class="font-display uppercase">My <span class="text-initial">Blog</span> Posts</h3>
         <ul class="flex flex-col ml-0">
           <post-card
-            v-for="post in $page.category.posts"
+            v-for="post in $page.home.posts"
             :key="post.id"
             :post="post"
             :metadata="$page.metadata"
           />
         </ul>
+        <arrow-link class="self-end" path="/blog" arrowDirection="right"
+          >See all blog posts</arrow-link
+        >
       </section>
-      <section v-if="$page.category.projects && $page.category.projects.length > 0" class="w-full">
-        <h2>
-          Projects
-        </h2>
+      <section
+        v-if="$page.home.projects && $page.home.projects.length > 0"
+        class="flex flex-col w-full py-4"
+      >
+        <h3 class="font-display uppercase">My <span class="text-initial">Projects</span></h3>
         <ul class="flex flex-row justify-between ml-0">
           <project-card
-            v-for="project in $page.category.projects"
+            v-for="project in $page.home.projects"
             :key="project.id"
             :project="project"
             :metadata="$page.metadata"
           />
         </ul>
+        <arrow-link class="self-end" path="/projects" arrowDirection="right"
+          >See all projects</arrow-link
+        >
       </section>
-      <ul>
-      <li v-for="edge in $page.category.belongsTo.edges" :key="edge.node.id">
-        <g-link :to="edge.node.path">
-          {{ edge.node.title }}
-        </g-link>
-      </li>
-    </ul>
-    </div> -->
+    </div>
   </layout>
 </template>
 
@@ -58,16 +69,94 @@
       description
     }
   }
+  home: sanityHomePage(id: "homePage") {
+    introHeader,
+    _rawIntroBody,
+    projects: highlightedProjects {
+      id
+        title
+        path
+        categories {
+          id
+          title
+          slug {
+            current
+          }
+        }
+        publishedAt(format: "MMMM D YYYY")
+        _rawExcerpt
+        mainImage {
+          asset {
+            _id
+            url
+          }
+          caption
+          alt
+          hotspot {
+            x
+            y
+            height
+            width
+          }
+          crop {
+            top
+            bottom
+            left
+            right
+          }
+        }
+    },
+    posts: highlightedBlogPosts {
+      id
+        title
+        path
+        categories {
+          id
+          title
+          slug {
+            current
+          }
+        }
+        publishedAt(format: "MMMM D YYYY")
+        _rawExcerpt
+        _rawBody
+        mainImage {
+          asset {
+            _id
+            url
+          }
+          caption
+          alt
+          hotspot {
+            x
+            y
+            height
+            width
+          }
+          crop {
+            top
+            bottom
+            left
+            right
+          }
+        }
+    }
+  }
 }
 
 </page-query>
 
 <script>
+import BlockContent from '~/components/BlockContent'
+import PostCard from '~/components/PostCard'
+import ProjectCard from '~/components/ProjectCard'
+import ArrowLink from '~/components/ArrowLink'
+
 export default {
-  components: {},
+  name: 'Home',
   metaInfo() {
     return {
-      title: 'Home',
+      title: 'Software Engineer',
       meta: [
         {
           name: 'description',
@@ -75,6 +164,12 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    BlockContent,
+    PostCard,
+    ProjectCard,
+    ArrowLink
   }
 }
 </script>
@@ -89,7 +184,6 @@ export default {
   position: relative;
   display: block;
   margin: 0;
-  font-size: 4rem;
   line-height: 1;
   transform: translateY(6rem);
   animation: up 500ms linear forwards;

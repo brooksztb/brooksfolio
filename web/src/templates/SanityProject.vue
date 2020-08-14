@@ -17,7 +17,7 @@
         {{ $page.project.title }}
       </h1>
 
-      <div class="w-full font-body">
+      <div class="flex flex-col w-full font-body">
         <!-- project Topbar -->
         <div class="pb-4 text-sm">
           <meta-info
@@ -26,7 +26,7 @@
             v-if="$page.project"
           />
           <categories :content="$page.project" v-if="$page.project" />
-          <g-link to="/projects" exact>See more projects</g-link>
+          <arrow-link path="/projects" arrowDirection="left">See all projects</arrow-link>
         </div>
 
         <!-- project Body -->

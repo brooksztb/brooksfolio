@@ -1,5 +1,5 @@
 <template>
-  <div class="arrow-link">
+  <div class="flex arrow-link" :class="arrowDirection">
     <g-link :to="path">
       <font-awesome
         v-show="arrowDirection === 'left'"

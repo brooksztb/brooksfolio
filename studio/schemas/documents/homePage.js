@@ -15,13 +15,18 @@ export default {
       type: 'bodyPortableText'
     },
     {
+      title: 'Main Image',
+      name: 'mainImage',
+      type: 'mainImage'
+    },
+    {
       title: 'Highlighted Blog Posts',
       name: 'highlightedBlogPosts',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{type: 'post'}]
+          to: [{ type: 'post' }]
         }
       ]
     },
@@ -32,7 +37,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'project'}]
+          to: [{ type: 'project' }]
         }
       ]
     }

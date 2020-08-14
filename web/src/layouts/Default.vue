@@ -24,11 +24,11 @@
               <header-link :route="{ path: '/about', exact: true }" :icon="['fas', 'user']">
                 About
               </header-link>
-              <header-link :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
-                Projects
-              </header-link>
               <header-link :route="{ path: '/blog', exact: false }" :icon="['fas', 'newspaper']">
                 Blog
+              </header-link>
+              <header-link :route="{ path: '/projects', exact: false }" :icon="['fas', 'code']">
+                Projects
               </header-link>
               <header-link :route="{ path: '/contact', exact: true }" :icon="['fas', 'envelope']">
                 Contact
@@ -68,8 +68,14 @@
       <div
         class="flex flex-col lg:flex-row items-center lg:justify-between w-90 max-w-1250 my-0 mx-auto"
       >
-        <span class="lg:w-full text-primary--muted"
-          >© Zachary Brooks {{ new Date().getFullYear() }}
+        <span class="flex flex-col items-center md:flex-row lg:w-full text-primary--muted"
+          >© Zachary Brooks {{ new Date().getFullYear() }} - &nbsp;
+          <a
+            title="Site Source Code"
+            href="https://github.com/brooksztb/brooksfolio"
+            target="_blank"
+            >See the Source Code</a
+          >
         </span>
         <div class="flex flex-row items-center justify-evenly lg:justify-end w-full">
           <a

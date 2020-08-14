@@ -1,7 +1,7 @@
 <template>
   <div class="my-4">
     <li
-      class="flex md:flex-row flex-col justify-center md:min-h-px300 lg:min-h-px275 min-h-38 h-full md:h-screen-1/3 mb-0 bg-secondary shadow-lg rounded-md transform hover:scale-105 transition-all duration-300"
+      class="flex md:flex-row flex-col justify-center h-full md:h-screen-1/3 md:max-h-300 mb-0 bg-secondary shadow-lg rounded-md transform hover:scale-105 transition-all duration-300"
     >
       <div
         class="w-full md:h-full h-screen-1/3 overflow-hidden rounded-t-md md:rounded-l-md md:rounded-tr-none"
@@ -10,6 +10,7 @@
           alt="Cover image"
           v-if="post.mainImage"
           class="object-cover md:h-full min-h-full md:min-h-0 min-w-full md:w-auto"
+          immediate="true"
           :src="
             $urlForImage(post.mainImage, $page.metadata.sanityOptions)
               .height(300)

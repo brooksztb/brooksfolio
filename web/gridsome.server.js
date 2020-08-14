@@ -64,7 +64,7 @@ module.exports = function(api) {
   // to contain the GROQ queried content-->
   api.loadSource(({ addSchemaTypes }) => {
     addSchemaTypes(`
-    type CategoryPost implements Node @infer {
+    type ReferencedPost implements Node @infer {
       id: ID!
       title: String
       publishedAt: Date
@@ -73,8 +73,9 @@ module.exports = function(api) {
       _rawExcerpt: JSON
       path: String
       slug: SanitySlug
+      categories: [JSON]
     }
-    type CategoryProject implements Node @infer {
+    type ReferencedProject implements Node @infer {
       id: ID!
       title: String
       publishedAt: Date
@@ -82,6 +83,7 @@ module.exports = function(api) {
       _rawExcerpt: JSON
       path: String
       slug: SanitySlug
+      categories: [JSON]
     }
   `)
   })
@@ -89,11 +91,11 @@ module.exports = function(api) {
     addSchemaResolvers({
       SanityCategory: {
         posts: {
-          type: ['CategoryPost'],
+          type: ['ReferencedPost'],
           async resolve(obj) {
             const posts = []
             const categoriesQuery =
-              '*[_type == "category" && _id == $categoryID] {"posts": *[_type == "post" && references($categoryID)]}'
+              '*[_type == "category" && _id == $categoryID] {"posts": *[_type == "post" && references($categoryID)]{..., categories[]->{_id, title, slug}}}'
             const categoriesParams = { categoryID: obj._id }
             await client.fetch(categoriesQuery, categoriesParams).then(category => {
               category.forEach(categoryPosts => {
@@ -102,6 +104,11 @@ module.exports = function(api) {
                   post['id'] = post._id
                   post['_rawBody'] = post.body
                   post['_rawExcerpt'] = post.excerpt
+                  post['categories'] = post.categories.map(category => ({
+                    id: category._id,
+                    title: category.title,
+                    slug: category.slug
+                  }))
                   post['path'] = `/blog/${post.slug.current}`
                   posts.push(post)
                 })
@@ -111,11 +118,11 @@ module.exports = function(api) {
           }
         },
         projects: {
-          type: ['CategoryProject'],
+          type: ['ReferencedProject'],
           async resolve(obj) {
             const projects = []
             const categoriesQuery =
-              '*[_type == "category" && _id == $categoryID] {"projects": *[_type == "project" && references($categoryID)]}'
+              '*[_type == "category" && _id == $categoryID] {"projects": *[_type == "project" && references($categoryID)]{..., categories[]->{_id, title, slug}}}'
             const categoriesParams = { categoryID: obj._id }
             await client.fetch(categoriesQuery, categoriesParams).then(category => {
               category.forEach(categoryProjects => {
@@ -123,6 +130,11 @@ module.exports = function(api) {
                   //Dynamically set the variables that are created by gridsome
                   project['id'] = project._id
                   project['_rawExcerpt'] = project.excerpt
+                  project['categories'] = project.categories.map(category => ({
+                    id: category._id,
+                    title: category.title,
+                    slug: category.slug
+                  }))
                   project['path'] = `/projects/${project.slug.current}`
                   projects.push(project)
                 })
