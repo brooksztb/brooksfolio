@@ -2,6 +2,7 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   // purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.js'],
+  purge: false,
   theme: {
     screens: {
       xs: '375px',

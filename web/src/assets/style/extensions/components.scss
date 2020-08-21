@@ -1,0 +1,23 @@
+.m-modal {
+  .m-modal-content {
+    @apply bg-secondary text-primary #{!important};
+  }
+
+  a {
+    @apply form-button mt-2 #{!important};
+
+    &.m-by {
+      @apply mt-4 #{!important};
+    }
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+
+  a,
+  p,
+  span,
+  strong {
+    @apply font-body #{!important};
+  }
+}

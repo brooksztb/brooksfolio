@@ -2,11 +2,15 @@
 
 _Personal Blog and Portfolio built from the Sanity.io Gridsome blog template, styled with Tailwindcss._
 
-[Live Url](https://brooksfolio.netlify.app/)
+This site is used for my own personal blog and portfolio that I have extended from the Sanity.io Gridsome blog template, not only to get experience with Sanity, but also to extend my knowledge of working with Gridsome, TailwindCSS, and to have a place for me to post my personal projects that I work on as well as any blog posts that I write.
 
-Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-gridsome-blog).
+This site also implements [mailgo](https://mailgo.dev/) which is open source module that transforms mailto and tel links to utilize a modal popup with links to open gmail, outlook, or a users default email service instead of the standard link to mail or phone services.
 
-## What you have
+Also feel free to fork this repo if you like my design as a base but do make it your own!
+
+[Live Url](https://zacharybrooks.dev/)
+
+## What the site has
 
 - A fast by default blog and Portfolio with [Gridsome](https://gridsome.org)
 - Structured content using [Sanity.io](https://www.sanity.io)
@@ -23,8 +27,8 @@ Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-i
 
 ## Enable real-time content preview on development
 
-1. Go to your [project’s API settings on manage.sanity.io](https://manage.sanity.io/projects/mso96qji/settings/api) and create a token with read rights.
-2. Rename `.env.development.tenplate` to `.env.development` and paste in the token: `SANITY_READ_TOKEN="yourTokenHere"`.
+1. Go to your [project’s API settings on manage.sanity.io](https://manage.sanity.io/) and create a token with read rights.
+2. Rename `.env.development.template` to `.env.development` and paste in the token: `SANITY_READ_TOKEN="yourTokenHere"`.
 3. Restart the development server (`ctrl + C` and `npm run dev`).
 
 If you want to turn off preview you can set `watchMode: false` in gridsome-config.js. If you just want to preview published changes you can set `overlayDrafts: false` in gridsome-config.js.
@@ -36,6 +40,8 @@ Netlify automatically deploys new changes commited to master on GitHub. If you w
 This starter comes with a Netlify-widget that lets you trigger new deploys from Sanity Studio.
 
 ## Stuck? Get help
+
+If you want to know more about Sanity or get help directly from the Sanity development team and community check out the links below.
 
 [![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
 

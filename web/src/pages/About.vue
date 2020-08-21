@@ -20,12 +20,9 @@
             :alt="$page.about.mainImage.alt"
           ></g-image>
           <div
-            class="w-full md:w-2/3 border rounded-md border-primary p-4 flex flex-col justify-between leading-normal"
+            class="flex flex-col justify-center w-full md:w-2/3 bg-secondary shadow-lg rounded-md p-4 mb-2 leading-normal"
           >
-            <div class="mb-2">
-              <div class="font-bold text-xl mb-2"></div>
-              <block-content :blocks="$page.about._rawBiography" />
-            </div>
+            <block-content :blocks="$page.about._rawBiography" />
           </div>
         </div>
         <div class="flex w-full flex-col items-center">
@@ -83,8 +80,17 @@ import BlockContent from '~/components/BlockContent'
 import Timeline from '~/components/Timeline'
 
 export default {
-  metaInfo: {
-    title: 'About Me'
+  metaInfo() {
+    return {
+      title: 'About Me',
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$toPlainText(this.$page.about._rawBiography)
+        }
+      ]
+    }
   },
   components: {
     BlockContent,

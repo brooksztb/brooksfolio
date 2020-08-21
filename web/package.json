@@ -22,7 +22,8 @@
     "gridsome-source-sanity": "^1.0.5",
     "sanity-blocks-vue-component": "^0.1.0",
     "tailwindcss": "^1.4.6",
-    "vue-youtube": "^1.4.0"
+    "vue-youtube": "^1.4.0",
+    "mailgo": "^0.9.14"
   },
   "devDependencies": {
     "css-loader": "^2.1.1",
