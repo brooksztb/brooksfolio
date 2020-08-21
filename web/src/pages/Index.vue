@@ -4,8 +4,10 @@
       <div class="title-container flex items-center">
         <h1 class="font-display uppercase title-animated">{{ $page.home.introHeader }}</h1>
       </div>
-      <div class="flex flex-row text-lg md:max-w-1/2 py-4">
-        <block-content :blocks="$page.home._rawIntroBody" />
+      <div class="flex flex-row text-lg md:max-w-1/2 pt-8 pb-4">
+        <div class="flex flex-col justify-center bg-secondary shadow-lg rounded-md p-4">
+          <block-content :blocks="$page.home._rawIntroBody" />
+        </div>
       </div>
       <!--
         Need to take a couple photos and have one animate up only once when the site is loaded and have that tracked.
@@ -159,6 +161,7 @@ export default {
       title: 'Software Engineer',
       meta: [
         {
+          key: 'description',
           name: 'description',
           content: this.$page.metadata.siteInfo.description
         }

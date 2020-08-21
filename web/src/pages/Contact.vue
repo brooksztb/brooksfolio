@@ -59,8 +59,17 @@ import BlockContent from '~/components/BlockContent'
 import ContactLink from '~/components/ContactLink'
 
 export default {
-  metaInfo: {
-    title: 'Contact'
+  metaInfo() {
+    return {
+      title: 'Contact',
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$toPlainText(this.$page.contact._rawInformation)
+        }
+      ]
+    }
   },
   components: {
     ContactForm,

@@ -50,7 +50,7 @@ import BlockContent from '~/components/BlockContent'
 import MetaInfo from '~/components/MetaInfo'
 import Categories from '~/components/Categories'
 import ArrowLink from '~/components/ArrowLink'
-import readingTime from '../utils/timeToRead.js'
+import readingTime from '../utils/timeToRead'
 
 export default {
   components: {
@@ -64,6 +64,7 @@ export default {
       title: this.$page.project.title,
       meta: [
         {
+          key: 'description',
           name: 'description',
           content: this.$page.project.description
         }
@@ -95,7 +96,8 @@ export default {
       return item == null || item == undefined
     },
     timeToRead(content) {
-      return readingTime(content)
+      const plainText = this.$toPlainText(content)
+      return readingTime(plainText)
     }
   }
 }

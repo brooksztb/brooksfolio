@@ -50,7 +50,7 @@ import BlockContent from '~/components/BlockContent'
 import MetaInfo from '~/components/MetaInfo'
 import Categories from '~/components/Categories'
 import ArrowLink from '~/components/ArrowLink'
-import readingTime from '../utils/timeToRead.js'
+import readingTime from '../utils/timeToRead'
 
 export default {
   components: {
@@ -61,7 +61,19 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.$page.post.title
+      title: this.$page.post.title,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$toPlainText(this.$page.post._rawExcerpt)
+        },
+        {
+          key: 'keywords',
+          name: 'keywords',
+          content: this.$page.post.categories.map(category => category.title).join(',')
+        }
+      ]
     }
   },
   computed: {
@@ -83,7 +95,8 @@ export default {
       return item == null || item == undefined
     },
     timeToRead(content) {
-      return readingTime(content)
+      const plainText = this.$toPlainText(content)
+      return readingTime(plainText)
     }
   }
 }

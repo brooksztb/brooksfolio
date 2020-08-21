@@ -62,10 +62,11 @@ export default {
   },
   methods: {
     timeToRead(content) {
-      return readingTime(content)
+      const plainText = this.$toPlainText(content)
+      return readingTime(plainText)
     }
   }
 }
 </script>
 
-<style lang="scss"></style>
+<style></style>

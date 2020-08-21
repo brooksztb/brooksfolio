@@ -10,6 +10,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import '@deckdeckgo/highlight-code'
 import { applyPolyfills, defineCustomElements } from '@deckdeckgo/highlight-code/dist/loader'
 
+import mailgo from 'mailgo'
+
 import { faGithub, faDev, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import {
   faHome,
@@ -44,6 +46,7 @@ library.add(
 )
 // Import image url builder
 import urlForImage from './utils/urlForImage'
+import toPlainText from './utils/toPlainText'
 
 import VueYoutube from 'vue-youtube'
 
@@ -68,8 +71,14 @@ export default function(Vue, { head }) {
   head.meta.push({
     name: 'keywords',
     content: clientConfig.siteInfo.keywords.join(),
-    vmid: 'keywords'
+    key: 'keywords'
   })
+
+  if (process.isClient) {
+    mailgo({
+      validateEmail: true
+    })
+  }
 
   Vue.use(VueYoutube)
 
@@ -80,4 +89,5 @@ export default function(Vue, { head }) {
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage
+  Vue.prototype.$toPlainText = toPlainText
 }
