@@ -11,6 +11,14 @@
 
 <script>
 export default {
+  props: {
+    language: String,
+    code: String,
+    highlightedLines: {
+      type: Array,
+      default: () => []
+    }
+  },
   data() {
     return {
       theme: 'cobalt'
@@ -19,14 +27,6 @@ export default {
   computed: {
     showLineNumbers() {
       return this.highlightedLines.length > 0 ? true : false
-    }
-  },
-  props: {
-    language: String,
-    code: String,
-    highlightedLines: {
-      type: Array,
-      default: () => []
     }
   }
 }
