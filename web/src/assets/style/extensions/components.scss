@@ -21,3 +21,9 @@
     @apply font-body #{!important};
   }
 }
+
+:not(div .deckgo-highlight-code-container code) {
+  code {
+    @apply bg-secondary text-primary rounded max-w-full text-sm py-1 px-2;
+  }
+}
