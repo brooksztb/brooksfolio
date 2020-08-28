@@ -1,23 +1,11 @@
-@tailwind base;
-
-@tailwind components;
-@import '../style/extensions/components.scss';
-
-@tailwind utilities;
-
-.dark-mode {
+[data-theme='dark'] {
   --color-primary: #fbc758;
   --color-primary--muted: rgba(251, 199, 88, 0.3);
   --color-secondary: #154a9f;
 
-  // --color-bg-primary: #1a1b23; First Theme
-  // --color-bg-primary: #121212; Second Theme
-  --color-bg-primary: #0d2538; //Dark Blue Theme
-  // --color-bg-primary--muted: rgba(26, 27, 35, 0.6);
+  --color-bg-primary: #0d2538;
   --color-bg-primary--muted: rgba(28, 28, 28, 0.6);
-  // --color-bg-secondary: #22242f; First Theme
-  // --color-bg-secondary: #282828; Second Theme
-  --color-bg-secondary: #0f2d44; //Dark Blue Theme
+  --color-bg-secondary: #0f2d44;
   --color-bg-tertiary: #030303;
   --color-bg-inverse: #ffffff;
 
@@ -37,7 +25,7 @@
   --box-shadow--lg: 0 0 4rem -2rem rgba(0, 0, 0, 0.6);
 }
 
-.light-mode {
+[data-theme='light'] {
   --color-primary: #154a9f;
   --color-primary--muted: rgba(21, 74, 159, 0.3);
   --color-secondary: #fbc758;
@@ -69,12 +57,8 @@ body {
   --vh: 6.67px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: theme('screens.md')) {
   body {
     --space: 3.5rem;
   }
-}
-
-.time-to-read::before {
-  content: ' \2014';
 }

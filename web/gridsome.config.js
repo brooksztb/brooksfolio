@@ -8,10 +8,17 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
 const tailwindcss = require('tailwindcss')
+const postcssimport = require('postcss-import')
+const postcssnested = require('postcss-nested')
+const autoprefixer = require('autoprefixer')
+const purgecss = require('@fullhuman/postcss-purgecss')
 
 const clientConfig = require('./client-config')
 
+const postcssPlugins = [postcssimport(), tailwindcss(), postcssnested(), autoprefixer()]
+
 const isProd = process.env.NODE_ENV === 'production'
+if (isProd) postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
   siteName: clientConfig.siteInfo.title,
@@ -30,7 +37,7 @@ module.exports = {
   css: {
     loaderOptions: {
       postcss: {
-        plugins: [tailwindcss]
+        plugins: postcssPlugins
       }
     }
   },

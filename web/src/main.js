@@ -1,6 +1,3 @@
-// Import main css
-import './assets/style/main.scss'
-
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'
 
@@ -49,6 +46,9 @@ import urlForImage from './utils/urlForImage'
 import toPlainText from './utils/toPlainText'
 
 import VueYoutube from 'vue-youtube'
+
+// Import main css
+require('./assets/style/main.css')
 
 const clientConfig = require('../client-config')
 

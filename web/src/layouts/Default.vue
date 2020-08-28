@@ -71,6 +71,7 @@
         <span class="flex flex-col items-center md:flex-row lg:w-full text-primary--muted"
           >© Zachary Brooks {{ new Date().getFullYear() }} - &nbsp;
           <a
+            rel="noopener"
             title="Site Source Code"
             href="https://github.com/brooksztb/brooksfolio"
             target="_blank"
@@ -79,6 +80,7 @@
         </span>
         <div class="flex flex-row items-center justify-evenly lg:justify-end w-full">
           <a
+            rel="noopener"
             class="no-highlight-anchor text-initial--muted hover:text-initial mx-2 my-2"
             title="Email"
             href="mailto:brooksztb@gmail.com"
@@ -87,6 +89,7 @@
           </a>
           <a
             href="https://github.com/brooksztb"
+            rel="noopener"
             target="_blank"
             title="Github Profile"
             class="no-highlight-anchor text-initial--muted hover:text-initial mx-2 my-2"
@@ -95,6 +98,7 @@
           </a>
           <a
             href="https://dev.to/zacann0n"
+            rel="noopener"
             target="_blank"
             title="Dev.to Profile"
             class="no-highlight-anchor text-initial--muted hover:text-initial mx-2 my-2"
@@ -103,6 +107,7 @@
           </a>
           <a
             href="https://twitter.com/zacann0n"
+            rel="noopener"
             target="_blank"
             title="Twitter Profile"
             class="no-highlight-anchor text-initial--muted hover:text-initial mx-2 my-2"
