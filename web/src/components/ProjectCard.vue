@@ -25,7 +25,7 @@
 
         <categories v-if="project.categories" :content="project" />
         <arrow-link class="flex justify-end" :path="project.path" arrowDirection="right">
-          Read More
+          Check Out this Project
         </arrow-link>
       </div>
     </li>

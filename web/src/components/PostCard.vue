@@ -35,7 +35,7 @@
             :path="post.path"
             arrowDirection="right"
           >
-            Read More
+            Read this Blog Post
           </arrow-link>
         </div>
       </div>
