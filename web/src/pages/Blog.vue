@@ -4,13 +4,9 @@
       <h1 class="font-display uppercase">My <span class="text-initial">Blog</span> Posts</h1>
       <!-- List posts -->
       <section class="w-full">
-        <ul class="flex flex-col ml-0">
-          <post-card
-            v-for="edge in $page.posts.edges"
-            :key="edge.node.id"
-            :post="edge.node"
-            :metadata="$page.metadata"
-          />
+        <ul class="flex flex-col ml-0 list-none">
+          <li v-for="edge in $page.posts.edges" :key="edge.node.id"></li>
+          <post-card :post="edge.node" :metadata="$page.metadata" />
         </ul>
       </section>
     </div>

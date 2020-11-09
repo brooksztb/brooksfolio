@@ -4,13 +4,10 @@
       <h1 class="font-display uppercase">My <span class="text-initial">Projects</span></h1>
       <!-- List projects -->
       <section class="w-full">
-        <ul class="flex flex-row justify-between ml-0">
-          <project-card
-            v-for="edge in $page.projects.edges"
-            :key="edge.node.id"
-            :project="edge.node"
-            :metadata="$page.metadata"
-          />
+        <ul class="flex flex-row justify-between ml-0 list-none">
+          <li v-for="edge in $page.projects.edges" :key="edge.node.id">
+            <project-card :project="edge.node" :metadata="$page.metadata" />
+          </li>
         </ul>
       </section>
     </div>

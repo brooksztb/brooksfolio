@@ -71,7 +71,7 @@
         <span class="flex flex-col items-center md:flex-row lg:w-full text-primary--muted"
           >© Zachary Brooks {{ new Date().getFullYear() }} - &nbsp;
           <a
-            rel="noopener"
+            rel="noreferrer"
             title="Site Source Code"
             href="https://github.com/brooksztb/brooksfolio"
             target="_blank"
@@ -80,7 +80,7 @@
         </span>
         <div class="flex flex-row items-center justify-evenly lg:justify-end w-full">
           <a
-            rel="noopener"
+            rel="noreferrer"
             class="no-highlight-anchor text-initial--muted hover:text-initial mx-2 my-2"
             title="Email"
             href="mailto:brooksztb@gmail.com"
@@ -89,7 +89,7 @@
           </a>
           <a
             href="https://github.com/brooksztb"
-            rel="noopener"
+            rel="noreferrer"
             target="_blank"
             title="Github Profile"
             class="no-highlight-anchor text-initial--muted hover:text-initial mx-2 my-2"
@@ -98,7 +98,7 @@
           </a>
           <a
             href="https://dev.to/zacann0n"
-            rel="noopener"
+            rel="noreferrer"
             target="_blank"
             title="Dev.to Profile"
             class="no-highlight-anchor text-initial--muted hover:text-initial mx-2 my-2"
@@ -107,7 +107,7 @@
           </a>
           <a
             href="https://twitter.com/zacann0n"
-            rel="noopener"
+            rel="noreferrer"
             target="_blank"
             title="Twitter Profile"
             class="no-highlight-anchor text-initial--muted hover:text-initial mx-2 my-2"
@@ -116,6 +116,7 @@
           </a>
           <a
             href="https://www.linkedin.com/in/zachary-brooks-3b8b5b84/"
+            rel="noreferrer"
             target="_blank"
             title="Linkedin Profile"
             class="no-highlight-anchor text-initial--muted hover:text-initial mx-2 lg:mr-0 my-2"
@@ -171,4 +172,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>

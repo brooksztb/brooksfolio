@@ -1,13 +1,13 @@
 <template>
-  <div class="my-4 w-full lg:w-1/2 lg:max-w-500">
+  <div class="my-4 w-full md:w-1/2 lg:max-w-500">
     <li
       class="flex flex-col justify-center md:min-h-px250 min-h-38 w-full mb-0 bg-secondary shadow-lg rounded-md transform hover:scale-105 transition-all duration-300"
     >
-      <div class="w-full md:h-full overflow-hidden rounded-t-md">
+      <div class="w-full overflow-hidden rounded-t-md">
         <g-image
           alt="Cover image"
           v-if="project.mainImage"
-          class="object-cover object-top md:h-full min-h-full md:min-h-0 md:min-w-full md:w-auto"
+          class="object-cover object-top"
           immediate="true"
           :src="
             $urlForImage(project.mainImage, $page.metadata.sanityOptions)
@@ -49,4 +49,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>

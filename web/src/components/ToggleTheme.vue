@@ -1,7 +1,7 @@
 <template>
   <button
     role="button"
-    aria-label="Toggle dark/light"
+    aria-label="Toggle dark/light theme"
     @click.prevent="toggleTheme"
     class="flex items-center justify-center hover:text-initial text-primary font-bold py-1 lg:py-0 mx-2 lg:mx-0 w-full"
   >
@@ -67,4 +67,4 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style></style>

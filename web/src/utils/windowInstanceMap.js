@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 let WindowInstanceMap
-//only return the window theme if were on the client, otherwise return dark-mode by default
+//only return the window theme if were on the client, otherwise return dark by default
 if (process.isClient) {
   WindowInstanceMap = new Vue({
     data() {
@@ -17,7 +17,7 @@ if (process.isClient) {
   WindowInstanceMap = new Vue({
     data() {
       return {
-        theme: 'dark-mode'
+        theme: 'dark'
       }
     }
   })

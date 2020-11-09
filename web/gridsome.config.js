@@ -7,18 +7,13 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
-const tailwindcss = require('tailwindcss')
-const postcssimport = require('postcss-import')
-const postcssnested = require('postcss-nested')
-const autoprefixer = require('autoprefixer')
-const purgecss = require('@fullhuman/postcss-purgecss')
 
 const clientConfig = require('./client-config')
+const postcssConfig = require('./postcss.config')
 
-const postcssPlugins = [postcssimport(), tailwindcss(), postcssnested(), autoprefixer()]
+const postcssPlugins = postcssConfig.plugins
 
 const isProd = process.env.NODE_ENV === 'production'
-if (isProd) postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
   siteName: clientConfig.siteInfo.title,
@@ -52,6 +47,15 @@ module.exports = {
         // Enable this if you want preview mode enabled
         overlayDrafts: !isProd,
         watchMode: !isProd
+      }
+    },
+    {
+      use: 'gridsome-plugin-tailwindcss',
+      options: {
+        tailwindConfig: './tailwind.config.js',
+        presetEnvConfig: {},
+        shouldImport: true,
+        shouldTimeTravel: true
       }
     }
     /* {
