@@ -8,7 +8,7 @@
         <div class="flex flex-col w-full max-w-sm md:flex-row md:max-w-full">
           <g-image
             class="w-full h-full mb-4 mr-0 rounded-md h-1/2 md:h-full md:w-1/3 md:mr-4 lg:mb-0"
-            immediate="true"
+            :immediate="true"
             :src="
               $urlForImage($page.about.mainImage, $page.metadata.sanityOptions)
                 .height(750)

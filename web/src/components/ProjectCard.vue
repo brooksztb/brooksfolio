@@ -1,6 +1,6 @@
 <template>
   <div class="w-full my-4 md:w-1/2 lg:w-full lg:max-w-500">
-    <li
+    <div
       class="flex flex-col justify-center w-full mb-0 transition-all duration-300 transform rounded-md shadow-lg md:min-h-px250 min-h-38 bg-secondary hover:scale-105"
     >
       <div class="w-full overflow-hidden rounded-t-md">
@@ -8,7 +8,7 @@
           alt="Cover image"
           v-if="project.mainImage"
           class="object-cover object-top"
-          immediate="true"
+          :immediate="true"
           :src="
             $urlForImage(project.mainImage, $page.metadata.sanityOptions)
               .height(300)
@@ -28,7 +28,7 @@
           Check Out this Project
         </arrow-link>
       </div>
-    </li>
+    </div>
   </div>
 </template>
 

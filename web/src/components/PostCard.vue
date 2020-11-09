@@ -1,6 +1,6 @@
 <template>
   <div class="my-4">
-    <li
+    <div
       class="flex flex-col justify-center h-full mb-0 transition-all duration-300 transform rounded-md shadow-lg md:flex-row md:h-screen-1/3 md:max-h-300 bg-secondary hover:scale-105"
     >
       <div
@@ -10,7 +10,7 @@
           alt="Cover image"
           v-if="post.mainImage"
           class="object-cover object-top w-full md:h-full"
-          immediate="true"
+          :immediate="true"
           :src="
             $urlForImage(post.mainImage, $page.metadata.sanityOptions)
               .height(300)
@@ -39,7 +39,7 @@
           </arrow-link>
         </div>
       </div>
-    </li>
+    </div>
   </div>
 </template>
 

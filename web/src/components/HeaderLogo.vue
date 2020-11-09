@@ -4,7 +4,7 @@
     to="/"
     exact
   >
-    <g-image class="w-auto h-12 mr-2" :src="theme" alt="zachary brooks logo" immediate="true" />
+    <g-image class="w-auto h-12 mr-2" :src="theme" alt="zachary brooks logo" :immediate="true" />
     <span class="hidden font-bold lg:flex">
       Zachary Brooks
     </span>
