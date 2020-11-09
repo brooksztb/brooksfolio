@@ -21,7 +21,7 @@
     "fontsource-montserrat": "^3.0.9",
     "fontsource-open-sans": "^3.0.9",
     "get-youtube-id": "^1.0.1",
-    "gridsome": "^0.7.17",
+    "gridsome": "^0.7.22",
     "gridsome-plugin-tailwindcss": "^3.0.1",
     "gridsome-source-sanity": "^1.0.5",
     "mailgo": "^0.9.14",

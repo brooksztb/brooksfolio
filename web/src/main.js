@@ -6,21 +6,23 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import library from './assets/images/icons'
 
 // //fonts
-import 'fontsource-montserrat/700-normal.css'
-import 'fontsource-montserrat/600-normal.css'
-import 'fontsource-montserrat/400-normal.css'
-import 'fontsource-montserrat/300-normal.css'
-import 'fontsource-open-sans/400-normal.css'
-import 'fontsource-open-sans/300-normal.css'
+require('fontsource-montserrat/700-normal.css')
+require('fontsource-montserrat/600-normal.css')
+require('fontsource-montserrat/400-normal.css')
+require('fontsource-montserrat/300-normal.css')
+require('fontsource-open-sans/400-normal.css')
+require('fontsource-open-sans/300-normal.css')
 
 //main css
-import './assets/style/main.css'
+require('./assets/style/main.css')
 
 //components
 import '@deckdeckgo/highlight-code'
 import { applyPolyfills, defineCustomElements } from '@deckdeckgo/highlight-code/dist/loader'
 import mailgo from 'mailgo'
 import VueYoutube from 'vue-youtube'
+import TheHeader from '~/components/TheHeader.vue'
+import TheFooter from '~/components/TheFooter.vue'
 
 //Vue Prototypes
 import urlForImage from './utils/urlForImage'
@@ -56,6 +58,8 @@ export default function(Vue, { head }) {
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+  Vue.component('TheHeader', TheHeader)
+  Vue.component('TheFooter', TheFooter)
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage

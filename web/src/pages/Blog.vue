@@ -51,18 +51,6 @@
           }
           caption
           alt
-          hotspot {
-            x
-            y
-            height
-            width
-          }
-          crop {
-            top
-            bottom
-            left
-            right
-          }
         }
       }
     }
