@@ -31,13 +31,13 @@
       <button class="form-button" type="submit">Send Message</button>
     </form>
     <transition name="fade">
-      <div class="flex items-start md:items-center text-xl text-success mt-2" v-show="success">
+      <div class="flex items-start mt-2 text-xl md:items-center text-success" v-show="success">
         <font-awesome class="mr-2" :icon="['fas', 'thumbs-up']" size="1x" />
         <span>Thanks for your message! I'll be sure to take a look at it!</span>
       </div>
     </transition>
     <transition name="fade">
-      <div class="flex items-center text-xl text-error mt-2" v-show="failure">
+      <div class="flex items-center mt-2 text-xl text-error" v-show="failure">
         <font-awesome class="mr-2" :icon="['fas', 'times-circle']" size="1x" />
         <span>Woops, looks like something went wrong.</span>
       </div>

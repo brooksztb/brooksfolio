@@ -1,7 +1,7 @@
 <template>
-  <div class="my-4 w-full md:w-1/2 lg:max-w-500">
+  <div class="w-full my-4 md:w-1/2 lg:w-full lg:max-w-500">
     <li
-      class="flex flex-col justify-center md:min-h-px250 min-h-38 w-full mb-0 bg-secondary shadow-lg rounded-md transform hover:scale-105 transition-all duration-300"
+      class="flex flex-col justify-center w-full mb-0 transition-all duration-300 transform rounded-md shadow-lg md:min-h-px250 min-h-38 bg-secondary hover:scale-105"
     >
       <div class="w-full overflow-hidden rounded-t-md">
         <g-image
@@ -20,7 +20,7 @@
         />
       </div>
       <div class="flex flex-col justify-center p-4 rounded-b-md">
-        <h3 class="font-display m-0 text-primary" v-html="project.title" />
+        <h3 class="m-0 font-display text-primary" v-html="project.title" />
         <block-content class="font-body max-w-px900 text-secondary" :blocks="project._rawExcerpt" />
 
         <categories v-if="project.categories" :content="project" />

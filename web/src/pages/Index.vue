@@ -1,11 +1,11 @@
 <template>
   <layout page="Home">
     <div class="flex flex-col items-start">
-      <div class="title-container flex items-center">
-        <h1 class="font-display uppercase title-animated">{{ $page.home.introHeader }}</h1>
+      <div class="flex items-center title-container">
+        <h1 class="uppercase font-display title-animated">{{ $page.home.introHeader }}</h1>
       </div>
-      <div class="flex flex-row text-lg md:max-w-1/2 pt-8 pb-4">
-        <div class="flex flex-col justify-center bg-secondary shadow-lg rounded-md p-4">
+      <div class="flex flex-row pt-8 pb-4 text-lg md:max-w-1/2">
+        <div class="flex flex-col justify-center p-4 rounded-md shadow-lg bg-secondary">
           <block-content :blocks="$page.home._rawIntroBody" />
         </div>
       </div>
@@ -14,7 +14,7 @@
         <img
         alt="Cover image"
         v-if="$page.home.mainImage"
-        class="object-cover w-full max-h-400 rounded-md"
+        class="object-cover w-full rounded-md max-h-400"
         :src="
           $urlForImage($page.home.mainImage, $page.metadata.sanityOptions)
             .height(400)
@@ -26,7 +26,7 @@
         v-if="$page.home.posts && $page.home.posts.length > 0"
         class="flex flex-col w-full py-4"
       >
-        <h2 class="font-display uppercase">My <span class="text-initial">Blog</span> Posts</h2>
+        <h2 class="uppercase font-display">My <span class="text-initial">Blog</span> Posts</h2>
         <ul class="flex flex-col ml-0 list-none">
           <li v-for="post in $page.home.posts" :key="post.id">
             <post-card :post="post" :metadata="$page.metadata" />
@@ -40,7 +40,7 @@
         v-if="$page.home.projects && $page.home.projects.length > 0"
         class="flex flex-col w-full py-4"
       >
-        <h2 class="font-display uppercase">My <span class="text-initial">Projects</span></h2>
+        <h2 class="uppercase font-display">My <span class="text-initial">Projects</span></h2>
         <ul class="flex flex-row justify-between ml-0 list-none">
           <li v-for="project in $page.home.projects" :key="project.id">
             <project-card :project="project" :metadata="$page.metadata" />

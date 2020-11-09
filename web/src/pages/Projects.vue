@@ -1,7 +1,7 @@
 <template>
   <layout page="blog">
     <div class="flex flex-col items-start">
-      <h1 class="font-display uppercase">My <span class="text-initial">Projects</span></h1>
+      <h1 class="uppercase font-display">My <span class="text-initial">Projects</span></h1>
       <!-- List projects -->
       <section class="w-full">
         <ul class="flex flex-row justify-between ml-0 list-none">

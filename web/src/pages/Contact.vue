@@ -2,8 +2,8 @@
   <layout page="contact">
     <!-- Header Text -->
     <div v-if="$page.contact" class="flex flex-col items-start">
-      <h1 class="font-display uppercase">Lets Get in <span class="text-initial">Contact</span></h1>
-      <section class="flex flex-col lg:flex-row w-full">
+      <h1 class="uppercase font-display">Lets Get in <span class="text-initial">Contact</span></h1>
+      <section class="flex flex-col w-full lg:flex-row">
         <div class="flex flex-col items-start justify-start w-full lg:w-1/2 lg:pr-2">
           <!-- Body Text -->
           <block-content :blocks="$page.contact._rawInformation"></block-content>

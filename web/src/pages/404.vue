@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="flex justify-center align-center w-full h-screen">
+    <div class="flex justify-center w-full h-screen align-center">
       <h2>
         <g-link class="no-highlight-anchor" to="/">
           Sorry, couldn't find that page...

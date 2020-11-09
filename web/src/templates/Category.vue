@@ -1,7 +1,7 @@
 <template>
   <layout page="Categories">
     <div class="flex flex-col items-start">
-      <h1 class="font-display uppercase">
+      <h1 class="uppercase font-display">
         Category: <span class="text-initial">{{ $page.category.title }}</span>
       </h1>
 

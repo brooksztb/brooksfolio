@@ -1,12 +1,13 @@
 <template>
   <layout page="blog">
     <div class="flex flex-col items-start">
-      <h1 class="font-display uppercase">My <span class="text-initial">Blog</span> Posts</h1>
+      <h1 class="uppercase font-display">My <span class="text-initial">Blog</span> Posts</h1>
       <!-- List posts -->
       <section class="w-full">
         <ul class="flex flex-col ml-0 list-none">
-          <li v-for="edge in $page.posts.edges" :key="edge.node.id"></li>
-          <post-card :post="edge.node" :metadata="$page.metadata" />
+          <li v-for="edge in $page.posts.edges" :key="edge.node.id">
+            <post-card :post="edge.node" :metadata="$page.metadata" />
+          </li>
         </ul>
       </section>
     </div>

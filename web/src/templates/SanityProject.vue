@@ -1,11 +1,11 @@
 <template>
   <Layout page="blog">
-    <article class="w-full max-w-900 mx-auto ">
+    <article class="w-full mx-auto max-w-900 ">
       <!-- project Header -->
       <!-- <img
         alt="Cover image"
         v-if="$page.project.image"
-        class="object-cover object-top w-full max-h-400 rounded-md"
+        class="object-cover object-top w-full rounded-md max-h-400"
         :src="
           $urlForImage($page.project.image, $page.metadata.sanityOptions)
             .height(600)
@@ -13,7 +13,7 @@
             .url()
         "
       /> -->
-      <h1 class="font-display text-center pt-4 border-b border-primary">
+      <h1 class="pt-4 text-center border-b font-display border-primary">
         {{ $page.project.title }}
       </h1>
 
@@ -32,7 +32,7 @@
         <!-- project Body -->
         <block-content :blocks="$page.project._rawBody" v-if="$page.project._rawBody" />
       </div>
-      <div class="flex items-center justify-between w-full max-w-900 mx-auto py-4">
+      <div class="flex items-center justify-between w-full py-4 mx-auto max-w-900">
         <arrow-link :path="previousProjectPath" arrowDirection="left">Previous Project</arrow-link>
 
         <arrow-link :path="nextProjectPath" arrowDirection="right">Next Project</arrow-link>
