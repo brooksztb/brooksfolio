@@ -1,7 +1,7 @@
 <template>
   <layout page="Categories">
     <div class="flex flex-col items-start">
-      <h1 class="font-display uppercase">
+      <h1 class="uppercase font-display">
         Category: <span class="text-initial">{{ $page.category.title }}</span>
       </h1>
 
@@ -9,26 +9,20 @@
         <h2>
           Blog Posts
         </h2>
-        <ul class="flex flex-col ml-0">
-          <post-card
-            v-for="post in $page.category.posts"
-            :key="post.id"
-            :post="post"
-            :metadata="$page.metadata"
-          />
+        <ul class="flex flex-col ml-0 list-none">
+          <li v-for="post in $page.category.posts" :key="post.id">
+            <post-card :post="post" :metadata="$page.metadata" />
+          </li>
         </ul>
       </section>
       <section v-if="$page.category.projects && $page.category.projects.length > 0" class="w-full">
         <h2>
           Projects
         </h2>
-        <ul class="flex flex-row justify-between ml-0">
-          <project-card
-            v-for="project in $page.category.projects"
-            :key="project.id"
-            :project="project"
-            :metadata="$page.metadata"
-          />
+        <ul class="flex flex-row justify-between ml-0 list-none">
+          <li v-for="project in $page.category.projects" :key="project.id">
+            <project-card :project="project" :metadata="$page.metadata" />
+          </li>
         </ul>
       </section>
       <!-- <ul>

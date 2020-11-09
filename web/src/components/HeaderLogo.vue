@@ -1,11 +1,11 @@
 <template>
   <g-link
-    class="no-highlight-anchor flex items-center flex-grow w-auto text-initial text-base md:text-2xl"
+    class="flex items-center flex-grow w-auto text-base no-highlight-anchor text-initial md:text-2xl"
     to="/"
     exact
   >
-    <g-image class="h-12 w-auto mr-2" :src="theme" alt="zachary brooks logo" immediate="true" />
-    <span class="font-bold hidden lg:flex">
+    <g-image class="w-auto h-12 mr-2" :src="theme" alt="zachary brooks logo" immediate="true" />
+    <span class="hidden font-bold lg:flex">
       Zachary Brooks
     </span>
   </g-link>
@@ -35,4 +35,4 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style></style>

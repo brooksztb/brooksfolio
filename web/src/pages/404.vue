@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="not-found">
+    <div class="flex justify-center w-full h-screen align-center">
       <h2>
         <g-link class="no-highlight-anchor" to="/">
           Sorry, couldn't find that page...
@@ -20,12 +20,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.not-found {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style></style>

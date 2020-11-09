@@ -7,9 +7,11 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
-const tailwindcss = require('tailwindcss')
 
 const clientConfig = require('./client-config')
+const postcssConfig = require('./postcss.config')
+
+const postcssPlugins = postcssConfig.plugins
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -30,7 +32,7 @@ module.exports = {
   css: {
     loaderOptions: {
       postcss: {
-        plugins: [tailwindcss]
+        plugins: postcssPlugins
       }
     }
   },
@@ -45,6 +47,15 @@ module.exports = {
         // Enable this if you want preview mode enabled
         overlayDrafts: !isProd,
         watchMode: !isProd
+      }
+    },
+    {
+      use: 'gridsome-plugin-tailwindcss',
+      options: {
+        tailwindConfig: './tailwind.config.js',
+        presetEnvConfig: {},
+        shouldImport: true,
+        shouldTimeTravel: true
       }
     }
     /* {

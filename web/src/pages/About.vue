@@ -1,13 +1,13 @@
 <template>
   <layout page="about">
     <div class="flex flex-col items-start">
-      <h1 class="font-display uppercase">
+      <h1 class="uppercase font-display">
         A Little Bit <span class="text-initial">About</span> Me
       </h1>
-      <section class="text-primary pt-4 lg:pt-0">
-        <div class="flex flex-col md:flex-row max-w-sm w-full md:max-w-full">
+      <section class="pt-4 text-primary lg:pt-0">
+        <div class="flex flex-col w-full max-w-sm md:flex-row md:max-w-full">
           <g-image
-            class="w-full h-1/2 md:h-full md:w-1/3 md:mr-4 h-full rounded-md mr-0 mb-4 lg:mb-0"
+            class="w-full h-full mb-4 mr-0 rounded-md h-1/2 md:h-full md:w-1/3 md:mr-4 lg:mb-0"
             immediate="true"
             :src="
               $urlForImage($page.about.mainImage, $page.metadata.sanityOptions)
@@ -20,13 +20,13 @@
             :alt="$page.about.mainImage.alt"
           ></g-image>
           <div
-            class="flex flex-col justify-center w-full md:w-2/3 bg-secondary shadow-lg rounded-md p-4 mb-2 leading-normal"
+            class="flex flex-col justify-center w-full p-4 mb-2 leading-normal rounded-md shadow-lg md:w-2/3 bg-secondary"
           >
             <block-content :blocks="$page.about._rawBiography" />
           </div>
         </div>
-        <div class="flex w-full flex-col items-center">
-          <h2 class="self-start font-bold text-3xl">Where I've Been</h2>
+        <div class="flex flex-col items-center w-full">
+          <h2 class="self-start text-3xl font-bold">Where I've Been</h2>
           <timeline :data="$page.about.workHistory"></timeline>
         </div>
       </section>
@@ -99,4 +99,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>

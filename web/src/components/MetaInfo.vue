@@ -1,7 +1,7 @@
 <template>
   <div class="text-sm opacity-80">
     <span>Posted {{ content.publishedAt }}</span>
-    <span v-if="timeToRead" class="time-to-read">
+    <span v-if="timeToRead" class="mdash">
       <strong> {{ timeToRead }} min read</strong>
     </span>
   </div>

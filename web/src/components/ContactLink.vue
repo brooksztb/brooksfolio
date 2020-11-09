@@ -7,7 +7,7 @@
     :rel="link.blank ? 'noopener' : ''"
   >
     <font-awesome :icon="[icon.library, icon.name]" size="lg" />
-    <span v-if="link.urlText" class="block text-md lg:text-2xl ml-4">
+    <span v-if="link.urlText" class="block ml-4 text-md lg:text-2xl">
       {{ link.urlText }}
     </span>
   </a>

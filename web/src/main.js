@@ -1,56 +1,32 @@
-// Import main css
-import './assets/style/main.scss'
-
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'
 
+//icons
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
+import library from './assets/images/icons'
 
+// //fonts
+import 'fontsource-montserrat/700-normal.css'
+import 'fontsource-montserrat/600-normal.css'
+import 'fontsource-montserrat/400-normal.css'
+import 'fontsource-montserrat/300-normal.css'
+import 'fontsource-open-sans/400-normal.css'
+import 'fontsource-open-sans/300-normal.css'
+
+//main css
+import './assets/style/main.css'
+
+//components
 import '@deckdeckgo/highlight-code'
 import { applyPolyfills, defineCustomElements } from '@deckdeckgo/highlight-code/dist/loader'
-
 import mailgo from 'mailgo'
+import VueYoutube from 'vue-youtube'
 
-import { faGithub, faDev, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import {
-  faHome,
-  faEnvelope,
-  faNewspaper,
-  faCode,
-  faUser,
-  faArrowRight,
-  faArrowLeft,
-  faTag,
-  faShareAlt,
-  faThumbsUp,
-  faTimesCircle
-} from '@fortawesome/free-solid-svg-icons'
-
-library.add(
-  faGithub,
-  faDev,
-  faTwitter,
-  faLinkedin,
-  faHome,
-  faCode,
-  faUser,
-  faNewspaper,
-  faEnvelope,
-  faArrowRight,
-  faArrowLeft,
-  faTag,
-  faShareAlt,
-  faThumbsUp,
-  faTimesCircle
-)
-// Import image url builder
+//Vue Prototypes
 import urlForImage from './utils/urlForImage'
 import toPlainText from './utils/toPlainText'
 
-import VueYoutube from 'vue-youtube'
-
-const clientConfig = require('../client-config')
+import clientConfig from '../client-config'
 
 applyPolyfills()
   .then(() => {
@@ -62,12 +38,6 @@ applyPolyfills()
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 export default function(Vue, { head }) {
-  head.link.push({
-    rel: 'stylesheet',
-    href:
-      'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Open+Sans&display=swap'
-  })
-
   head.meta.push({
     name: 'keywords',
     content: clientConfig.siteInfo.keywords.join(),

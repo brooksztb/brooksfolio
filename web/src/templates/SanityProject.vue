@@ -1,11 +1,11 @@
 <template>
   <Layout page="blog">
-    <article class="w-full max-w-900 mx-auto ">
+    <article class="w-full mx-auto max-w-900 ">
       <!-- project Header -->
       <!-- <img
         alt="Cover image"
         v-if="$page.project.image"
-        class="object-cover object-top w-full max-h-400 rounded-md"
+        class="object-cover object-top w-full rounded-md max-h-400"
         :src="
           $urlForImage($page.project.image, $page.metadata.sanityOptions)
             .height(600)
@@ -13,7 +13,7 @@
             .url()
         "
       /> -->
-      <h1 class="font-display text-center pt-4 border-b border-primary">
+      <h1 class="pt-4 text-center border-b font-display border-primary">
         {{ $page.project.title }}
       </h1>
 
@@ -32,7 +32,7 @@
         <!-- project Body -->
         <block-content :blocks="$page.project._rawBody" v-if="$page.project._rawBody" />
       </div>
-      <div class="flex items-center justify-between w-full max-w-900 mx-auto py-4">
+      <div class="flex items-center justify-between w-full py-4 mx-auto max-w-900">
         <arrow-link :path="previousProjectPath" arrowDirection="left">Previous Project</arrow-link>
 
         <arrow-link :path="nextProjectPath" arrowDirection="right">Next Project</arrow-link>
@@ -162,53 +162,4 @@ query Project ($id: ID!) {
 }
 </page-query>
 
-<style lang="scss" scoped>
-.header::before {
-  top: -6rem;
-
-  height: calc(100% + 9rem);
-  // background-image: repeating-linear-gradient(
-  //     310deg,
-  //     var(--color-bg-primary),
-  //     var(--color-bg-primary) 20px,
-  //     var(--color-bg-secondary) 20px,
-  //     var(--color-bg-secondary) 40px
-  //   ),
-  //   repeating-linear-gradient(
-  //     50deg,
-  //     var(--color-primary),
-  //     var(--color-primary) 20px,
-  //     var(--color-secondary) 20px,
-  //     var(--color-secondary) 40px
-  //   );
-
-  background-image: radial-gradient(var(--color-primary--muted) 0.075rem, transparent 0),
-    radial-gradient(var(--color-primary--muted) 0.075rem, transparent 0);
-
-  background-size: 0.75rem 0.75rem;
-
-  background-position: 0 0, 0.375rem 0.375rem;
-
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-  content: '';
-
-  height: 100%;
-
-  left: 50%;
-
-  position: absolute;
-
-  top: 0;
-
-  -webkit-transform: translateX(-50%);
-
-  transform: translateX(-50%);
-
-  width: 100vw;
-
-  z-index: -1;
-}
-</style>
+<style></style>

@@ -1,9 +1,9 @@
 <template>
   <button
     role="button"
-    aria-label="Toggle dark/light"
+    aria-label="Toggle dark/light theme"
     @click.prevent="toggleTheme"
-    class="flex items-center justify-center hover:text-initial text-primary font-bold py-1 lg:py-0 mx-2 lg:mx-0 w-full"
+    class="flex items-center justify-center w-full py-1 mx-2 font-bold hover:text-initial text-primary lg:py-0 lg:mx-0"
   >
     <svg
       v-if="darkTheme"
@@ -58,13 +58,13 @@ export default {
       this.darkTheme = !this.darkTheme
 
       // This is using a script that is added in index.html
-      window.__setPreferredTheme(this.darkTheme ? 'dark-mode' : 'light-mode')
+      window.__setPreferredTheme(this.darkTheme ? 'dark' : 'light')
     }
   },
   mounted() {
-    if (window.__theme == 'dark-mode') this.darkTheme = true
+    if (window.__theme == 'dark') this.darkTheme = true
   }
 }
 </script>
 
-<style lang="scss"></style>
+<style></style>
